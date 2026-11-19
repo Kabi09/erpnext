@@ -1,0 +1,14 @@
+# ERPNext and Frappe architecture
+
+| App | Branch and commit | Inventory |
+| --- | --- | --- |
+| ERPNext | develop / 04985378822020da230b7bf77ffc40c63c77a91a | 5,982 files, 1,363 JSON files parsed |
+| Frappe | develop / a9488f482626a9794457c89ad88b31a881cb79a9 | 5,906 files, 573 JSON files parsed |
+
+ERPNext declares its Frappe dependency in its Bench manifest and supplies DocTypes, SQL-backed services, Desk controllers, reports, routes and app hooks. Frappe provides document persistence, schema synchronization, controllers, Desk, portal rendering, sessions, background workers, permission evaluation and RPC and resource APIs. The underlying framework supports MariaDB and PostgreSQL and uses Redis and RQ for upstream caching and jobs. The target equivalents are described in the [MERN architecture](11-MERN-ARCHITECTURE.md). [ERPNext manifest](../reference/erpnext/pyproject.toml) · [Frappe manifest](../reference/frappe/pyproject.toml) · [ERPNext hooks](../reference/erpnext/erpnext/hooks.py) · [Frappe hooks](../reference/frappe/frappe/hooks.py)
+
+Frappe synchronizes standard definitions from app modules. Effective metadata is assembled at runtime with custom fields, property setters and custom permissions. DocType controllers and hooks add behavior, while list, report and form scripts can further alter presentation and available actions. Database-resident customizations and application installation order can change the resulting system. [Sync code](../reference/frappe/frappe/model/sync.py) · [Metadata processing](../reference/frappe/frappe/model/meta.py) · [Module utilities](../reference/frappe/frappe/modules/utils.py)
+
+Source reading confirmed that the document layer selects lifecycle methods for save, submit, cancel and update after submit. Persistence also handles ordered child rows, link checks and version history. The separate workflow engine uses the current document, user roles, conditions and approval checks to select legal actions. Business status and lifecycle status each need their own representation. [Document source](../reference/frappe/frappe/model/document.py#L2203) · [Workflow source](../reference/frappe/frappe/model/workflow.py#L75)
+
+The extractor indexes all Git-tracked and non-ignored untracked files, parses plain JSON, pairs definition folders with sibling code, and records selected syntax signals by source and line. It never imports source code from either app. Definitions preserve upstream JSON. Inferred files, routes and code signals are discovery aids. Manual reading findings appear in [business logic](05-BUSINESS-LOGIC.md) and [workflows](06-WORKFLOWS.md). The [source index](../metadata/source-index.json) also lists JSON files or records outside the definition catalog, such as charts of accounts, test data, localization and package configuration.

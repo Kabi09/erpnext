@@ -1,0 +1,2268 @@
+[
+  {
+    "id": "erpnext:Accounts",
+    "app": "erpnext",
+    "name": "Accounts",
+    "slug": "accounts",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 1,
+    "directory": "reference/erpnext/erpnext/accounts",
+    "subareas": [
+      "accounts_dashboard",
+      "custom",
+      "dashboard_chart",
+      "dashboard_chart_source",
+      "doctype",
+      "doctype_settings_map",
+      "financial_report_template",
+      "insights_workbook",
+      "letter_head",
+      "module_onboarding",
+      "notification",
+      "number_card",
+      "onboarding_step",
+      "page",
+      "print_format",
+      "print_format_field_template",
+      "report",
+      "services",
+      "sidebar",
+      "test",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 2,
+      "Dashboard Chart": 7,
+      "Dashboard Chart Source": 1,
+      "DocType": 191,
+      "Financial Report Template": 6,
+      "Insights Workbook": 2,
+      "Module Onboarding": 1,
+      "Notification": 1,
+      "Number Card": 4,
+      "Onboarding Step": 9,
+      "Print Format": 38,
+      "Report": 57,
+      "Sidebar": 1,
+      "Workspace": 4,
+      "Workspace Sidebar": 3
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 125
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 49
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 27
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 70
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 20
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 9
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "frappe:Website",
+        "kind": "link",
+        "count": 11
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 16
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 22
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 52
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "frappe:Automation",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Stock",
+        "kind": "child-table",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Selling",
+        "kind": "child-table",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Assets",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Buying",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Regional",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Accounts",
+        "to": "erpnext:Assets",
+        "kind": "report-reference",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "erpnext:CRM",
+    "app": "erpnext",
+    "name": "CRM",
+    "slug": "crm",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 2,
+    "directory": "reference/erpnext/erpnext/crm",
+    "subareas": [
+      "crm_dashboard",
+      "dashboard_chart",
+      "doctype",
+      "number_card",
+      "report",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 1,
+      "Dashboard Chart": 7,
+      "DocType": 28,
+      "Number Card": 4,
+      "Report": 9,
+      "Sidebar": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:CRM",
+        "to": "frappe:Desk",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 13
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 12
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "frappe:Automation",
+        "kind": "table-multiselect",
+        "count": 1
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "frappe:Website",
+        "kind": "link",
+        "count": 6
+      },
+      {
+        "from": "erpnext:CRM",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Buying",
+    "app": "erpnext",
+    "name": "Buying",
+    "slug": "buying",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 3,
+    "directory": "reference/erpnext/erpnext/buying",
+    "subareas": [
+      "buying_dashboard",
+      "dashboard_chart",
+      "doctype",
+      "doctype_settings_map",
+      "form_tour",
+      "insights_workbook",
+      "module_onboarding",
+      "number_card",
+      "onboarding_step",
+      "page",
+      "print_format",
+      "print_format_field_template",
+      "report",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 1,
+      "Dashboard Chart": 4,
+      "DocType": 19,
+      "Insights Workbook": 1,
+      "Module Onboarding": 1,
+      "Number Card": 7,
+      "Onboarding Step": 8,
+      "Print Format": 10,
+      "Report": 10,
+      "Sidebar": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 33
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 24
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 16
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 7
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Accounts",
+        "kind": "child-table",
+        "count": 9
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 20
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 6
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "frappe:Automation",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Manufacturing",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Assets",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:CRM",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Stock",
+        "kind": "table-multiselect",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Utilities",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Stock",
+        "kind": "report-reference",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Buying",
+        "to": "erpnext:Subcontracting",
+        "kind": "report-reference",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Projects",
+    "app": "erpnext",
+    "name": "Projects",
+    "slug": "projects",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 4,
+    "directory": "reference/erpnext/erpnext/projects",
+    "subareas": [
+      "dashboard_chart",
+      "doctype",
+      "doctype_settings_map",
+      "module_onboarding",
+      "number_card",
+      "onboarding_step",
+      "projects_dashboard",
+      "report",
+      "sidebar",
+      "web_form",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 1,
+      "Dashboard Chart": 2,
+      "DocType": 15,
+      "Module Onboarding": 1,
+      "Number Card": 3,
+      "Onboarding Step": 6,
+      "Report": 5,
+      "Sidebar": 1,
+      "Web Form": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Projects",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 10
+      },
+      {
+        "from": "erpnext:Projects",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Projects",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Projects",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Projects",
+        "to": "erpnext:Support",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Projects",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Selling",
+    "app": "erpnext",
+    "name": "Selling",
+    "slug": "selling",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 5,
+    "directory": "reference/erpnext/erpnext/selling",
+    "subareas": [
+      "dashboard_chart",
+      "doctype",
+      "doctype_settings_map",
+      "form_tour",
+      "insights_workbook",
+      "module_onboarding",
+      "number_card",
+      "onboarding_step",
+      "page",
+      "print_format",
+      "print_format_field_template",
+      "report",
+      "selling_dashboard",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 1,
+      "Dashboard Chart": 4,
+      "DocType": 20,
+      "Insights Workbook": 1,
+      "Module Onboarding": 1,
+      "Number Card": 7,
+      "Onboarding Step": 8,
+      "Page": 2,
+      "Print Format": 12,
+      "Report": 23,
+      "Sidebar": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 17
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 20
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:CRM",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 7
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 43
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Accounts",
+        "kind": "child-table",
+        "count": 10
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 7
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 19
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Stock",
+        "kind": "table-multiselect",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Utilities",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 7
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Automation",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Setup",
+        "kind": "table-multiselect",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Stock",
+        "kind": "child-table",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:CRM",
+        "kind": "table-multiselect",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Website",
+        "kind": "link",
+        "count": 6
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:Manufacturing",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "frappe:Contacts",
+        "kind": "report-reference",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Selling",
+        "to": "erpnext:CRM",
+        "kind": "report-reference",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Setup",
+    "app": "erpnext",
+    "name": "Setup",
+    "slug": "setup",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 6,
+    "directory": "reference/erpnext/erpnext/setup",
+    "subareas": [
+      "demo_data",
+      "doctype",
+      "module_onboarding",
+      "onboarding_step",
+      "page",
+      "setup_wizard",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 40,
+      "Module Onboarding": 1,
+      "Onboarding Step": 9,
+      "Sidebar": 1,
+      "Workspace": 2,
+      "Workspace Sidebar": 2
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Setup",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 12
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "erpnext:Stock",
+        "kind": "child-table",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 47
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 8
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 10
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "erpnext:Accounts",
+        "kind": "child-table",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "erpnext:Selling",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Setup",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Manufacturing",
+    "app": "erpnext",
+    "name": "Manufacturing",
+    "slug": "manufacturing",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 7,
+    "directory": "reference/erpnext/erpnext/manufacturing",
+    "subareas": [
+      "dashboard_chart",
+      "doctype",
+      "doctype_settings_map",
+      "manufacturing_dashboard",
+      "module_onboarding",
+      "notification",
+      "number_card",
+      "onboarding_step",
+      "page",
+      "report",
+      "scheduling",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 1,
+      "Dashboard Chart": 8,
+      "DocType": 51,
+      "Module Onboarding": 1,
+      "Notification": 1,
+      "Number Card": 7,
+      "Onboarding Step": 7,
+      "Page": 4,
+      "Report": 21,
+      "Sidebar": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 9
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 42
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 6
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 79
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Subcontracting",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Stock",
+        "kind": "report-reference",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Manufacturing",
+        "to": "erpnext:Selling",
+        "kind": "report-reference",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Stock",
+    "app": "erpnext",
+    "name": "Stock",
+    "slug": "stock",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 8,
+    "directory": "reference/erpnext/erpnext/stock",
+    "subareas": [
+      "dashboard",
+      "dashboard_chart",
+      "dashboard_chart_source",
+      "doctype",
+      "doctype_settings_map",
+      "insights_workbook",
+      "module_onboarding",
+      "number_card",
+      "onboarding_step",
+      "page",
+      "print_format",
+      "report",
+      "services",
+      "sidebar",
+      "spec",
+      "stock_dashboard",
+      "tests",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 1,
+      "Dashboard Chart": 6,
+      "Dashboard Chart Source": 2,
+      "DocType": 78,
+      "Insights Workbook": 1,
+      "Module Onboarding": 1,
+      "Number Card": 3,
+      "Onboarding Step": 8,
+      "Page": 2,
+      "Print Format": 7,
+      "Report": 54,
+      "Sidebar": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 14
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 14
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 92
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 17
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 22
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 11
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Accounts",
+        "kind": "child-table",
+        "count": 6
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 51
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 10
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 11
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "frappe:Automation",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Selling",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "frappe:Website",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Assets",
+        "kind": "link",
+        "count": 8
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Manufacturing",
+        "kind": "link",
+        "count": 12
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Buying",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Subcontracting",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Manufacturing",
+        "kind": "report-reference",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Stock",
+        "to": "erpnext:Accounts",
+        "kind": "report-reference",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Support",
+    "app": "erpnext",
+    "name": "Support",
+    "slug": "support",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 9,
+    "directory": "reference/erpnext/erpnext/support",
+    "subareas": [
+      "dashboard_chart",
+      "doctype",
+      "number_card",
+      "page",
+      "report",
+      "sidebar",
+      "web_form",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard Chart": 1,
+      "DocType": 11,
+      "Number Card": 3,
+      "Report": 4,
+      "Sidebar": 1,
+      "Web Form": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Support",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Support",
+        "to": "erpnext:CRM",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Support",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Support",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Support",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Support",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Support",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Support",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Utilities",
+    "app": "erpnext",
+    "name": "Utilities",
+    "slug": "utilities",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 10,
+    "directory": "reference/erpnext/erpnext/utilities",
+    "subareas": [
+      "doctype",
+      "report",
+      "web_form"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 4,
+      "Report": 1,
+      "Web Form": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Utilities",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Assets",
+    "app": "erpnext",
+    "name": "Assets",
+    "slug": "assets",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 11,
+    "directory": "reference/erpnext/erpnext/assets",
+    "subareas": [
+      "assets_dashboard",
+      "dashboard_chart",
+      "doctype",
+      "insights_workbook",
+      "module_onboarding",
+      "number_card",
+      "onboarding_step",
+      "report",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard": 1,
+      "Dashboard Chart": 3,
+      "DocType": 26,
+      "Insights Workbook": 1,
+      "Module Onboarding": 1,
+      "Number Card": 3,
+      "Onboarding Step": 7,
+      "Report": 3,
+      "Sidebar": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Assets",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 12
+      },
+      {
+        "from": "erpnext:Assets",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 18
+      },
+      {
+        "from": "erpnext:Assets",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Assets",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Assets",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 28
+      },
+      {
+        "from": "erpnext:Assets",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 6
+      },
+      {
+        "from": "erpnext:Assets",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Portal",
+    "app": "erpnext",
+    "name": "Portal",
+    "slug": "portal",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 12,
+    "directory": "reference/erpnext/erpnext/portal",
+    "subareas": [
+      "doctype",
+      "sidebar"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 2,
+      "Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Portal",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Maintenance",
+    "app": "erpnext",
+    "name": "Maintenance",
+    "slug": "maintenance",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 13,
+    "directory": "reference/erpnext/erpnext/maintenance",
+    "subareas": [
+      "doctype",
+      "report"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 5,
+      "Report": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Maintenance",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Maintenance",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:Maintenance",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 9
+      },
+      {
+        "from": "erpnext:Maintenance",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Maintenance",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Regional",
+    "app": "erpnext",
+    "name": "Regional",
+    "slug": "regional",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 14,
+    "directory": "reference/erpnext/erpnext/regional",
+    "subareas": [
+      "address_template",
+      "australia",
+      "doctype",
+      "italy",
+      "print_format",
+      "report",
+      "south_africa",
+      "turkey",
+      "united_arab_emirates",
+      "united_states"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 5,
+      "Print Format": 5,
+      "Report": 4
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Regional",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 5
+      },
+      {
+        "from": "erpnext:Regional",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Regional",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:Regional",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Regional",
+        "to": "erpnext:Accounts",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Regional",
+        "to": "erpnext:Accounts",
+        "kind": "report-reference",
+        "count": 3
+      },
+      {
+        "from": "erpnext:Regional",
+        "to": "erpnext:Buying",
+        "kind": "report-reference",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:ERPNext Integrations",
+    "app": "erpnext",
+    "name": "ERPNext Integrations",
+    "slug": "erpnext_integrations",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 15,
+    "directory": "reference/erpnext/erpnext/erpnext_integrations",
+    "subareas": [
+      "doctype"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 1
+    },
+    "dependencies": []
+  },
+  {
+    "id": "erpnext:Quality Management",
+    "app": "erpnext",
+    "name": "Quality Management",
+    "slug": "quality_management",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 16,
+    "directory": "reference/erpnext/erpnext/quality_management",
+    "subareas": [
+      "dashboard_chart",
+      "doctype",
+      "module_onboarding",
+      "number_card",
+      "onboarding_step",
+      "report",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard Chart": 1,
+      "DocType": 16,
+      "Module Onboarding": 1,
+      "Number Card": 3,
+      "Onboarding Step": 7,
+      "Report": 1,
+      "Sidebar": 1,
+      "Workspace": 1,
+      "Workspace Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Quality Management",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Quality Management",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Communication",
+    "app": "erpnext",
+    "name": "Communication",
+    "slug": "communication",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 17,
+    "directory": "reference/erpnext/erpnext/communication",
+    "subareas": [
+      "doctype"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 2
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Communication",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Communication",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Telephony",
+    "app": "erpnext",
+    "name": "Telephony",
+    "slug": "telephony",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 18,
+    "directory": "reference/erpnext/erpnext/telephony",
+    "subareas": [
+      "doctype"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 5
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Telephony",
+        "to": "frappe:Core",
+        "kind": "child-table",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Telephony",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "erpnext:Telephony",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Telephony",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Bulk Transaction",
+    "app": "erpnext",
+    "name": "Bulk Transaction",
+    "slug": "bulk_transaction",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 19,
+    "directory": "reference/erpnext/erpnext/bulk_transaction",
+    "subareas": [
+      "doctype"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 2
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Bulk Transaction",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "erpnext:Subcontracting",
+    "app": "erpnext",
+    "name": "Subcontracting",
+    "slug": "subcontracting",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 20,
+    "directory": "reference/erpnext/erpnext/subcontracting",
+    "subareas": [
+      "dashboard_chart",
+      "doctype",
+      "doctype_settings_map",
+      "number_card",
+      "report"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard Chart": 1,
+      "DocType": 13,
+      "Number Card": 3,
+      "Report": 3
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Stock",
+        "kind": "link",
+        "count": 42
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Manufacturing",
+        "kind": "link",
+        "count": 6
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Setup",
+        "kind": "link",
+        "count": 15
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Selling",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Buying",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 8
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Stock",
+        "kind": "child-table",
+        "count": 2
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Accounts",
+        "kind": "link",
+        "count": 9
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "erpnext:Projects",
+        "kind": "link",
+        "count": 4
+      },
+      {
+        "from": "erpnext:Subcontracting",
+        "to": "frappe:Automation",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "erpnext:EDI",
+    "app": "erpnext",
+    "name": "EDI",
+    "slug": "edi",
+    "source": "reference/erpnext/erpnext/modules.txt",
+    "line": 21,
+    "directory": "reference/erpnext/erpnext/edi",
+    "subareas": [
+      "doctype"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 2
+    },
+    "dependencies": [
+      {
+        "from": "erpnext:EDI",
+        "to": "frappe:Core",
+        "kind": "child-table",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Core",
+    "app": "frappe",
+    "name": "Core",
+    "slug": "core",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 1,
+    "directory": "reference/frappe/frappe/core",
+    "subareas": [
+      "api",
+      "dashboard_chart",
+      "doctype",
+      "number_card",
+      "page",
+      "permission_type",
+      "report",
+      "web_form"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard Chart": 2,
+      "DocType": 115,
+      "Number Card": 4,
+      "Page": 3,
+      "Permission Type": 1,
+      "Report": 7,
+      "Web Form": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Core",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 7
+      },
+      {
+        "from": "frappe:Core",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "frappe:Core",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "frappe:Core",
+        "to": "frappe:Contacts",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "frappe:Core",
+        "to": "frappe:Desk",
+        "kind": "link",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "frappe:Website",
+    "app": "frappe",
+    "name": "Website",
+    "slug": "website",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 2,
+    "directory": "reference/frappe/frappe/website",
+    "subareas": [
+      "css",
+      "dashboard_chart",
+      "doctype",
+      "js",
+      "number_card",
+      "page_renderers",
+      "report",
+      "sidebar",
+      "web_form",
+      "web_template",
+      "website_components",
+      "website_theme",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard Chart": 1,
+      "DocType": 39,
+      "Number Card": 1,
+      "Report": 1,
+      "Sidebar": 1,
+      "Web Form": 2,
+      "Web Template": 23,
+      "Website Theme": 1,
+      "Workspace": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Website",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 10
+      },
+      {
+        "from": "frappe:Website",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "frappe:Website",
+        "to": "frappe:Core",
+        "kind": "child-table",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Workflow",
+    "app": "frappe",
+    "name": "Workflow",
+    "slug": "workflow",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 3,
+    "directory": "reference/frappe/frappe/workflow",
+    "subareas": [
+      "doctype",
+      "page",
+      "sidebar"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 10,
+      "Page": 1,
+      "Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Workflow",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 8
+      },
+      {
+        "from": "frappe:Workflow",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Email",
+    "app": "frappe",
+    "name": "Email",
+    "slug": "email",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 4,
+    "directory": "reference/frappe/frappe/email",
+    "subareas": [
+      "assets",
+      "doctype",
+      "page",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 17,
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Email",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 14
+      },
+      {
+        "from": "frappe:Email",
+        "to": "frappe:Integrations",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "frappe:Email",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "frappe:Email",
+        "to": "frappe:Desk",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Custom",
+    "app": "frappe",
+    "name": "Custom",
+    "slug": "custom",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 5,
+    "directory": "reference/frappe/frappe/custom",
+    "subareas": [
+      "doctype",
+      "fixtures",
+      "report"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 5,
+      "Report": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Custom",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 7
+      },
+      {
+        "from": "frappe:Custom",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "frappe:Custom",
+        "to": "frappe:Core",
+        "kind": "child-table",
+        "count": 3
+      },
+      {
+        "from": "frappe:Custom",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Geo",
+    "app": "frappe",
+    "name": "Geo",
+    "slug": "geo",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 6,
+    "directory": "reference/frappe/frappe/geo",
+    "subareas": [
+      "doctype",
+      "report",
+      "sidebar"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 2,
+      "Sidebar": 1
+    },
+    "dependencies": []
+  },
+  {
+    "id": "frappe:Desk",
+    "app": "frappe",
+    "name": "Desk",
+    "slug": "desk",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 7,
+    "directory": "reference/frappe/frappe/desk",
+    "subareas": [
+      "dashboard_chart",
+      "doctype",
+      "doctype_settings",
+      "form",
+      "number_card",
+      "page",
+      "report"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Dashboard Chart": 3,
+      "DocType": 66,
+      "Number Card": 5,
+      "Page": 7,
+      "Report": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Desk",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 57
+      },
+      {
+        "from": "frappe:Desk",
+        "to": "frappe:Core",
+        "kind": "child-table",
+        "count": 7
+      },
+      {
+        "from": "frappe:Desk",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 3
+      },
+      {
+        "from": "frappe:Desk",
+        "to": "frappe:Integrations",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "frappe:Desk",
+        "to": "frappe:Automation",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Integrations",
+    "app": "frappe",
+    "name": "Integrations",
+    "slug": "integrations",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 8,
+    "directory": "reference/frappe/frappe/integrations",
+    "subareas": [
+      "doctype",
+      "frappe_providers",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 24,
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Integrations",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 12
+      }
+    ]
+  },
+  {
+    "id": "frappe:Printing",
+    "app": "frappe",
+    "name": "Printing",
+    "slug": "printing",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 9,
+    "directory": "reference/frappe/frappe/printing",
+    "subareas": [
+      "doctype",
+      "page",
+      "print_style",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 8,
+      "Page": 4,
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Printing",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 10
+      },
+      {
+        "from": "frappe:Printing",
+        "to": "frappe:Core",
+        "kind": "table-multiselect",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Contacts",
+    "app": "frappe",
+    "name": "Contacts",
+    "slug": "contacts",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 10,
+    "directory": "reference/frappe/frappe/contacts",
+    "subareas": [
+      "doctype",
+      "report",
+      "sidebar"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 7,
+      "Report": 1,
+      "Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Contacts",
+        "to": "frappe:Geo",
+        "kind": "link",
+        "count": 2
+      },
+      {
+        "from": "frappe:Contacts",
+        "to": "frappe:Core",
+        "kind": "child-table",
+        "count": 2
+      },
+      {
+        "from": "frappe:Contacts",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "frappe:Contacts",
+        "to": "frappe:Integrations",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:Automation",
+    "app": "frappe",
+    "name": "Automation",
+    "slug": "automation",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 11,
+    "directory": "reference/frappe/frappe/automation",
+    "subareas": [
+      "doctype",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 16,
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Automation",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 14
+      },
+      {
+        "from": "frappe:Automation",
+        "to": "frappe:Email",
+        "kind": "link",
+        "count": 1
+      },
+      {
+        "from": "frappe:Automation",
+        "to": "frappe:Printing",
+        "kind": "link",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "frappe:System",
+    "app": "frappe",
+    "name": "System",
+    "slug": "system",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 12,
+    "directory": "reference/frappe/frappe/system",
+    "subareas": [
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": []
+  },
+  {
+    "id": "frappe:Build",
+    "app": "frappe",
+    "name": "Build",
+    "slug": "build",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 13,
+    "directory": "reference/frappe/frappe/build",
+    "subareas": [
+      "page",
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": []
+  },
+  {
+    "id": "frappe:Data",
+    "app": "frappe",
+    "name": "Data",
+    "slug": "data",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 14,
+    "directory": "reference/frappe/frappe/data",
+    "subareas": [
+      "sidebar"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Sidebar": 1
+    },
+    "dependencies": []
+  },
+  {
+    "id": "frappe:Users",
+    "app": "frappe",
+    "name": "Users",
+    "slug": "users",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 15,
+    "directory": "reference/frappe/frappe/users",
+    "subareas": [
+      "sidebar",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": []
+  },
+  {
+    "id": "frappe:Studio",
+    "app": "frappe",
+    "name": "Studio",
+    "slug": "studio",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 16,
+    "directory": "reference/frappe/frappe/studio",
+    "subareas": [
+      "ai",
+      "commands",
+      "doctype",
+      "sidebar",
+      "tests"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 10,
+      "Sidebar": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Studio",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "frappe:Flow",
+    "app": "frappe",
+    "name": "Flow",
+    "slug": "flow",
+    "source": "reference/frappe/frappe/modules.txt",
+    "line": 17,
+    "directory": "reference/frappe/frappe/flow",
+    "subareas": [
+      "api",
+      "assistant",
+      "commands",
+      "daemon",
+      "doctype",
+      "knowledge",
+      "lib",
+      "memory",
+      "sidebar",
+      "templates",
+      "tests",
+      "tools",
+      "triggers",
+      "utils",
+      "workspace"
+    ],
+    "status": "metadata-only",
+    "counts": {
+      "DocType": 20,
+      "Sidebar": 1,
+      "Workspace": 1
+    },
+    "dependencies": [
+      {
+        "from": "frappe:Flow",
+        "to": "frappe:Core",
+        "kind": "table-multiselect",
+        "count": 2
+      },
+      {
+        "from": "frappe:Flow",
+        "to": "frappe:Core",
+        "kind": "link",
+        "count": 7
+      }
+    ]
+  }
+]

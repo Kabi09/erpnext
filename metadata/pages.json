@@ -1,0 +1,2642 @@
+{
+  "definitions": [
+    {
+      "id": "reference/erpnext/erpnext/manufacturing/page/bom_comparison_tool/bom_comparison_tool.json#0",
+      "app": "erpnext",
+      "module": "Manufacturing",
+      "kind": "Page",
+      "name": "bom-comparison-tool",
+      "source": "reference/erpnext/erpnext/manufacturing/page/bom_comparison_tool/bom_comparison_tool.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2019-07-29 13:24:38.201981",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2019-07-29 13:24:38.201981",
+        "modified_by": "Administrator",
+        "module": "Manufacturing",
+        "name": "bom-comparison-tool",
+        "owner": "Administrator",
+        "page_name": "BOM Comparison Tool",
+        "restrict_to_domain": "Manufacturing",
+        "roles": [
+          {
+            "role": "System Manager"
+          },
+          {
+            "role": "Manufacturing User"
+          },
+          {
+            "role": "Manufacturing Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "BOM Comparison Tool"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/manufacturing/page/bom_comparison_tool/__init__.py",
+        "reference/erpnext/erpnext/manufacturing/page/bom_comparison_tool/bom_comparison_tool.js"
+      ],
+      "route": "BOM Comparison Tool",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/manufacturing/page/production_plan_visualizer/production_plan_visualizer.json#0",
+      "app": "erpnext",
+      "module": "Manufacturing",
+      "kind": "Page",
+      "name": "production-plan-visualizer",
+      "source": "reference/erpnext/erpnext/manufacturing/page/production_plan_visualizer/production_plan_visualizer.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-08-28 10:00:00",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-08-28 10:00:00",
+        "modified_by": "Administrator",
+        "module": "Manufacturing",
+        "name": "production-plan-visualizer",
+        "owner": "Administrator",
+        "page_name": "production-plan-visualizer",
+        "roles": [
+          {
+            "role": "Manufacturing User"
+          },
+          {
+            "role": "Manufacturing Manager"
+          },
+          {
+            "role": "System Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Production Plan Visualizer"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/manufacturing/page/production_plan_visualizer/__init__.py",
+        "reference/erpnext/erpnext/manufacturing/page/production_plan_visualizer/production_plan_visualizer.js",
+        "reference/erpnext/erpnext/manufacturing/page/production_plan_visualizer/production_plan_visualizer.py"
+      ],
+      "route": "production-plan-visualizer",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/manufacturing/page/shop_floor/shop_floor.json#0",
+      "app": "erpnext",
+      "module": "Manufacturing",
+      "kind": "Page",
+      "name": "shop-floor",
+      "source": "reference/erpnext/erpnext/manufacturing/page/shop_floor/shop_floor.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-05-30 10:00:00",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-06-05 00:24:12.148085",
+        "modified_by": "Administrator",
+        "module": "Manufacturing",
+        "name": "shop-floor",
+        "owner": "Administrator",
+        "page_name": "shop-floor",
+        "roles": [
+          {
+            "role": "Manufacturing User"
+          },
+          {
+            "role": "Manufacturing Manager"
+          },
+          {
+            "role": "Shop Floor Manager"
+          },
+          {
+            "role": "Shop Floor User"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Shop Floor"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/manufacturing/page/shop_floor/__init__.py",
+        "reference/erpnext/erpnext/manufacturing/page/shop_floor/shop_floor.js",
+        "reference/erpnext/erpnext/manufacturing/page/shop_floor/shop_floor.py"
+      ],
+      "route": "shop-floor",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/manufacturing/page/visual_plant_floor/visual_plant_floor.json#0",
+      "app": "erpnext",
+      "module": "Manufacturing",
+      "kind": "Page",
+      "name": "visual-plant-floor",
+      "source": "reference/erpnext/erpnext/manufacturing/page/visual_plant_floor/visual_plant_floor.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2023-10-06 15:17:39.215300",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2023-10-06 15:18:00.622073",
+        "modified_by": "Administrator",
+        "module": "Manufacturing",
+        "name": "visual-plant-floor",
+        "owner": "Administrator",
+        "page_name": "visual-plant-floor",
+        "roles": [
+          {
+            "role": "Manufacturing User"
+          },
+          {
+            "role": "Manufacturing Manager"
+          },
+          {
+            "role": "Operator"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Visual Plant Floor"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/manufacturing/page/visual_plant_floor/__init__.py",
+        "reference/erpnext/erpnext/manufacturing/page/visual_plant_floor/visual_plant_floor.js"
+      ],
+      "route": "visual-plant-floor",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/projects/web_form/tasks/tasks.json#0",
+      "app": "erpnext",
+      "module": "Projects",
+      "kind": "Web Form",
+      "name": "tasks",
+      "source": "reference/erpnext/erpnext/projects/web_form/tasks/tasks.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "accept_payment": 0,
+        "allow_comments": 1,
+        "allow_delete": 1,
+        "allow_edit": 1,
+        "allow_incomplete": 0,
+        "allow_multiple": 1,
+        "allow_print": 0,
+        "amount": 0,
+        "amount_based_on_field": 0,
+        "breadcrumbs": "[{\"title\":\"Tasks\", \"name\":\"tasks\"}]",
+        "creation": "2016-06-24 15:50:33.091287",
+        "doc_type": "Task",
+        "docstatus": 0,
+        "doctype": "Web Form",
+        "idx": 0,
+        "introduction_text": "",
+        "is_standard": 1,
+        "login_required": 1,
+        "max_attachment_size": 0,
+        "modified": "2018-07-24 11:32:07.805956",
+        "modified_by": "Administrator",
+        "module": "Projects",
+        "name": "tasks",
+        "owner": "Administrator",
+        "payment_button_label": "Buy Now",
+        "published": 1,
+        "route": "tasks",
+        "show_sidebar": 1,
+        "sidebar_items": [],
+        "success_url": "",
+        "title": "Task",
+        "web_form_fields": [
+          {
+            "fieldname": "project",
+            "fieldtype": "Link",
+            "hidden": 0,
+            "label": "Project",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Project",
+            "read_only": 1,
+            "reqd": 1
+          },
+          {
+            "fieldname": "subject",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Subject",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 1
+          },
+          {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "hidden": 0,
+            "label": "Status",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Open\nWorking\nPending Review\nOverdue\nClosed\nCancelled",
+            "read_only": 0,
+            "reqd": 0
+          },
+          {
+            "fieldname": "description",
+            "fieldtype": "Text Editor",
+            "hidden": 0,
+            "label": "Details",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0
+          },
+          {
+            "fieldname": "priority",
+            "fieldtype": "Select",
+            "hidden": 0,
+            "label": "Priority",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Low\nMedium\nHigh\nUrgent",
+            "read_only": 0,
+            "reqd": 0
+          },
+          {
+            "fieldname": "exp_start_date",
+            "fieldtype": "Date",
+            "hidden": 0,
+            "label": "Expected Start Date",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0
+          },
+          {
+            "fieldname": "exp_end_date",
+            "fieldtype": "Date",
+            "hidden": 0,
+            "label": "Expected End Date",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0
+          }
+        ]
+      },
+      "companions": [
+        "reference/erpnext/erpnext/projects/web_form/tasks/__init__.py",
+        "reference/erpnext/erpnext/projects/web_form/tasks/tasks.js",
+        "reference/erpnext/erpnext/projects/web_form/tasks/tasks.py"
+      ],
+      "route": "tasks",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/erpnext/erpnext/selling/page/point_of_sale/point_of_sale.json#0",
+      "app": "erpnext",
+      "module": "Selling",
+      "kind": "Page",
+      "name": "point-of-sale",
+      "source": "reference/erpnext/erpnext/selling/page/point_of_sale/point_of_sale.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2020-01-28 22:05:44.819140",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2020-06-01 15:41:06.348380",
+        "modified_by": "Administrator",
+        "module": "Selling",
+        "name": "point-of-sale",
+        "owner": "Administrator",
+        "page_name": "Point of Sale",
+        "restrict_to_domain": "Retail",
+        "roles": [
+          {
+            "role": "Accounts User"
+          },
+          {
+            "role": "Accounts Manager"
+          },
+          {
+            "role": "Sales User"
+          },
+          {
+            "role": "Sales Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Point Of Sale"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/selling/page/point_of_sale/__init__.py",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/point_of_sale.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/point_of_sale.py",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_controller.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_item_cart.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_item_details.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_item_selector.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_number_pad.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_past_order_list.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_past_order_summary.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/pos_payment.js",
+        "reference/erpnext/erpnext/selling/page/point_of_sale/test_point_of_sale.py"
+      ],
+      "route": "Point of Sale",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/selling/page/sales_funnel/sales_funnel.json#0",
+      "app": "erpnext",
+      "module": "Selling",
+      "kind": "Page",
+      "name": "sales-funnel",
+      "source": "reference/erpnext/erpnext/selling/page/sales_funnel/sales_funnel.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "creation": "2013-10-04 13:17:18.000000",
+        "docstatus": 0,
+        "doctype": "Page",
+        "icon": "funnel",
+        "idx": 1,
+        "modified": "2026-07-03 13:17:18.000000",
+        "modified_by": "Administrator",
+        "module": "Selling",
+        "name": "sales-funnel",
+        "owner": "Administrator",
+        "page_name": "sales-funnel",
+        "roles": [
+          {
+            "role": "Sales Manager"
+          }
+        ],
+        "standard": "Yes",
+        "title": "Sales Funnel"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/selling/page/sales_funnel/__init__.py",
+        "reference/erpnext/erpnext/selling/page/sales_funnel/sales_funnel.js",
+        "reference/erpnext/erpnext/selling/page/sales_funnel/sales_funnel.py",
+        "reference/erpnext/erpnext/selling/page/sales_funnel/test_sales_funnel.py"
+      ],
+      "route": "sales-funnel",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/stock/page/stock_balance/stock_balance.json#0",
+      "app": "erpnext",
+      "module": "Stock",
+      "kind": "Page",
+      "name": "stock-balance",
+      "source": "reference/erpnext/erpnext/stock/page/stock_balance/stock_balance.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2016-04-21 04:59:00.141546",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2016-07-14 06:39:09.096256",
+        "modified_by": "Administrator",
+        "module": "Stock",
+        "name": "stock-balance",
+        "owner": "Administrator",
+        "page_name": "stock-balance",
+        "roles": [
+          {
+            "role": "Stock User"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "title": "Stock Summary"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/stock/page/stock_balance/__init__.py",
+        "reference/erpnext/erpnext/stock/page/stock_balance/stock_balance.js"
+      ],
+      "route": "stock-balance",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/stock/page/warehouse_capacity_summary/warehouse_capacity_summary.json#0",
+      "app": "erpnext",
+      "module": "Stock",
+      "kind": "Page",
+      "name": "warehouse-capacity-summary",
+      "source": "reference/erpnext/erpnext/stock/page/warehouse_capacity_summary/warehouse_capacity_summary.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2020-11-25 12:07:54.056208",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2020-11-25 11:07:54.056208",
+        "modified_by": "Administrator",
+        "module": "Stock",
+        "name": "warehouse-capacity-summary",
+        "owner": "Administrator",
+        "page_name": "Warehouse Capacity Summary",
+        "roles": [
+          {
+            "role": "Stock User"
+          },
+          {
+            "role": "Stock Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Warehouse Capacity Summary"
+      },
+      "companions": [
+        "reference/erpnext/erpnext/stock/page/warehouse_capacity_summary/__init__.py",
+        "reference/erpnext/erpnext/stock/page/warehouse_capacity_summary/warehouse_capacity_summary.html",
+        "reference/erpnext/erpnext/stock/page/warehouse_capacity_summary/warehouse_capacity_summary.js",
+        "reference/erpnext/erpnext/stock/page/warehouse_capacity_summary/warehouse_capacity_summary_header.html"
+      ],
+      "route": "Warehouse Capacity Summary",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/erpnext/erpnext/support/web_form/issues/issues.json#0",
+      "app": "erpnext",
+      "module": "Support",
+      "kind": "Web Form",
+      "name": "issues",
+      "source": "reference/erpnext/erpnext/support/web_form/issues/issues.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "allow_comments": 1,
+        "allow_delete": 1,
+        "allow_edit": 1,
+        "allow_incomplete": 0,
+        "allow_multiple": 1,
+        "allow_print": 0,
+        "anonymous": 0,
+        "apply_document_permissions": 0,
+        "breadcrumbs": "[{\"label\":_(\"Issues\"), \"route\":\"issues\"}]",
+        "condition_json": "[]",
+        "creation": "2016-06-24 15:50:33.186483",
+        "doc_type": "Issue",
+        "docstatus": 0,
+        "doctype": "Web Form",
+        "idx": 0,
+        "introduction_text": "",
+        "is_standard": 1,
+        "list_columns": [],
+        "login_required": 1,
+        "max_attachment_size": 0,
+        "modified": "2024-03-27 16:16:03.621730",
+        "modified_by": "Administrator",
+        "module": "Support",
+        "name": "issues",
+        "owner": "Administrator",
+        "published": 1,
+        "route": "issues",
+        "show_attachments": 0,
+        "show_list": 1,
+        "show_sidebar": 1,
+        "success_message": "",
+        "success_url": "/issues",
+        "title": "Issue",
+        "web_form_fields": [
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "subject",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Subject",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "default": "Open",
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "hidden": 0,
+            "label": "Status",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Open\nReplied\nOn Hold\nClosed",
+            "read_only": 1,
+            "reqd": 0,
+            "show_in_filter": 1
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "customer",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Customer",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Customer",
+            "read_only": 1,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "description",
+            "fieldtype": "Text Editor",
+            "hidden": 0,
+            "label": "Description",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "attachment",
+            "fieldtype": "Attach",
+            "hidden": 0,
+            "label": "Attachment",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "default": "Medium",
+            "fieldname": "priority",
+            "fieldtype": "Link",
+            "hidden": 0,
+            "label": "Priority",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Issue Priority",
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "default": "1",
+            "fieldname": "via_customer_portal",
+            "fieldtype": "Check",
+            "hidden": 1,
+            "label": "Via Customer Portal",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 1,
+            "reqd": 0,
+            "show_in_filter": 0
+          }
+        ]
+      },
+      "companions": [
+        "reference/erpnext/erpnext/support/web_form/issues/__init__.py",
+        "reference/erpnext/erpnext/support/web_form/issues/issues.js",
+        "reference/erpnext/erpnext/support/web_form/issues/issues.py"
+      ],
+      "route": "issues",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/erpnext/erpnext/utilities/web_form/addresses/addresses.json#0",
+      "app": "erpnext",
+      "module": "Utilities",
+      "kind": "Web Form",
+      "name": "addresses",
+      "source": "reference/erpnext/erpnext/utilities/web_form/addresses/addresses.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "accept_payment": 0,
+        "allow_comments": 0,
+        "allow_delete": 0,
+        "allow_edit": 1,
+        "allow_incomplete": 0,
+        "allow_multiple": 1,
+        "allow_print": 0,
+        "amount": 0,
+        "amount_based_on_field": 0,
+        "anonymous": 0,
+        "apply_document_permissions": 1,
+        "condition_json": "[]",
+        "creation": "2016-06-24 15:50:33.196990",
+        "doc_type": "Address",
+        "docstatus": 0,
+        "doctype": "Web Form",
+        "idx": 0,
+        "is_standard": 1,
+        "list_columns": [],
+        "list_title": "",
+        "login_required": 1,
+        "max_attachment_size": 0,
+        "modified": "2025-10-27 21:05:21.125639",
+        "modified_by": "Administrator",
+        "module": "Utilities",
+        "name": "addresses",
+        "owner": "Administrator",
+        "published": 1,
+        "route": "address",
+        "show_attachments": 0,
+        "show_list": 1,
+        "show_sidebar": 0,
+        "success_url": "/addresses",
+        "title": "Address",
+        "web_form_fields": [
+          {
+            "allow_read_on_all_link_options": 0,
+            "description": "",
+            "fieldname": "address_title",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Address Title",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "address_type",
+            "fieldtype": "Select",
+            "hidden": 0,
+            "label": "Address Type",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Billing\nShipping\nOffice\nPersonal\nPlant\nPostal\nShop\nSubsidiary\nWarehouse\nOther",
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "address_line1",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Address Line 1",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "address_line2",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Address Line 2",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "pincode",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Postal Code",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "city",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "City/Town",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "state",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "State/Province",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 1,
+            "fieldname": "country",
+            "fieldtype": "Link",
+            "hidden": 0,
+            "label": "Country",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Country",
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldtype": "Column Break",
+            "hidden": 0,
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "email_id",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Email Address",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "phone",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Phone",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "default": "0",
+            "description": "",
+            "fieldname": "is_primary_address",
+            "fieldtype": "Check",
+            "hidden": 0,
+            "label": "Preferred Billing Address",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "default": "0",
+            "description": "",
+            "fieldname": "is_shipping_address",
+            "fieldtype": "Check",
+            "hidden": 0,
+            "label": "Preferred Shipping Address",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          }
+        ]
+      },
+      "companions": [
+        "reference/erpnext/erpnext/utilities/web_form/addresses/__init__.py",
+        "reference/erpnext/erpnext/utilities/web_form/addresses/addresses.js",
+        "reference/erpnext/erpnext/utilities/web_form/addresses/addresses.py"
+      ],
+      "route": "address",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/frappe/frappe/core/page/component_explorer/component_explorer.json#0",
+      "app": "frappe",
+      "module": "Core",
+      "kind": "Page",
+      "name": "component-explorer",
+      "source": "reference/frappe/frappe/core/page/component_explorer/component_explorer.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-07-10 17:32:45.805692",
+        "docstatus": 0,
+        "doctype": "Page",
+        "icon": "",
+        "idx": 0,
+        "modified": "2026-11-14 01:38:31.344771",
+        "modified_by": "Administrator",
+        "module": "Core",
+        "name": "component-explorer",
+        "owner": "Administrator",
+        "page_name": "component-explorer",
+        "roles": [
+          {
+            "role": "System Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Components"
+      },
+      "companions": [
+        "reference/frappe/frappe/core/page/component_explorer/__init__.py",
+        "reference/frappe/frappe/core/page/component_explorer/component_explorer.js"
+      ],
+      "route": "component-explorer",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/core/page/dashboard_view/dashboard_view.json#0",
+      "app": "frappe",
+      "module": "Core",
+      "kind": "Page",
+      "name": "dashboard-view",
+      "source": "reference/frappe/frappe/core/page/dashboard_view/dashboard_view.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2019-01-08 19:19:48.073410",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2020-12-16 12:29:08.610352",
+        "modified_by": "Administrator",
+        "module": "Core",
+        "name": "dashboard-view",
+        "owner": "Administrator",
+        "page_name": "dashboard-view",
+        "roles": [],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Dashboard"
+      },
+      "companions": [
+        "reference/frappe/frappe/core/page/dashboard_view/__init__.py",
+        "reference/frappe/frappe/core/page/dashboard_view/dashboard_view.js"
+      ],
+      "route": "dashboard-view",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/core/page/permission_manager/permission_manager.json#0",
+      "app": "frappe",
+      "module": "Core",
+      "kind": "Page",
+      "name": "permission-manager",
+      "source": "reference/frappe/frappe/core/page/permission_manager/permission_manager.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "creation": "2013-01-01 11:00:01.000000",
+        "docstatus": 0,
+        "doctype": "Page",
+        "icon": "lock",
+        "idx": 1,
+        "modified": "2013-07-11 14:43:43.000000",
+        "modified_by": "Administrator",
+        "module": "Core",
+        "name": "permission-manager",
+        "owner": "Administrator",
+        "page_name": "permission-manager",
+        "roles": [
+          {
+            "role": "System Manager"
+          }
+        ],
+        "standard": "Yes",
+        "title": "Role Permissions Manager"
+      },
+      "companions": [
+        "reference/frappe/frappe/core/page/permission_manager/__init__.py",
+        "reference/frappe/frappe/core/page/permission_manager/permission_manager.js",
+        "reference/frappe/frappe/core/page/permission_manager/permission_manager.py",
+        "reference/frappe/frappe/core/page/permission_manager/permission_manager_help.html"
+      ],
+      "route": "permission-manager",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/core/web_form/edit_profile/edit_profile.json#0",
+      "app": "frappe",
+      "module": "Core",
+      "kind": "Web Form",
+      "name": "edit-profile",
+      "source": "reference/frappe/frappe/core/web_form/edit_profile/edit_profile.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "allow_comments": 0,
+        "allow_delete": 0,
+        "allow_edit": 1,
+        "allow_incomplete": 0,
+        "allow_multiple": 0,
+        "allow_print": 0,
+        "anonymous": 0,
+        "apply_document_permissions": 0,
+        "breadcrumbs": "[{\"title\": _(\"My Account\"), \"route\": \"me\"}]",
+        "client_script": "frappe.web_form.after_load = () => {\n    if (window.location.pathname.endsWith(\"/new\") && frappe.session.user) {\n        let current_path = window.location.href;\n        window.location.href = current_path.replace(\"/new\", \"/\" + frappe.session.user);\n    }\n}",
+        "condition_json": "[]",
+        "creation": "2016-09-19 05:16:59.242754",
+        "doc_type": "User",
+        "docstatus": 0,
+        "doctype": "Web Form",
+        "hide_footer": 1,
+        "hide_navbar": 1,
+        "idx": 0,
+        "introduction_text": "",
+        "is_standard": 1,
+        "list_columns": [],
+        "login_required": 1,
+        "max_attachment_size": 0,
+        "modified": "2025-07-22 19:31:20.283749",
+        "modified_by": "Administrator",
+        "module": "Core",
+        "name": "edit-profile",
+        "owner": "Administrator",
+        "published": 1,
+        "route": "update-profile",
+        "show_attachments": 0,
+        "show_list": 0,
+        "show_sidebar": 0,
+        "success_message": "Profile updated successfully.",
+        "success_url": "/me",
+        "title": "Update Profile",
+        "web_form_fields": [
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "first_name",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "First Name",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "middle_name",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Middle Name (Optional)",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "last_name",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Last Name",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "",
+            "fieldtype": "Column Break",
+            "hidden": 0,
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "description": "",
+            "fieldname": "user_image",
+            "fieldtype": "Attach Image",
+            "hidden": 0,
+            "label": "Profile Picture",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldtype": "Section Break",
+            "hidden": 0,
+            "label": "More Information",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "phone",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Phone",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "mobile_no",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Mobile Number",
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "",
+            "fieldtype": "Column Break",
+            "hidden": 0,
+            "max_length": 0,
+            "max_value": 0,
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "description": "",
+            "fieldname": "language",
+            "fieldtype": "Link",
+            "hidden": 0,
+            "label": "Language",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Language",
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          },
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "time_zone",
+            "fieldtype": "Select",
+            "hidden": 0,
+            "label": "Time Zone",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "Africa/Abidjan\nAfrica/Accra\nAfrica/Addis_Ababa\nAfrica/Algiers\nAfrica/Asmara\nAfrica/Asmera\nAfrica/Bamako\nAfrica/Bangui\nAfrica/Banjul\nAfrica/Bissau\nAfrica/Blantyre\nAfrica/Brazzaville\nAfrica/Bujumbura\nAfrica/Cairo\nAfrica/Casablanca\nAfrica/Ceuta\nAfrica/Conakry\nAfrica/Dakar\nAfrica/Dar_es_Salaam\nAfrica/Djibouti\nAfrica/Douala\nAfrica/El_Aaiun\nAfrica/Freetown\nAfrica/Gaborone\nAfrica/Harare\nAfrica/Johannesburg\nAfrica/Juba\nAfrica/Kampala\nAfrica/Khartoum\nAfrica/Kigali\nAfrica/Kinshasa\nAfrica/Lagos\nAfrica/Libreville\nAfrica/Lome\nAfrica/Luanda\nAfrica/Lubumbashi\nAfrica/Lusaka\nAfrica/Malabo\nAfrica/Maputo\nAfrica/Maseru\nAfrica/Mbabane\nAfrica/Mogadishu\nAfrica/Monrovia\nAfrica/Nairobi\nAfrica/Ndjamena\nAfrica/Niamey\nAfrica/Nouakchott\nAfrica/Ouagadougou\nAfrica/Porto-Novo\nAfrica/Sao_Tome\nAfrica/Timbuktu\nAfrica/Tripoli\nAfrica/Tunis\nAfrica/Windhoek\nAmerica/Adak\nAmerica/Anchorage\nAmerica/Anguilla\nAmerica/Antigua\nAmerica/Araguaina\nAmerica/Argentina/Buenos_Aires\nAmerica/Argentina/Catamarca\nAmerica/Argentina/ComodRivadavia\nAmerica/Argentina/Cordoba\nAmerica/Argentina/Jujuy\nAmerica/Argentina/La_Rioja\nAmerica/Argentina/Mendoza\nAmerica/Argentina/Rio_Gallegos\nAmerica/Argentina/Salta\nAmerica/Argentina/San_Juan\nAmerica/Argentina/San_Luis\nAmerica/Argentina/Tucuman\nAmerica/Argentina/Ushuaia\nAmerica/Aruba\nAmerica/Asuncion\nAmerica/Atikokan\nAmerica/Atka\nAmerica/Bahia\nAmerica/Bahia_Banderas\nAmerica/Barbados\nAmerica/Belem\nAmerica/Belize\nAmerica/Blanc-Sablon\nAmerica/Boa_Vista\nAmerica/Bogota\nAmerica/Boise\nAmerica/Buenos_Aires\nAmerica/Cambridge_Bay\nAmerica/Campo_Grande\nAmerica/Cancun\nAmerica/Caracas\nAmerica/Catamarca\nAmerica/Cayenne\nAmerica/Cayman\nAmerica/Chicago\nAmerica/Chihuahua\nAmerica/Ciudad_Juarez\nAmerica/Coral_Harbour\nAmerica/Cordoba\nAmerica/Costa_Rica\nAmerica/Coyhaique\nAmerica/Creston\nAmerica/Cuiaba\nAmerica/Curacao\nAmerica/Danmarkshavn\nAmerica/Dawson\nAmerica/Dawson_Creek\nAmerica/Denver\nAmerica/Detroit\nAmerica/Dominica\nAmerica/Edmonton\nAmerica/Eirunepe\nAmerica/El_Salvador\nAmerica/Ensenada\nAmerica/Fort_Nelson\nAmerica/Fort_Wayne\nAmerica/Fortaleza\nAmerica/Glace_Bay\nAmerica/Godthab\nAmerica/Goose_Bay\nAmerica/Grand_Turk\nAmerica/Grenada\nAmerica/Guadeloupe\nAmerica/Guatemala\nAmerica/Guayaquil\nAmerica/Guyana\nAmerica/Halifax\nAmerica/Havana\nAmerica/Hermosillo\nAmerica/Indiana/Indianapolis\nAmerica/Indiana/Knox\nAmerica/Indiana/Marengo\nAmerica/Indiana/Petersburg\nAmerica/Indiana/Tell_City\nAmerica/Indiana/Vevay\nAmerica/Indiana/Vincennes\nAmerica/Indiana/Winamac\nAmerica/Indianapolis\nAmerica/Inuvik\nAmerica/Iqaluit\nAmerica/Jamaica\nAmerica/Jujuy\nAmerica/Juneau\nAmerica/Kentucky/Louisville\nAmerica/Kentucky/Monticello\nAmerica/Knox_IN\nAmerica/Kralendijk\nAmerica/La_Paz\nAmerica/Lima\nAmerica/Los_Angeles\nAmerica/Louisville\nAmerica/Lower_Princes\nAmerica/Maceio\nAmerica/Managua\nAmerica/Manaus\nAmerica/Marigot\nAmerica/Martinique\nAmerica/Matamoros\nAmerica/Mazatlan\nAmerica/Mendoza\nAmerica/Menominee\nAmerica/Merida\nAmerica/Metlakatla\nAmerica/Mexico_City\nAmerica/Miquelon\nAmerica/Moncton\nAmerica/Monterrey\nAmerica/Montevideo\nAmerica/Montreal\nAmerica/Montserrat\nAmerica/Nassau\nAmerica/New_York\nAmerica/Nipigon\nAmerica/Nome\nAmerica/Noronha\nAmerica/North_Dakota/Beulah\nAmerica/North_Dakota/Center\nAmerica/North_Dakota/New_Salem\nAmerica/Nuuk\nAmerica/Ojinaga\nAmerica/Panama\nAmerica/Pangnirtung\nAmerica/Paramaribo\nAmerica/Phoenix\nAmerica/Port-au-Prince\nAmerica/Port_of_Spain\nAmerica/Porto_Acre\nAmerica/Porto_Velho\nAmerica/Puerto_Rico\nAmerica/Punta_Arenas\nAmerica/Rainy_River\nAmerica/Rankin_Inlet\nAmerica/Recife\nAmerica/Regina\nAmerica/Resolute\nAmerica/Rio_Branco\nAmerica/Rosario\nAmerica/Santa_Isabel\nAmerica/Santarem\nAmerica/Santiago\nAmerica/Santo_Domingo\nAmerica/Sao_Paulo\nAmerica/Scoresbysund\nAmerica/Shiprock\nAmerica/Sitka\nAmerica/St_Barthelemy\nAmerica/St_Johns\nAmerica/St_Kitts\nAmerica/St_Lucia\nAmerica/St_Thomas\nAmerica/St_Vincent\nAmerica/Swift_Current\nAmerica/Tegucigalpa\nAmerica/Thule\nAmerica/Thunder_Bay\nAmerica/Tijuana\nAmerica/Toronto\nAmerica/Tortola\nAmerica/Vancouver\nAmerica/Virgin\nAmerica/Whitehorse\nAmerica/Winnipeg\nAmerica/Yakutat\nAmerica/Yellowknife\nAntarctica/Casey\nAntarctica/Davis\nAntarctica/DumontDUrville\nAntarctica/Macquarie\nAntarctica/Mawson\nAntarctica/McMurdo\nAntarctica/Palmer\nAntarctica/Rothera\nAntarctica/South_Pole\nAntarctica/Syowa\nAntarctica/Troll\nAntarctica/Vostok\nArctic/Longyearbyen\nAsia/Aden\nAsia/Almaty\nAsia/Amman\nAsia/Anadyr\nAsia/Aqtau\nAsia/Aqtobe\nAsia/Ashgabat\nAsia/Ashkhabad\nAsia/Atyrau\nAsia/Baghdad\nAsia/Bahrain\nAsia/Baku\nAsia/Bangkok\nAsia/Barnaul\nAsia/Beirut\nAsia/Bishkek\nAsia/Brunei\nAsia/Calcutta\nAsia/Chita\nAsia/Choibalsan\nAsia/Chongqing\nAsia/Chungking\nAsia/Colombo\nAsia/Dacca\nAsia/Damascus\nAsia/Dhaka\nAsia/Dili\nAsia/Dubai\nAsia/Dushanbe\nAsia/Famagusta\nAsia/Gaza\nAsia/Harbin\nAsia/Hebron\nAsia/Ho_Chi_Minh\nAsia/Hong_Kong\nAsia/Hovd\nAsia/Irkutsk\nAsia/Istanbul\nAsia/Jakarta\nAsia/Jayapura\nAsia/Jerusalem\nAsia/Kabul\nAsia/Kamchatka\nAsia/Karachi\nAsia/Kashgar\nAsia/Kathmandu\nAsia/Katmandu\nAsia/Khandyga\nAsia/Kolkata\nAsia/Krasnoyarsk\nAsia/Kuala_Lumpur\nAsia/Kuching\nAsia/Kuwait\nAsia/Macao\nAsia/Macau\nAsia/Magadan\nAsia/Makassar\nAsia/Manila\nAsia/Muscat\nAsia/Nicosia\nAsia/Novokuznetsk\nAsia/Novosibirsk\nAsia/Omsk\nAsia/Oral\nAsia/Phnom_Penh\nAsia/Pontianak\nAsia/Pyongyang\nAsia/Qatar\nAsia/Qostanay\nAsia/Qyzylorda\nAsia/Rangoon\nAsia/Riyadh\nAsia/Saigon\nAsia/Sakhalin\nAsia/Samarkand\nAsia/Seoul\nAsia/Shanghai\nAsia/Singapore\nAsia/Srednekolymsk\nAsia/Taipei\nAsia/Tashkent\nAsia/Tbilisi\nAsia/Tehran\nAsia/Tel_Aviv\nAsia/Thimbu\nAsia/Thimphu\nAsia/Tokyo\nAsia/Tomsk\nAsia/Ujung_Pandang\nAsia/Ulaanbaatar\nAsia/Ulan_Bator\nAsia/Urumqi\nAsia/Ust-Nera\nAsia/Vientiane\nAsia/Vladivostok\nAsia/Yakutsk\nAsia/Yangon\nAsia/Yekaterinburg\nAsia/Yerevan\nAtlantic/Azores\nAtlantic/Bermuda\nAtlantic/Canary\nAtlantic/Cape_Verde\nAtlantic/Faeroe\nAtlantic/Faroe\nAtlantic/Jan_Mayen\nAtlantic/Madeira\nAtlantic/Reykjavik\nAtlantic/South_Georgia\nAtlantic/St_Helena\nAtlantic/Stanley\nAustralia/ACT\nAustralia/Adelaide\nAustralia/Brisbane\nAustralia/Broken_Hill\nAustralia/Canberra\nAustralia/Currie\nAustralia/Darwin\nAustralia/Eucla\nAustralia/Hobart\nAustralia/LHI\nAustralia/Lindeman\nAustralia/Lord_Howe\nAustralia/Melbourne\nAustralia/NSW\nAustralia/North\nAustralia/Perth\nAustralia/Queensland\nAustralia/South\nAustralia/Sydney\nAustralia/Tasmania\nAustralia/Victoria\nAustralia/West\nAustralia/Yancowinna\nBrazil/Acre\nBrazil/DeNoronha\nBrazil/East\nBrazil/West\nCET\nCST6CDT\nCanada/Atlantic\nCanada/Central\nCanada/Eastern\nCanada/Mountain\nCanada/Newfoundland\nCanada/Pacific\nCanada/Saskatchewan\nCanada/Yukon\nChile/Continental\nChile/EasterIsland\nCuba\nEET\nEST\nEST5EDT\nEgypt\nEire\nEtc/GMT\nEtc/GMT+0\nEtc/GMT+1\nEtc/GMT+10\nEtc/GMT+11\nEtc/GMT+12\nEtc/GMT+2\nEtc/GMT+3\nEtc/GMT+4\nEtc/GMT+5\nEtc/GMT+6\nEtc/GMT+7\nEtc/GMT+8\nEtc/GMT+9\nEtc/GMT-0\nEtc/GMT-1\nEtc/GMT-10\nEtc/GMT-11\nEtc/GMT-12\nEtc/GMT-13\nEtc/GMT-14\nEtc/GMT-2\nEtc/GMT-3\nEtc/GMT-4\nEtc/GMT-5\nEtc/GMT-6\nEtc/GMT-7\nEtc/GMT-8\nEtc/GMT-9\nEtc/GMT0\nEtc/Greenwich\nEtc/UCT\nEtc/UTC\nEtc/Universal\nEtc/Zulu\nEurope/Amsterdam\nEurope/Andorra\nEurope/Astrakhan\nEurope/Athens\nEurope/Belfast\nEurope/Belgrade\nEurope/Berlin\nEurope/Bratislava\nEurope/Brussels\nEurope/Bucharest\nEurope/Budapest\nEurope/Busingen\nEurope/Chisinau\nEurope/Copenhagen\nEurope/Dublin\nEurope/Gibraltar\nEurope/Guernsey\nEurope/Helsinki\nEurope/Isle_of_Man\nEurope/Istanbul\nEurope/Jersey\nEurope/Kaliningrad\nEurope/Kiev\nEurope/Kirov\nEurope/Kyiv\nEurope/Lisbon\nEurope/Ljubljana\nEurope/London\nEurope/Luxembourg\nEurope/Madrid\nEurope/Malta\nEurope/Mariehamn\nEurope/Minsk\nEurope/Monaco\nEurope/Moscow\nEurope/Nicosia\nEurope/Oslo\nEurope/Paris\nEurope/Podgorica\nEurope/Prague\nEurope/Riga\nEurope/Rome\nEurope/Samara\nEurope/San_Marino\nEurope/Sarajevo\nEurope/Saratov\nEurope/Simferopol\nEurope/Skopje\nEurope/Sofia\nEurope/Stockholm\nEurope/Tallinn\nEurope/Tirane\nEurope/Tiraspol\nEurope/Ulyanovsk\nEurope/Uzhgorod\nEurope/Vaduz\nEurope/Vatican\nEurope/Vienna\nEurope/Vilnius\nEurope/Volgograd\nEurope/Warsaw\nEurope/Zagreb\nEurope/Zaporozhye\nEurope/Zurich\nFactory\nGB\nGB-Eire\nGMT\nGMT+0\nGMT-0\nGMT0\nGreenwich\nHST\nHongkong\nIceland\nIndian/Antananarivo\nIndian/Chagos\nIndian/Christmas\nIndian/Cocos\nIndian/Comoro\nIndian/Kerguelen\nIndian/Mahe\nIndian/Maldives\nIndian/Mauritius\nIndian/Mayotte\nIndian/Reunion\nIran\nIsrael\nJamaica\nJapan\nKwajalein\nLibya\nMET\nMST\nMST7MDT\nMexico/BajaNorte\nMexico/BajaSur\nMexico/General\nNZ\nNZ-CHAT\nNavajo\nPRC\nPST8PDT\nPacific/Apia\nPacific/Auckland\nPacific/Bougainville\nPacific/Chatham\nPacific/Chuuk\nPacific/Easter\nPacific/Efate\nPacific/Enderbury\nPacific/Fakaofo\nPacific/Fiji\nPacific/Funafuti\nPacific/Galapagos\nPacific/Gambier\nPacific/Guadalcanal\nPacific/Guam\nPacific/Honolulu\nPacific/Johnston\nPacific/Kanton\nPacific/Kiritimati\nPacific/Kosrae\nPacific/Kwajalein\nPacific/Majuro\nPacific/Marquesas\nPacific/Midway\nPacific/Nauru\nPacific/Niue\nPacific/Norfolk\nPacific/Noumea\nPacific/Pago_Pago\nPacific/Palau\nPacific/Pitcairn\nPacific/Pohnpei\nPacific/Ponape\nPacific/Port_Moresby\nPacific/Rarotonga\nPacific/Saipan\nPacific/Samoa\nPacific/Tahiti\nPacific/Tarawa\nPacific/Tongatapu\nPacific/Truk\nPacific/Wake\nPacific/Wallis\nPacific/Yap\nPoland\nPortugal\nROC\nROK\nSingapore\nTurkey\nUCT\nUS/Alaska\nUS/Aleutian\nUS/Arizona\nUS/Central\nUS/East-Indiana\nUS/Eastern\nUS/Hawaii\nUS/Indiana-Starke\nUS/Michigan\nUS/Mountain\nUS/Pacific\nUS/Samoa\nUTC\nUniversal\nW-SU\nWET\nZulu",
+            "precision": "",
+            "read_only": 0,
+            "reqd": 0,
+            "show_in_filter": 0
+          }
+        ]
+      },
+      "companions": [
+        "reference/frappe/frappe/core/web_form/edit_profile/__init__.py",
+        "reference/frappe/frappe/core/web_form/edit_profile/edit_profile.js",
+        "reference/frappe/frappe/core/web_form/edit_profile/edit_profile.py"
+      ],
+      "route": "update-profile",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/frappe/frappe/desk/page/backups/backups.json#0",
+      "app": "frappe",
+      "module": "Desk",
+      "kind": "Page",
+      "name": "backups",
+      "source": "reference/frappe/frappe/desk/page/backups/backups.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2015-09-24 01:26:06.225378",
+        "docstatus": 0,
+        "doctype": "Page",
+        "modified": "2015-09-24 01:26:06.225378",
+        "modified_by": "Administrator",
+        "module": "Desk",
+        "name": "backups",
+        "owner": "Administrator",
+        "page_name": "backups",
+        "roles": [
+          {
+            "role": "System Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "title": "Download Backups"
+      },
+      "companions": [
+        "reference/frappe/frappe/desk/page/backups/__init__.py",
+        "reference/frappe/frappe/desk/page/backups/backups.html",
+        "reference/frappe/frappe/desk/page/backups/backups.js",
+        "reference/frappe/frappe/desk/page/backups/backups.py"
+      ],
+      "route": "backups",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/desk/page/desktop/desktop.json#0",
+      "app": "frappe",
+      "module": "Desk",
+      "kind": "Page",
+      "name": "desktop",
+      "source": "reference/frappe/frappe/desk/page/desktop/desktop.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2025-08-18 16:17:07.259326",
+        "docstatus": 0,
+        "doctype": "Page",
+        "icon": "",
+        "idx": 0,
+        "modified": "2026-06-17 12:56:17.129975",
+        "modified_by": "Administrator",
+        "module": "Desk",
+        "name": "desktop",
+        "owner": "Administrator",
+        "page_name": "desktop",
+        "roles": [
+          {
+            "role": "All"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 1,
+        "title": "Desktop"
+      },
+      "companions": [
+        "reference/frappe/frappe/desk/page/desktop/__init__.py",
+        "reference/frappe/frappe/desk/page/desktop/desktop.html",
+        "reference/frappe/frappe/desk/page/desktop/desktop.js",
+        "reference/frappe/frappe/desk/page/desktop/desktop.py"
+      ],
+      "route": "desktop",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/desk/page/notifications/notifications.json#0",
+      "app": "frappe",
+      "module": "Desk",
+      "kind": "Page",
+      "name": "notifications",
+      "source": "reference/frappe/frappe/desk/page/notifications/notifications.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-10-02 15:33:32.625636",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-10-02 18:19:48.368751",
+        "modified_by": "Administrator",
+        "module": "Desk",
+        "name": "notifications",
+        "owner": "Administrator",
+        "page_name": "notifications",
+        "roles": [],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 1,
+        "title": "Notifications",
+        "type": "Frappe UI"
+      },
+      "companions": [
+        "reference/frappe/frappe/desk/page/notifications/__init__.py",
+        "reference/frappe/frappe/desk/page/notifications/notifications.island.js",
+        "reference/frappe/frappe/desk/page/notifications/notifications.vue"
+      ],
+      "route": "notifications",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/desk/page/profile/profile.json#0",
+      "app": "frappe",
+      "module": "Desk",
+      "kind": "Page",
+      "name": "profile",
+      "source": "reference/frappe/frappe/desk/page/profile/profile.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-10-02 15:41:56.084511",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-10-02 18:19:48.368751",
+        "modified_by": "Administrator",
+        "module": "Desk",
+        "name": "profile",
+        "owner": "Administrator",
+        "page_name": "profile",
+        "roles": [],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 1,
+        "title": "Profile",
+        "type": "Frappe UI"
+      },
+      "companions": [
+        "reference/frappe/frappe/desk/page/profile/__init__.py",
+        "reference/frappe/frappe/desk/page/profile/profile.island.js",
+        "reference/frappe/frappe/desk/page/profile/profile.vue"
+      ],
+      "route": "profile",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/desk/page/search/search.json#0",
+      "app": "frappe",
+      "module": "Desk",
+      "kind": "Page",
+      "name": "search",
+      "source": "reference/frappe/frappe/desk/page/search/search.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-10-02 14:29:38.440350",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-10-02 18:19:48.368751",
+        "modified_by": "Administrator",
+        "module": "Desk",
+        "name": "search",
+        "owner": "Administrator",
+        "page_name": "search",
+        "roles": [],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 1,
+        "title": "Search",
+        "type": "Frappe UI"
+      },
+      "companions": [
+        "reference/frappe/frappe/desk/page/search/__init__.py",
+        "reference/frappe/frappe/desk/page/search/phone_page.js",
+        "reference/frappe/frappe/desk/page/search/search.island.js",
+        "reference/frappe/frappe/desk/page/search/search.vue"
+      ],
+      "route": "search",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/desk/page/setup_wizard/setup_wizard.json#0",
+      "app": "frappe",
+      "module": "Desk",
+      "kind": "Page",
+      "name": "setup-wizard",
+      "source": "reference/frappe/frappe/desk/page/setup_wizard/setup_wizard.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2013-10-04 13:49:33",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 1,
+        "modified": "2017-04-12 18:45:00.774654",
+        "modified_by": "Administrator",
+        "module": "Desk",
+        "name": "setup-wizard",
+        "owner": "Administrator",
+        "page_name": "setup-wizard",
+        "roles": [
+          {
+            "role": "System Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 1,
+        "title": "Setup Wizard"
+      },
+      "companions": [
+        "reference/frappe/frappe/desk/page/setup_wizard/__init__.py",
+        "reference/frappe/frappe/desk/page/setup_wizard/install_fixtures.py",
+        "reference/frappe/frappe/desk/page/setup_wizard/setup_wizard.js",
+        "reference/frappe/frappe/desk/page/setup_wizard/setup_wizard.py",
+        "reference/frappe/frappe/desk/page/setup_wizard/test_setup_wizard.py"
+      ],
+      "route": "setup-wizard",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/desk/page/workspace_restore/workspace_restore.json#0",
+      "app": "frappe",
+      "module": "Desk",
+      "kind": "Page",
+      "name": "workspace-restore",
+      "source": "reference/frappe/frappe/desk/page/workspace_restore/workspace_restore.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-10-06 12:31:45.335784",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-10-06 12:31:45.335784",
+        "modified_by": "Administrator",
+        "module": "Desk",
+        "name": "workspace-restore",
+        "owner": "Administrator",
+        "page_name": "workspace-restore",
+        "roles": [
+          {
+            "role": "Workspace Manager"
+          }
+        ],
+        "script": null,
+        "shared_page": 0,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 1,
+        "title": "Restore Workspace Edits",
+        "type": ""
+      },
+      "companions": [
+        "reference/frappe/frappe/desk/page/workspace_restore/__init__.py",
+        "reference/frappe/frappe/desk/page/workspace_restore/test_workspace_restore.py",
+        "reference/frappe/frappe/desk/page/workspace_restore/workspace_restore.js",
+        "reference/frappe/frappe/desk/page/workspace_restore/workspace_restore.py"
+      ],
+      "route": "workspace-restore",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/printing/page/print/print.json#0",
+      "app": "frappe",
+      "module": "Printing",
+      "kind": "Page",
+      "name": "print",
+      "source": "reference/frappe/frappe/printing/page/print/print.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2020-10-09 17:23:15.163030",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-10-02 17:53:57.731125",
+        "modified_by": "Administrator",
+        "module": "Printing",
+        "name": "print",
+        "owner": "Administrator",
+        "page_name": "Print",
+        "roles": [],
+        "script": null,
+        "shared_page": 1,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0
+      },
+      "companions": [
+        "reference/frappe/frappe/printing/page/print/__init__.py",
+        "reference/frappe/frappe/printing/page/print/print.js",
+        "reference/frappe/frappe/printing/page/print/print.py",
+        "reference/frappe/frappe/printing/page/print/print_skeleton_loading.html"
+      ],
+      "route": "Print",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/printing/page/print_designer_migration/print_designer_migration.json#0",
+      "app": "frappe",
+      "module": "Printing",
+      "kind": "Page",
+      "name": "print-designer-migration",
+      "source": "reference/frappe/frappe/printing/page/print_designer_migration/print_designer_migration.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-11-13 17:00:00.000000",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-11-13 17:00:00.000000",
+        "modified_by": "Administrator",
+        "module": "Printing",
+        "name": "print-designer-migration",
+        "owner": "Administrator",
+        "page_name": "print-designer-migration",
+        "roles": [
+          {
+            "role": "System Manager"
+          }
+        ],
+        "script": null,
+        "shared_page": 0,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 1,
+        "title": "Migrate Print Designer Formats",
+        "type": ""
+      },
+      "companions": [
+        "reference/frappe/frappe/printing/page/print_designer_migration/__init__.py",
+        "reference/frappe/frappe/printing/page/print_designer_migration/print_designer_migration.js",
+        "reference/frappe/frappe/printing/page/print_designer_migration/print_designer_migration.py"
+      ],
+      "route": "print-designer-migration",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/printing/page/print_format_builder/print_format_builder.json#0",
+      "app": "frappe",
+      "module": "Printing",
+      "kind": "Page",
+      "name": "print-format-builder",
+      "source": "reference/frappe/frappe/printing/page/print_format_builder/print_format_builder.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2021-07-10 12:22:16.138485",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-10-14 12:00:00.000000",
+        "modified_by": "Administrator",
+        "module": "Printing",
+        "name": "print-format-builder",
+        "owner": "Administrator",
+        "page_name": "Print Format Builder",
+        "roles": [
+          {
+            "role": "System Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Print Format Editor"
+      },
+      "companions": [
+        "reference/frappe/frappe/printing/page/print_format_builder/__init__.py",
+        "reference/frappe/frappe/printing/page/print_format_builder/print_format_builder.js",
+        "reference/frappe/frappe/printing/page/print_format_builder/print_format_builder.py"
+      ],
+      "route": "Print Format Builder",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/printing/page/report_print/report_print.json#0",
+      "app": "frappe",
+      "module": "Printing",
+      "kind": "Page",
+      "name": "report-print",
+      "source": "reference/frappe/frappe/printing/page/report_print/report_print.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2026-10-23 11:52:48.436907",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2026-10-23 11:52:48.436907",
+        "modified_by": "Administrator",
+        "module": "Printing",
+        "name": "report-print",
+        "owner": "Administrator",
+        "page_name": "report-print",
+        "roles": [],
+        "script": null,
+        "shared_page": 1,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Report Print",
+        "type": ""
+      },
+      "companions": [
+        "reference/frappe/frappe/printing/page/report_print/__init__.py",
+        "reference/frappe/frappe/printing/page/report_print/report_print.js"
+      ],
+      "route": "report-print",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/website/doctype/web_form/test_records.json#0",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Form",
+      "name": "manage-events",
+      "source": "reference/frappe/frappe/website/doctype/web_form/test_records.json",
+      "index": 0,
+      "scope": "sample",
+      "group": "pages",
+      "definition": {
+        "allow_comments": 0,
+        "allow_edit": 1,
+        "allow_multiple": 1,
+        "show_list": 1,
+        "doc_type": "Event",
+        "docstatus": 0,
+        "doctype": "Web Form",
+        "introduction_text": "Add events",
+        "login_required": 1,
+        "name": "manage-events",
+        "owner": "Administrator",
+        "page_name": "manage-events",
+        "published": 1,
+        "success_url": "/manage-events",
+        "title": "Manage Events",
+        "meta_title": "Test Meta Form Title",
+        "meta_description": "Test Meta Form Description",
+        "meta_image": "https://frappe.io/files/frappe.png",
+        "web_form_fields": [
+          {
+            "doctype": "Web Form Field",
+            "fieldname": "subject",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "idx": 1,
+            "label": "Title",
+            "read_only": 0,
+            "reqd": 1
+          },
+          {
+            "doctype": "Web Form Field",
+            "fieldname": "starts_on",
+            "fieldtype": "Date",
+            "hidden": 0,
+            "idx": 2,
+            "label": "Event Date",
+            "read_only": 0,
+            "reqd": 1
+          },
+          {
+            "doctype": "Web Form Field",
+            "fieldname": "description",
+            "fieldtype": "Text",
+            "hidden": 0,
+            "idx": 3,
+            "label": "Description",
+            "read_only": 0,
+            "reqd": 0
+          }
+        ]
+      },
+      "companions": [
+        "reference/frappe/frappe/website/doctype/web_form/__init__.py",
+        "reference/frappe/frappe/website/doctype/web_form/test_web_form.py",
+        "reference/frappe/frappe/website/doctype/web_form/test_web_form_table_multiselect.py",
+        "reference/frappe/frappe/website/doctype/web_form/web_form.js",
+        "reference/frappe/frappe/website/doctype/web_form/web_form.py",
+        "reference/frappe/frappe/website/doctype/web_form/web_form_list.js"
+      ],
+      "route": "manage-events",
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/website/doctype/web_page/test_records.json#0",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Page",
+      "name": "Test Web Page 1",
+      "source": "reference/frappe/frappe/website/doctype/web_page/test_records.json",
+      "index": 0,
+      "scope": "sample",
+      "group": "pages",
+      "definition": {
+        "doctype": "Web Page",
+        "main_section": "Test Content 1",
+        "published": 1,
+        "title": "Test Web Page 1"
+      },
+      "companions": [
+        "reference/frappe/frappe/website/doctype/web_page/__init__.py",
+        "reference/frappe/frappe/website/doctype/web_page/test_web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.js",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page_list.js"
+      ],
+      "route": null,
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/website/doctype/web_page/test_records.json#1",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Page",
+      "name": "Test Web Page 2",
+      "source": "reference/frappe/frappe/website/doctype/web_page/test_records.json",
+      "index": 1,
+      "scope": "sample",
+      "group": "pages",
+      "definition": {
+        "doctype": "Web Page",
+        "main_section": "Test Content 2",
+        "route": "test-web-page-1/test-web-page-2",
+        "published": 1,
+        "title": "Test Web Page 2"
+      },
+      "companions": [
+        "reference/frappe/frappe/website/doctype/web_page/__init__.py",
+        "reference/frappe/frappe/website/doctype/web_page/test_web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.js",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page_list.js"
+      ],
+      "route": "test-web-page-1/test-web-page-2",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/frappe/frappe/website/doctype/web_page/test_records.json#2",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Page",
+      "name": "Test Web Page 3",
+      "source": "reference/frappe/frappe/website/doctype/web_page/test_records.json",
+      "index": 2,
+      "scope": "sample",
+      "group": "pages",
+      "definition": {
+        "doctype": "Web Page",
+        "main_section": "Test Content 3",
+        "route": "test-web-page-1/test-web-page-3",
+        "published": 1,
+        "title": "Test Web Page 3"
+      },
+      "companions": [
+        "reference/frappe/frappe/website/doctype/web_page/__init__.py",
+        "reference/frappe/frappe/website/doctype/web_page/test_web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.js",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page_list.js"
+      ],
+      "route": "test-web-page-1/test-web-page-3",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/frappe/frappe/website/doctype/web_page/test_records.json#3",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Page",
+      "name": "Test Web Page 4",
+      "source": "reference/frappe/frappe/website/doctype/web_page/test_records.json",
+      "index": 3,
+      "scope": "sample",
+      "group": "pages",
+      "definition": {
+        "doctype": "Web Page",
+        "main_section": "Test Content 4",
+        "published": 1,
+        "title": "Test Web Page 4"
+      },
+      "companions": [
+        "reference/frappe/frappe/website/doctype/web_page/__init__.py",
+        "reference/frappe/frappe/website/doctype/web_page/test_web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.js",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page_list.js"
+      ],
+      "route": null,
+      "routeConfidence": "desk-identifier"
+    },
+    {
+      "id": "reference/frappe/frappe/website/doctype/web_page/test_records.json#4",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Page",
+      "name": "Test Web Page 5",
+      "source": "reference/frappe/frappe/website/doctype/web_page/test_records.json",
+      "index": 4,
+      "scope": "sample",
+      "group": "pages",
+      "definition": {
+        "doctype": "Web Page",
+        "main_section": "Test Content 5",
+        "route": "test-web-page-1/test-web-page-5",
+        "published": 1,
+        "title": "Test Web Page 5"
+      },
+      "companions": [
+        "reference/frappe/frappe/website/doctype/web_page/__init__.py",
+        "reference/frappe/frappe/website/doctype/web_page/test_web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.js",
+        "reference/frappe/frappe/website/doctype/web_page/web_page.py",
+        "reference/frappe/frappe/website/doctype/web_page/web_page_list.js"
+      ],
+      "route": "test-web-page-1/test-web-page-5",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/frappe/frappe/website/web_form/request_data/request_data.json#0",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Form",
+      "name": "request-data",
+      "source": "reference/frappe/frappe/website/web_form/request_data/request_data.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "allow_comments": 0,
+        "allow_delete": 0,
+        "allow_edit": 0,
+        "allow_incomplete": 0,
+        "allow_multiple": 0,
+        "allow_print": 0,
+        "anonymous": 0,
+        "apply_document_permissions": 0,
+        "breadcrumbs": "",
+        "button_label": "Request Data",
+        "client_script": "",
+        "condition_json": "[]",
+        "creation": "2019-01-24 16:19:26.886096",
+        "doc_type": "Personal Data Download Request",
+        "docstatus": 0,
+        "doctype": "Web Form",
+        "hide_footer": 0,
+        "hide_navbar": 0,
+        "idx": 0,
+        "introduction_text": "<div class=\"ql-editor read-mode\"><p>Request a file containing your personally identifiable information (PII) that is saved on our system. The file will be in JSON format and is sent to you by email. If you would like to have your PII deleted from our system, please make a <a href=\"/request-for-account-deletion\" rel=\"noopener noreferrer\">request to delete data</a>.</p></div>",
+        "is_standard": 1,
+        "key_required": 0,
+        "list_columns": [],
+        "login_required": 0,
+        "max_attachment_size": 0,
+        "modified": "2026-08-19 13:26:08.005491",
+        "modified_by": "Administrator",
+        "module": "Website",
+        "name": "request-data",
+        "owner": "Administrator",
+        "published": 1,
+        "route": "request-data",
+        "show_attachments": 0,
+        "show_list": 0,
+        "show_sidebar": 0,
+        "success_message": "If this email is registered with us, a download link will be sent to it.",
+        "success_url": "/desk",
+        "title": "Request Data",
+        "web_form_fields": [
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "user",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Email",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "",
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          }
+        ]
+      },
+      "companions": [
+        "reference/frappe/frappe/website/web_form/request_data/__init__.py",
+        "reference/frappe/frappe/website/web_form/request_data/request_data.js",
+        "reference/frappe/frappe/website/web_form/request_data/request_data.py"
+      ],
+      "route": "request-data",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/frappe/frappe/website/web_form/request_to_delete_data/request_to_delete_data.json#0",
+      "app": "frappe",
+      "module": "Website",
+      "kind": "Web Form",
+      "name": "request-to-delete-data",
+      "source": "reference/frappe/frappe/website/web_form/request_to_delete_data/request_to_delete_data.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "allow_comments": 0,
+        "allow_delete": 0,
+        "allow_edit": 0,
+        "allow_incomplete": 0,
+        "allow_multiple": 0,
+        "allow_print": 0,
+        "apply_document_permissions": 0,
+        "breadcrumbs": "",
+        "button_label": "Submit",
+        "client_script": "",
+        "creation": "2019-01-25 14:24:12.588810",
+        "custom_css": "[data-doctype=\"Web Form\"] {\n    width: 50%;\n    margin: 6rem auto;\n}",
+        "doc_type": "Personal Data Deletion Request",
+        "docstatus": 0,
+        "doctype": "Web Form",
+        "idx": 0,
+        "introduction_text": "<div class=\"ql-editor read-mode\"><p>Send a request to delete your account and personally identifiable information (PII) that is stored on our system. You will receive an email to verify your request. Once the request is verified we will take care of deleting your PII. If you just want to check what PII we have stored, you can <a href=\"/request-data\" rel=\"noopener noreferrer\">request your data</a>.</p></div>",
+        "is_multi_step_form": 0,
+        "is_standard": 1,
+        "list_columns": [],
+        "login_required": 0,
+        "max_attachment_size": 0,
+        "modified": "2022-07-18 16:51:30.949738",
+        "modified_by": "Administrator",
+        "module": "Website",
+        "name": "request-to-delete-data",
+        "owner": "Administrator",
+        "published": 1,
+        "route": "request-for-account-deletion",
+        "route_to_success_link": 0,
+        "show_attachments": 0,
+        "show_list": 0,
+        "show_sidebar": 0,
+        "success_message": "An email to verify your request has been sent to your email address. Please verify your request to complete the process.",
+        "success_url": "/",
+        "title": "Request for Account Deletion",
+        "web_form_fields": [
+          {
+            "allow_read_on_all_link_options": 0,
+            "fieldname": "email",
+            "fieldtype": "Data",
+            "hidden": 0,
+            "label": "Email",
+            "max_length": 0,
+            "max_value": 0,
+            "options": "",
+            "read_only": 0,
+            "reqd": 1,
+            "show_in_filter": 0
+          }
+        ]
+      },
+      "companions": [
+        "reference/frappe/frappe/website/web_form/request_to_delete_data/__init__.py",
+        "reference/frappe/frappe/website/web_form/request_to_delete_data/request_to_delete_data.js",
+        "reference/frappe/frappe/website/web_form/request_to_delete_data/request_to_delete_data.py"
+      ],
+      "route": "request-for-account-deletion",
+      "routeConfidence": "declared"
+    },
+    {
+      "id": "reference/frappe/frappe/workflow/page/workflow_builder/workflow_builder.json#0",
+      "app": "frappe",
+      "module": "Workflow",
+      "kind": "Page",
+      "name": "workflow-builder",
+      "source": "reference/frappe/frappe/workflow/page/workflow_builder/workflow_builder.json",
+      "index": null,
+      "scope": "shipped",
+      "group": "pages",
+      "definition": {
+        "content": null,
+        "creation": "2023-05-01 13:02:17.223595",
+        "docstatus": 0,
+        "doctype": "Page",
+        "idx": 0,
+        "modified": "2023-05-01 13:02:17.223595",
+        "modified_by": "Administrator",
+        "module": "Workflow",
+        "name": "workflow-builder",
+        "owner": "Administrator",
+        "page_name": "workflow-builder",
+        "roles": [
+          {
+            "role": "System Manager"
+          }
+        ],
+        "script": null,
+        "standard": "Yes",
+        "style": null,
+        "system_page": 0,
+        "title": "Workflow Builder"
+      },
+      "companions": [
+        "reference/frappe/frappe/workflow/page/workflow_builder/__init__.py",
+        "reference/frappe/frappe/workflow/page/workflow_builder/workflow_builder.js"
+      ],
+      "route": "workflow-builder",
+      "routeConfidence": "desk-identifier"
+    }
+  ],
+  "portal": [
+    {
+      "id": "erpnext:/banking",
+      "app": "erpnext",
+      "kind": "Portal File Route",
+      "route": "/banking",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/erpnext/erpnext/www/banking.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "erpnext:/book_appointment",
+      "app": "erpnext",
+      "kind": "Portal File Route",
+      "route": "/book_appointment",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/erpnext/erpnext/www/book_appointment/index.html",
+        "reference/erpnext/erpnext/www/book_appointment/index.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "erpnext:/book_appointment/verify",
+      "app": "erpnext",
+      "kind": "Portal File Route",
+      "route": "/book_appointment/verify",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/erpnext/erpnext/www/book_appointment/verify/index.html",
+        "reference/erpnext/erpnext/www/book_appointment/verify/index.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "erpnext:/payment_setup_certification",
+      "app": "erpnext",
+      "kind": "Portal File Route",
+      "route": "/payment_setup_certification",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/erpnext/erpnext/www/payment_setup_certification.html",
+        "reference/erpnext/erpnext/www/payment_setup_certification.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "erpnext:/support",
+      "app": "erpnext",
+      "kind": "Portal File Route",
+      "route": "/support",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/erpnext/erpnext/www/support/index.html",
+        "reference/erpnext/erpnext/www/support/index.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/404",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/404",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/404.html",
+        "reference/frappe/frappe/www/404.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/about",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/about",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/about.html",
+        "reference/frappe/frappe/www/about.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/attribution",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/attribution",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/attribution.html",
+        "reference/frappe/frappe/www/attribution.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/billing",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/billing",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/billing.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/complete_signup",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/complete_signup",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/complete_signup.html",
+        "reference/frappe/frappe/www/complete_signup.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/confirm_workflow_action",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/confirm_workflow_action",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/confirm_workflow_action.html"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/contact",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/contact",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/contact.html",
+        "reference/frappe/frappe/www/contact.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/desk",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/desk",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/desk.html",
+        "reference/frappe/frappe/www/desk.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/error",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/error",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/error.html",
+        "reference/frappe/frappe/www/error.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/flow",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/flow",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/flow/index.html",
+        "reference/frappe/frappe/www/flow/index.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/list",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/list",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/list.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/login",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/login",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/login.html",
+        "reference/frappe/frappe/www/login.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/logout",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/logout",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/logout.html",
+        "reference/frappe/frappe/www/logout.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/me",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/me",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/me.html",
+        "reference/frappe/frappe/www/me.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/message",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/message",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/message.html",
+        "reference/frappe/frappe/www/message.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/modified_doc_alert",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/modified_doc_alert",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/modified_doc_alert.html"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/portal",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/portal",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/portal.html",
+        "reference/frappe/frappe/www/portal.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/printpreview",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/printpreview",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/printpreview.html",
+        "reference/frappe/frappe/www/printpreview.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/printview",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/printview",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/printview.html",
+        "reference/frappe/frappe/www/printview.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/profile",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/profile",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/profile.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/robots",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/robots",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/robots.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/sitemap",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/sitemap",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/sitemap.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/studio",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/studio",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/studio.html",
+        "reference/frappe/frappe/www/studio.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/third_party_apps",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/third_party_apps",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/third_party_apps.html",
+        "reference/frappe/frappe/www/third_party_apps.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/update-password",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/update-password",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/update-password.html"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/update_password",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/update_password",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/update_password.py"
+      ],
+      "scope": "shipped"
+    },
+    {
+      "id": "frappe:/website_script",
+      "app": "frappe",
+      "kind": "Portal File Route",
+      "route": "/website_script",
+      "routeConfidence": "inferred",
+      "sources": [
+        "reference/frappe/frappe/www/website_script.py"
+      ],
+      "scope": "shipped"
+    }
+  ],
+  "hookRoutes": [
+    {
+      "kind": "route-rule",
+      "line": 163,
+      "name": "/orders",
+      "value": "Sales Order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 165,
+      "name": "/orders/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 169,
+      "name": "/invoices",
+      "value": "Sales Invoice",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 171,
+      "name": "/invoices/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 178,
+      "name": "/supplier-quotations",
+      "value": "Supplier Quotation",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 180,
+      "name": "/supplier-quotations/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 187,
+      "name": "/purchase-orders",
+      "value": "Purchase Order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 189,
+      "name": "/purchase-orders/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 197,
+      "name": "/purchase-orders/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 204,
+      "name": "/purchase-invoices",
+      "value": "Purchase Invoice",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 206,
+      "name": "/purchase-invoices/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 213,
+      "name": "/quotations",
+      "value": "Quotation",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 215,
+      "name": "/quotations/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 222,
+      "name": "/shipments",
+      "value": "Delivery Note",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 224,
+      "name": "/shipments/<path:name>",
+      "value": "order",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 231,
+      "name": "/rfq",
+      "value": "Request for Quotation",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 233,
+      "name": "/rfq/<path:name>",
+      "value": "rfq",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 240,
+      "name": "/addresses",
+      "value": "Address",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 242,
+      "name": "/addresses/<path:name>",
+      "value": "addresses",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 246,
+      "name": "/boms",
+      "value": "BOM",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 247,
+      "name": "/timesheets",
+      "value": "Timesheet",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 248,
+      "name": "/material-requests",
+      "value": "Material Request",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 250,
+      "name": "/material-requests/<path:name>",
+      "value": "material_request_info",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 257,
+      "name": "/project",
+      "value": "Project",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 258,
+      "name": "/tasks",
+      "value": "Task",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 259,
+      "name": "/banking/<path:app_path>",
+      "value": "banking",
+      "app": "erpnext",
+      "source": "reference/erpnext/erpnext/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 76,
+      "name": "/kb/<category>",
+      "value": "Help Article",
+      "app": "frappe",
+      "source": "reference/frappe/frappe/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 77,
+      "name": "/profile",
+      "value": "me",
+      "app": "frappe",
+      "source": "reference/frappe/frappe/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 78,
+      "name": "/desk/<path:app_path>",
+      "value": "desk",
+      "app": "frappe",
+      "source": "reference/frappe/frappe/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 79,
+      "name": "/studio/<path:app_path>",
+      "value": "studio",
+      "app": "frappe",
+      "source": "reference/frappe/frappe/hooks.py"
+    },
+    {
+      "kind": "route-rule",
+      "line": 80,
+      "name": "/flow/<path:app_path>",
+      "value": "flow",
+      "app": "frappe",
+      "source": "reference/frappe/frappe/hooks.py"
+    }
+  ],
+  "navigation": [
+    "reference/erpnext/erpnext/projects/web_form/tasks/tasks.json#0",
+    "reference/erpnext/erpnext/support/web_form/issues/issues.json#0",
+    "reference/erpnext/erpnext/utilities/web_form/addresses/addresses.json#0",
+    "reference/frappe/frappe/core/web_form/edit_profile/edit_profile.json#0",
+    "reference/frappe/frappe/website/doctype/web_form/test_records.json#0",
+    "reference/frappe/frappe/website/web_form/request_data/request_data.json#0",
+    "reference/frappe/frappe/website/web_form/request_to_delete_data/request_to_delete_data.json#0"
+  ]
+}

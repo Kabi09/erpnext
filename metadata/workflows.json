@@ -1,0 +1,25 @@
+{
+  "definitions": [],
+  "schemas": [
+    "reference/frappe/frappe/workflow/doctype/workflow/workflow.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_action/workflow_action.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_action_master/workflow_action_master.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_action_permitted_role/workflow_action_permitted_role.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_condition/workflow_condition.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_document_state/workflow_document_state.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_state/workflow_state.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_transition/workflow_transition.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_transition_task/workflow_transition_task.json#0",
+    "reference/frappe/frappe/workflow/doctype/workflow_transition_tasks/workflow_transition_tasks.json#0"
+  ],
+  "lifecycle": {
+    "docstatus": {
+      "draft": 0,
+      "submitted": 1,
+      "cancelled": 2
+    },
+    "documentSource": "reference/frappe/frappe/model/document.py",
+    "workflowSource": "reference/frappe/frappe/model/workflow.py"
+  },
+  "notes": "Workflow schemas and source signals do not identify activated workflows in a deployed site."
+}

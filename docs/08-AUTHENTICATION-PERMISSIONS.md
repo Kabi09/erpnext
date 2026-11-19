@@ -1,0 +1,11 @@
+# Authentication and permissions
+
+Frappe has session and login management and request-time validation for OAuth, API keys and authentication hooks. Its permission engine uses role grants, owner rules, user permissions on linked records and controller hooks. Frappe metadata can apply Custom DocPerm over standard definitions and resolve field access by permission level. [Authentication](../reference/frappe/frappe/auth.py#L637) · [Permission source](../reference/frappe/frappe/permissions.py#L237) · [Meta processing](../reference/frappe/frappe/model/meta.py#L660)
+
+Phase 1 indexed 2,219 inline permission or role rows, one permission fixture and 52 distinct role names in those inline rows. A shipped role row is input for migration. Effective grants depend on roles, scope, custom overrides and active apps. [Permission catalog](../metadata/permissions.json)
+
+- Use short-lived, signed access JWTs with issuer, audience and expiration validation and a revocable, rotated refresh session. Use secure, HttpOnly cookies for browser refresh with a same-site and CSRF policy. Hold access tokens in memory. Hash refresh secrets and credentials. Rotate signing keys and revoke relevant sessions on user disablement or reuse.
+- Resolve effective role and company membership on the server. Deny by default. Combine operation and type grants with owner, share, linked user restrictions, field permissions and workflow conditions. Define a consistent precedence and list/read equivalence before importing upstream rules.
+- Apply the same authorization policy to metadata, counts, linked selectors, search, reports, exports, jobs, attachments and timeline. Exclude sensitive or denied values before serialization, even on errors.
+- Route permissions in the UI reflect backend capabilities. Server validation covers extra fields, operator allowlists, file policy and concurrent state checks. Record actor, scope, document and request ID for sensitive changes and privileged operations.
+- Verify user isolation, field-level read/write masks, record-sharing precedence, cross-company access, site boundary, refresh replay, revocation and approval separation through automated API tests. Never ship upstream admin accounts, login defaults or raw Frappe scripts.
