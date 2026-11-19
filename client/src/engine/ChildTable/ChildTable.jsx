@@ -94,6 +94,14 @@ export default function ChildTable({
     const cellError = getCellError(index, col.name)
     const isColReadOnly = readOnly || col.readOnly
 
+    if (readOnly) {
+      return (
+        <Typography variant="body2" className={styles.readOnlyCell}>
+          {String(cellVal) || '—'}
+        </Typography>
+      )
+    }
+
     if (col.type === 'Link') {
       return (
         <LinkedDocumentSelector

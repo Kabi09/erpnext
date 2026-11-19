@@ -1,0 +1,140 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.toprow {
+  margin-bottom: 16px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  min-width: 260px;
+}
+
+.toolActions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.alert:global(.MuiAlert-root) {
+  margin-bottom: 16px;
+}
+
+.middlerow {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.emptyTree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.treeList {
+  padding: 8px 0;
+}
+
+.nodeBranch {
+  display: flex;
+  flex-direction: column;
+}
+
+.nodeItem {
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid rgb(0 0 0 / 3%);
+
+  &:hover {
+    background-color: var(--surface-hover);
+  }
+}
+
+.highlighted {
+  background-color: rgb(153 124 255 / 10%);
+}
+
+.nodeContent {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px 12px 4px 4px;
+}
+
+.expandButton:global(.MuiIconButton-root) {
+  padding: 4px;
+  margin-right: 4px;
+}
+
+.leafSpacer {
+  width: 28px;
+  display: inline-block;
+}
+
+.nodeIcon:global(.MuiListItemIcon-root) {
+  min-width: 28px;
+}
+
+.primaryText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.groupTitle {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.leafTitle {
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.groupChip:global(.MuiChip-root) {
+  height: 20px;
+  font-size: 0.7rem;
+}
+
+.nodeValue {
+  margin-left: 6px;
+}
+
+.nodeActions {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.childrenLoading {
+  padding: 8px 16px;
+}
+
+.emptyChildren {
+  padding: 6px 16px;
+}

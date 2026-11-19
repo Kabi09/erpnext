@@ -93,3 +93,49 @@ export async function getDocumentRelations(doctype, id) {
   const { data } = await api.get('/documents/' + encodeURIComponent(doctype) + '/' + encodeURIComponent(id) + '/relations')
   return data.data
 }
+
+export async function getNavigationCatalog() {
+  const { data } = await api.get('/metadata/navigation')
+  return data.data
+}
+
+export async function getWorkspaces() {
+  const { data } = await api.get('/metadata/workspaces')
+  return data.data
+}
+
+export async function getWorkspace(name) {
+  const { data } = await api.get('/metadata/workspaces/' + encodeURIComponent(name))
+  return data.data
+}
+
+export async function getCoverageMatrix() {
+  const { data } = await api.get('/metadata/coverage')
+  return data.data
+}
+
+export async function getTreeNodes(doctype, parent = null) {
+  const params = parent ? { parent } : {}
+  const { data } = await api.get('/documents/' + encodeURIComponent(doctype) + '/tree', { params })
+  return data.data
+}
+
+export async function getReports() {
+  const { data } = await api.get('/reports')
+  return data.data
+}
+
+export async function runReport(name, filters = {}) {
+  const { data } = await api.post('/reports/' + encodeURIComponent(name) + '/run', { filters })
+  return data.data
+}
+
+export async function getPages() {
+  const { data } = await api.get('/pages')
+  return data.data
+}
+
+export async function getPage(name) {
+  const { data } = await api.get('/pages/' + encodeURIComponent(name))
+  return data.data
+}

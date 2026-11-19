@@ -99,7 +99,7 @@ export function buildRegistry(metadata, reviewed = policies) {
     const policy = reviewed.find(item => item.name === row.name)
     if (policy) {
       if (!['company','global'].includes(policy.scope || 'company')) throw new Error('Unknown document scope')
-      if (blocked || row.flags.tree || row.flags.single || row.flags.submittable || row.flags.child ||
+      if (blocked || (row.flags.tree && !policy.tree) || row.flags.single || row.flags.submittable || row.flags.child ||
         (customMethods && !policy.reviewedController) || registered.has(policy.name)) throw new Error('Unsafe registration: ' + row.name)
       const fields = descriptors(row, policy.fields, policy)
       const naming = policy.naming || { kind: 'field', field: row.definition.autoname?.replace(/^field:/, '') }
@@ -110,7 +110,15 @@ export function buildRegistry(metadata, reviewed = policies) {
       entry.stages.push('Registered')
       if (entry.status !== 'Registered') {
         entry.crudEnabled = true
-        registered.set(row.name, { ...policy, naming, fields, row })
+        registered.set(row.name, {
+          ...policy,
+          tree: Boolean(policy.tree),
+          treeParentField: policy.treeParentField || ('parent_' + row.name.toLowerCase().replace(/ /g, '_')),
+          treeGroupField: policy.treeGroupField || 'is_group',
+          naming,
+          fields,
+          row,
+        })
         entry.stages.push('CRUD Enabled')
         if (entry.status === 'Verified') entry.stages.push('Verified')
       }

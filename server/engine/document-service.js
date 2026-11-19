@@ -1,6 +1,7 @@
 import { HttpError, forbidden } from '../utils/http.js'
 import { checkObject, invalid, validId } from './fields.js'
 import { applyFields, documentName, granted, links, requireDraft } from './document-values.js'
+import { validateTreeMutation, validateTreeDeletion } from './tree.js'
 const missing = () => new HttpError(404,'NOT_FOUND','The resource is unavailable.')
 export const scope = (spec, req) => ({
   company: spec.scope === 'global' ? null : req.company._id,
@@ -32,11 +33,13 @@ export async function mutateDocument(database,registry,context,{action,id,body,m
       let saved
       const company = scope(spec,context).company
       if (action === 'delete') {
+        if (spec.tree) await validateTreeDeletion(spec, row._id, context)
         for (const source of context.models.values()) {
           if (await source.exists({ references:row._id }).session(session)) throw new HttpError(409,'REFERENCED','Another document references this record.')
         }
         await model.deleteOne({ _id:row._id,version:row.version },{ session })
       } else {
+        if (spec.tree) await validateTreeMutation(spec, body.fields, row, context)
         const fields = applyFields(spec,body.fields,row?.fields,context.grants)
         const references = []
         for (const edge of links(spec.fields,fields)) {

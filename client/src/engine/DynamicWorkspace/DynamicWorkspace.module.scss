@@ -1,120 +1,228 @@
 .container {
   width: 100%;
+}
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    .toprow {
-      .heading {
-        .titleGroup {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-bottom: 4px;
+.toprow {
+  .heading {
+    .titleGroup {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
 
-          .title {
-            font-weight: 700;
-            color: var(--ink, #222037);
-          }
-        }
+      .title {
+        font-weight: 700;
+        color: var(--ink, #222037);
+      }
+
+      .moduleBadge {
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.alert:global(.MuiAlert-root) {
+  margin-bottom: 16px;
+}
+
+.middlerow {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.shortcutsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subHeading {
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.shortcutRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.shortcutChip:global(.MuiChip-root) {
+  font-weight: 500;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background-color: var(--surface-hover);
+  }
+}
+
+.sectionHeader {
+  .sectionTitle {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--ink, #222037);
+    margin-bottom: 8px;
+  }
+
+  .divider {
+    border-color: var(--border, #e5e1ee);
+  }
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.sectionCard:global(.MuiCard-root) {
+  border-radius: var(--radius, 12px);
+  background: var(--surface);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+}
+
+.cardContent:global(.MuiCardContent-root) {
+  padding: 16px 20px;
+
+  &:last-child {
+    padding-bottom: 16px;
+  }
+}
+
+.cardTitle {
+  font-weight: 650;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.cardDivider {
+  margin-bottom: 8px;
+}
+
+.linkList {
+  width: 100%;
+}
+
+.linkItem:global(.MuiListItemButton-root) {
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    background-color: var(--surface-hover);
+  }
+}
+
+.linkIcon:global(.MuiListItemIcon-root) {
+  min-width: 28px;
+}
+
+.navigableText {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.pendingText {
+  color: var(--text-secondary);
+}
+
+.statusChip:global(.MuiChip-root) {
+  height: 20px;
+  font-size: 0.68rem;
+  margin-left: auto;
+}
+
+.dialogTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doctypeCard:global(.MuiCard-root) {
+  border-radius: var(--radius, 14px);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .cardContent {
+    padding: 20px;
+
+    .cardHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+
+      .cardIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background-color: var(--brand-soft, #eee9ff);
       }
     }
 
-    .middlerow {
-      .sectionHeader {
-        margin-bottom: 16px;
+    .docName {
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: var(--ink, #222037);
+    }
 
-        .sectionTitle {
-          font-weight: 600;
-          font-size: 1.1rem;
-          color: var(--ink, #222037);
-          margin-bottom: 8px;
-        }
+    .docDesc {
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+  }
+}
 
-        .divider {
-          border-color: var(--border, #e5e1ee);
-        }
+.pendingGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+
+  .pendingCard {
+    padding: 14px;
+    border-radius: var(--radius, 14px);
+    background-color: var(--canvas, #f7f7fb);
+    border-style: dashed;
+
+    .pendingHeader {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+
+      .pendingName {
+        font-weight: 600;
+        flex: 1;
       }
 
-      .cardGrid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 16px;
-
-        .doctypeCard {
-          border-radius: var(--radius, 14px);
-          transition: transform 0.15s ease, box-shadow 0.15s ease;
-
-          &:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
-          }
-
-          .cardContent {
-            padding: 20px;
-
-            .cardHeader {
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              margin-bottom: 12px;
-
-              .cardIcon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                border-radius: 8px;
-                background-color: var(--brand-soft, #eee9ff);
-              }
-            }
-
-            .docName {
-              font-weight: 600;
-              font-size: 1.05rem;
-              margin-bottom: 6px;
-              color: var(--ink, #222037);
-            }
-
-            .docDesc {
-              font-size: 0.85rem;
-              line-height: 1.4;
-            }
-          }
-        }
-      }
-
-      .pendingGrid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 12px;
-
-        .pendingCard {
-          padding: 14px;
-          border-radius: var(--radius, 14px);
-          background-color: var(--canvas, #f7f7fb);
-          border-style: dashed;
-
-          .pendingHeader {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 6px;
-
-            .pendingName {
-              font-weight: 600;
-              flex: 1;
-            }
-
-            .pendingChip {
-              font-size: 0.7rem;
-              height: 20px;
-            }
-          }
-        }
+      .pendingChip {
+        font-size: 0.7rem;
+        height: 20px;
       }
     }
   }

@@ -1,5 +1,5 @@
 {
-  "version": "5194f05ae5d4d3520b62c5645f46f0bbcc52b539d5dff503d23355b5d7efa86c",
+  "version": "e88136bfb7b355b1bf4a9663e65e54c78c5a5863df6bd8072c71fd981754a79d",
   "sourceChecksum": "166d1429bdc6b07f0e06f39b2a0c899e9df7fb643b6f73d44077ba389ae4a97d",
   "types": [
     {
@@ -9039,11 +9039,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Unsupported",
-      "registered": false,
-      "crudEnabled": false,
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true,
       "unsupportedConditions": [
         {
           "field": "overview_tab",
@@ -10089,11 +10091,13 @@
       "externalAppSignals": [],
       "genericCandidate": true,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Discovered",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Opportunity",
@@ -12738,11 +12742,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Workstation Working Hour",
@@ -13948,11 +13954,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Unsupported",
-      "registered": false,
-      "crudEnabled": false,
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true,
       "unsupportedConditions": [
         {
           "field": "overview_tab",
@@ -14083,11 +14091,13 @@
       "externalAppSignals": [],
       "genericCandidate": true,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Discovered",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Installation Note",
@@ -15047,11 +15057,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Unsupported",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Company",
@@ -15289,11 +15301,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false,
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true,
       "unsupportedConditions": [
         {
           "field": "accounts",
@@ -15349,11 +15363,13 @@
       "externalAppSignals": [],
       "genericCandidate": true,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Discovered",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Driver",
@@ -15820,11 +15836,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Unsupported",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Party Type",
@@ -15967,11 +15985,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Supplier Group",
@@ -15994,11 +16014,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false,
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true,
       "unsupportedConditions": [
         {
           "field": "accounts",
@@ -16054,11 +16076,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Territory",
@@ -16081,11 +16105,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Transaction Deletion Record",
@@ -16203,11 +16229,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "UOM Conversion Factor",
@@ -16877,11 +16905,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Unsupported",
-      "registered": false,
-      "crudEnabled": false,
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true,
       "unsupportedConditions": [
         {
           "field": "variant_of",
@@ -17089,11 +17119,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false,
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true,
       "unsupportedConditions": [
         {
           "field": "section_break_5",
@@ -18162,11 +18194,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Price List Country",
@@ -31037,11 +31071,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Currency",
@@ -31064,11 +31100,13 @@
       "externalAppSignals": [],
       "genericCandidate": false,
       "stages": [
-        "Discovered"
+        "Discovered",
+        "Registered",
+        "CRUD Enabled"
       ],
-      "status": "Requires Business Logic",
-      "registered": false,
-      "crudEnabled": false
+      "status": "CRUD Enabled",
+      "registered": true,
+      "crudEnabled": true
     },
     {
       "name": "Connected App",

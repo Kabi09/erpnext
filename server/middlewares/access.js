@@ -24,9 +24,10 @@ export async function companyGrants(models,user,companyId) {
   if (!membership?.roles.length) return null
   const [company,roles] = await Promise.all([
     models.Company.findOne({ _id:companyId,active:true }).select('code name').lean(),
-    models.Role.find({ _id:{ $in:membership.roles } }).select('permissions').lean(),
+    models.Role.find({ _id:{ $in:membership.roles } }).select('permissions key').lean(),
   ])
   if (!company) return null
   const permissions = await models.Permission.find({ _id:{ $in:roles.flatMap(role => role.permissions) } }).lean()
-  return { company,grants:new Set(permissions.map(p => p.resource + ':' + p.action)) }
+  const isAdmin = roles.some(r => r.key === 'company-administrator' || r.key === 'system-manager')
+  return { company, grants:new Set(permissions.map(p => p.resource + ':' + p.action)), roles, isAdmin }
 }

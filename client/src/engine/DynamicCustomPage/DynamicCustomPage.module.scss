@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.toprow {
+  margin-bottom: 8px;
+}
+
+.headingGroup {
+  .titleRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+
+    .title {
+      font-weight: 700;
+      color: var(--ink, #222037);
+    }
+  }
+}
+
+.alert:global(.MuiAlert-root) {
+  margin-bottom: 16px;
+}
+
+.middlerow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoCard:global(.MuiCard-root) {
+  border-radius: var(--radius, 12px);
+  background: var(--surface);
+  max-width: 800px;
+}

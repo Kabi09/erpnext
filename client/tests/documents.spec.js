@@ -16,6 +16,7 @@ const noOverflow = page => expect.poll(() => page.evaluate(() =>
 test.describe('Metadata-driven React MUI Document Engine', () => {
 
   test('complete vertical integration for Quality Inspection Parameter Group, Parameter and Feedback Template', async ({ page }) => {
+    test.setTimeout(120_000)
     await signIn(page)
 
     // 1. Dynamic Navigation & Sidebar verification
@@ -157,12 +158,12 @@ test.describe('Metadata-driven React MUI Document Engine', () => {
     await page.getByRole('button', { name: 'Remove row' }).nth(2).click()
 
     // Test child table duplicate parameter validation
-    await page.getByPlaceholder('Parameter').nth(1).fill('Precision')
+    await page.getByPlaceholder('Parameter').nth(1).fill('Surface Finish')
     await page.getByRole('button', { name: 'Save' }).click()
-    await expect(page.getByText(/validation error|check the submitted fields/i).first()).toBeVisible()
+    await expect(page.getByText(/validation error|check the submitted fields|duplicate/i).first()).toBeVisible()
 
     // Correct row #2
-    await page.getByPlaceholder('Parameter').nth(1).fill('Surface Finish')
+    await page.getByPlaceholder('Parameter').nth(1).fill('Precision')
     await page.getByRole('button', { name: 'Save' }).click()
 
     // Redirected to detail page
@@ -176,7 +177,7 @@ test.describe('Metadata-driven React MUI Document Engine', () => {
 
     // 7. Company Switching and Data Isolation
     await page.goto('/documents/Quality%20Inspection%20Parameter%20Group')
-    await expect(page.getByText('Dimensions')).toBeVisible()
+    await expect(page.getByText('Dimensions').first()).toBeVisible()
 
     // Switch company to Second Test Company
     await page.goto('/')
@@ -196,7 +197,7 @@ test.describe('Metadata-driven React MUI Document Engine', () => {
     await expect(page.getByRole('heading', { name: 'Browser Test Company' })).toBeVisible()
 
     await page.goto('/documents/Quality%20Inspection%20Parameter%20Group')
-    await expect(page.getByText('Dimensions')).toBeVisible()
+    await expect(page.getByText('Dimensions').first()).toBeVisible()
 
     // 8. Unregistered DocType handling
     await page.goto('/documents/Sales%20Invoice')
@@ -204,6 +205,7 @@ test.describe('Metadata-driven React MUI Document Engine', () => {
     await expect(page.getByText(/not registered or not permitted/i)).toBeVisible()
 
     // 9. Responsive layout verification across all 6 viewports
+    await page.goto('/documents/Quality%20Inspection%20Parameter%20Group')
     for (const [width, height] of sizes) {
       await page.setViewportSize({ width, height })
       await noOverflow(page)

@@ -8,7 +8,7 @@
 - Target users — Approximately 500 registered users. Concurrent workload and capacity remain unmeasured.
 - Important conventions — Preserve references and upstream notices. Follow [project rules](docs/14-PROJECT-RULES.md). Keep proposed behavior distinct from implementation status.
 - Reference repositories — ERPNext `develop`, `04985378822020da230b7bf77ffc40c63c77a91a`. Frappe `develop`, `a9488f482626a9794457c89ad88b31a881cb79a9`. Both clean at review.
-- Current development phase — Phase 4 frontend engine complete. Phase 5 is Core DocType Rollout and Business Logic Engine.
+- Current development phase — Phase 5 module, workspace, page and navigation generation complete. Phase 6 is Transactional Documents, Submittable DocTypes, and Posting Engines.
 
 ## Project Structure
 
@@ -82,6 +82,18 @@
 
 ### 2026-11-19
 
+#### Phase 5 complete module, workspace, page and navigation generation
+
+- Built complete navigation catalog in `server/engine/navigation.js` and `/api/v1/metadata/navigation`: Discovers all 38 modules, 24 workspaces, 875 DocTypes, 208 reports, and 35 custom pages with permission-aware filtering, module categories, and implementation coverage metrics.
+- Implemented global fast keyboard search (`Ctrl+K` / `Cmd+K`) in `client/src/components/GlobalSearch/`: Search modal indexing >500 items across DocTypes, Workspaces, Reports, Pages, and Modules with real-time category filtering and keyboard arrow/enter navigation.
+- Built dynamic workspaces in `client/src/engine/DynamicWorkspace/`: Renders Frappe workspace cards, shortcuts, and module masters. Generates synthesized module workspaces for modules lacking custom Frappe workspace JSONs. Features explanatory modal for unregistered DocTypes detailing Phase roadmap.
+- Controlled registration of 22 core masters in topological dependency order (`server/engine/registry.js`, `policies.js`): Setup, Stock, Selling, Buying, and HR masters (`Quality Inspection Parameter Group`, `Quality Inspection Parameter`, `Quality Feedback Template`, `UOM`, `UOM Conversion Factor`, `Currency`, `Currency Exchange`, `Territory`, `Customer Group`, `Supplier Group`, `Item Group`, `Sales Person`, `Warehouse`, `Department`, `Designation`, `Employment Type`, `Branch`, `Terms and Conditions`, `Item`, `Customer`, `Supplier`, `Price List`).
+- Implemented hierarchical tree engine in `server/engine/tree.js` and `/api/v1/documents/:doctype/tree`: Enforces self-parent prevention, circular ancestor traversal checks, and child deletion guards (409 Conflict). Integrated recursive `TreeView` (`client/src/components/TreeView/`) with expand/collapse, add child modal, search filter, and list/tree view mode toggle (`DynamicListView.jsx`).
+- Implemented reports registry and execution engine in `server/engine/reports.js` and `/api/v1/reports`: Implemented live operational query runners (`Item Summary`, `Customer Summary`, `Supplier Summary`, `Quality Inspection Summary`), dynamic tabular column compiler, date/search filter bar, and client-side RFC-4180 CSV export in `ReportViewer` (`client/src/engine/ReportViewer/`). Transparently classifies 204+ transactional reports as requiring Phase 6 accounting ledgers and posting engines.
+- Implemented custom pages registry in `server/engine/pages.js` and `/api/v1/pages`: Implemented `DynamicCustomPage` (`client/src/engine/DynamicCustomPage/`) and dedicated Administrator Coverage Dashboard (`client/src/pages/CoverageDashboard/`) with 6 KPI summary cards and filterable tables across Registered Masters, All DocTypes, Extracted Reports, and Custom Pages.
+- Added comprehensive backend tests in `server/tests/phase5.test.js` and end-to-end browser tests in `client/tests/phase5.spec.js`.
+- Created technical documentation: [Module generation](docs/18-MODULE-GENERATION.md).
+
 #### Phase 4 metadata-driven React MUI frontend engine
 
 - Created complete reusable engine in `client/src/engine/`: `DynamicPage`, `DynamicListView`, `DynamicDetailView`, `DynamicForm`, `DynamicTable`, `DynamicField`, `DynamicSection`, `DynamicTabs`, `DynamicWorkspace`, `ChildTable`, `LinkedDocumentSelector`, and `DocumentActions`.
@@ -122,11 +134,11 @@
 
 ## Current Progress
 
-- Completed — Phases 0–2 established references, running MERN foundation and auth. Phase 3 delivered registered document engine and API contract. Phase 4 delivered metadata-driven React MUI frontend engine, full vertical integration on verified masters, multi-tenancy header synchronization, optimistic concurrency conflict recovery, child tables, and responsive UI across 6 viewports.
+- Completed — Phases 0–2 established references, running MERN foundation and auth. Phase 3 delivered registered document engine and API contract. Phase 4 delivered metadata-driven React MUI frontend engine, full vertical integration on verified masters, multi-tenancy header synchronization, optimistic concurrency conflict recovery, child tables, and responsive UI across 6 viewports. Phase 5 delivered complete 38-module navigation catalog, 24 dynamic workspaces, global search (`Ctrl+K`), controlled registration of 22 core masters, hierarchical tree engine with circular prevention and child deletion guards, operational report runner with CSV export, custom pages catalog, and administrator coverage dashboard.
 - In Progress — None.
-- Pending — Phase 5 Core DocType Rollout and Business Logic Engine, followed by Phases 6 through 9.
-- Blocked — None for verified masters. Phase 5 rollout gates remaining DocTypes on domain controllers and approval.
-- Next implementation task — Phase 5: Classify and rollout the next batch of core ERPNext business DocTypes (e.g. Item, Customer, Supplier) with their domain logic, transaction controllers, and posting rules.
+- Pending — Phase 6 Transactional Documents, Submittable DocTypes, Multi-company Domain Services, and GL/Stock Posting Engines, followed by Phases 7 through 9.
+- Blocked — None for verified masters and Phase 5 features. Phase 6 transactional documents gate submittable workflows on ledger posting engines.
+- Next implementation task — Phase 6: Submittable transactional DocTypes (Sales Invoice, Purchase Invoice, Stock Entry, Payment Entry) with multi-company domain services, general ledger posting, and stock balance ledgers.
 
 ## Known Issues
 
@@ -138,6 +150,11 @@
 
 ## Technical Decisions
 
+- 2026-11-19 — Register core business masters in strict topological order to prevent dangling links. Core rate masters (UOM, Currency) and tree roots (Territory, Item Group) must precede entities (Item, Customer, Supplier).
+- 2026-11-19 — Convert `ObjectId` references to strings during ancestor traversal in tree engine to ensure type consistency against incoming payloads.
+- 2026-11-19 — Enforce JavaScript boolean types (`true` / `false`) on Check fields, rejecting raw integers (0 / 1) at schema validation boundary.
+- 2026-11-19 — Categorize 208 reports into operational master reports (executable via dynamic aggregation) vs transactional posting reports (requiring Phase 6 GL/Stock immutable ledgers).
+- 2026-11-19 — Isolate narrow viewport (<380px) header elements (search button text/kbd and breadcrumbs) to guarantee 0 horizontal scroll overflow on 320px mobile viewports.
 - 2026-11-19 — Use Node and Git without package dependencies for read-only extraction. Use explicit discovery coverage and stable provenance, and treat code signals as candidates.
 - 2026-11-19 — Plan a modular monolith and MongoDB transactional outbox for the initial deployment. Approve registry types explicitly. Use Decimal128 for financial and quantity values with explicit scales.
 - 2026-11-19 — Use a visually distinct CRYO shell and propose Inter. The one-day MVP emphasizes navigation and reviewed draft master data, with operational posting and report parity in later phases.
@@ -172,14 +189,19 @@
 - Result — All 24 backend tests passed. All 4 Playwright browser tests passed on native replica set with Chrome. Production build succeeded cleanly with zero errors.
 - Untested areas — Phase 5 unverified DocTypes (872 remaining DocTypes), ledger posting, complex transaction workflows, production HTTPS, multi-member replica failover, and 500-user concurrency benchmarks.
 
+- Task — Phase 5 complete module, workspace, page and navigation generation.
+- Tests executed — `npm test` passed all 30 backend tests across 4 test suites on a real local replica set. `npm run test:ui` passed all 9 Playwright end-to-end tests across 6 viewports (320px to 1920px). `npm run build` production client build succeeded in 4.54s with zero warnings or errors. Reference Git repositories (`reference/erpnext`, `reference/frappe`) remained clean on `develop`.
+- Coverage — Navigation catalog generation across all 38 modules and 24 workspaces, global search indexation (>500 items), tree node aggregation, tree self-parent prevention (422), circular ancestor graph traversal (422), child deletion protection (409 Conflict), operational query reports with dynamic columns, client-side CSV export, custom pages registry, implementation coverage access permissions, end-to-end global search modal (`Ctrl+K`), hierarchical tree explorer with view toggle, dynamic workspaces with pending dialogs, and coverage KPI matrix.
+- Untested areas — Phase 6 transactional documents (Sales Invoice, Stock Entry, Payment Entry), General Ledger posting engine, Stock Ledger valuation engine, multi-member MongoDB cluster failover, and 500-user concurrency benchmarks.
+
 ## Important Notes
 
 Read the actual pinned source before translating a complex domain action. Static metadata and heuristics are inputs to implementation. Never load upstream scripts as executable code into the target. Keep source notices with reused material, and record scope and coverage before release.
 
 ## Agent Handover
 
-- Current phase — Phase 4 complete. Next is Phase 5 – Core DocType Rollout and Business Logic Engine.
-- First task — Expand registration and domain controllers to core master DocTypes (Item, Customer, Supplier, Warehouse). Ensure hierarchical tree structures, pricing/tax templates, and ledger posting controllers are authored and verified.
-- Required reading — [Project rules](docs/14-PROJECT-RULES.md), [document contract](docs/16-DOCUMENT-ENGINE.md), [frontend metadata engine](docs/17-FRONTEND-METADATA-ENGINE.md), [registration manifest](metadata/registration-manifest.json), [UI components](docs/09-UI-COMPONENTS.md), [permissions](docs/08-AUTHENTICATION-PERMISSIONS.md) and [conversion plan](docs/12-CONVERSION-PLAN.md).
-- Commands — Use `npm ci`, `npm test`, `npm run test:ui` and `npm run build`. Follow the [local development guide](docs/15-LOCAL-DEVELOPMENT.md) for replica setup and grants. Regenerate the Phase 3 manifest with `node scripts/classify-doctypes.mjs` after registry changes.
-- Known blockers — None for verified masters. Live site exports, external app decisions and reviewed domain controllers gate wider coverage.
+- Current phase — Phase 5 complete. Next is Phase 6 – Transactional Documents, Submittable DocTypes, Multi-company Domain Services, and GL/Stock Posting Engines.
+- First task — Implement submittable document lifecycle (Draft -> Submitted -> Cancelled -> Amended) with immutable submitted state, and build General Ledger (GL Entry) and Stock Ledger (Stock Ledger Entry) domain posting engines.
+- Required reading — [Project rules](docs/14-PROJECT-RULES.md), [business logic](docs/05-BUSINESS-LOGIC.md), [workflows](docs/06-WORKFLOWS.md), [database design](docs/04-DOCTYPES-AND-DATABASE.md), [document contract](docs/16-DOCUMENT-ENGINE.md), [frontend metadata engine](docs/17-FRONTEND-METADATA-ENGINE.md), [module generation](docs/18-MODULE-GENERATION.md), and [conversion plan](docs/12-CONVERSION-PLAN.md).
+- Commands — Use `npm ci`, `npm test`, `npm run test:ui` and `npm run build`. Follow the [local development guide](docs/15-LOCAL-DEVELOPMENT.md) for replica setup and grants.
+- Known blockers — Submittable documents require multi-document transactional ledger posting engines and immutable cancellation rules before enabling submission.

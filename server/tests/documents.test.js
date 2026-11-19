@@ -81,7 +81,7 @@ test('registered HTTP documents on a replica set', async t => {
 
   await t.test('registry, sanitized metadata, scoped discovery and deny by default',async () => {
     assert.equal(registry.manifest.length,875)
-    assert.equal(registry.registered.size,3)
+    assert.equal(registry.registered.size,22)
     const second = await compileModels(db.connection,registry)
     assert.equal(second.models.get('Quality Feedback Template'),compiled.models.get('Quality Feedback Template'))
     assert.throws(() => buildRegistry(raw,[{name:'User',fields:[]}]))
@@ -90,7 +90,7 @@ test('registered HTTP documents on a replica set', async t => {
     assert(meta.layout.some(f=>f.type==='Section Break'))
     assert.equal(meta.fields.find(f=>f.name==='parameters').child.fields[0].name,'parameter')
     assert.equal(meta.version,registry.version)
-    assert.equal((await call('GET','/metadata/doctypes',200)).data.length,3)
+    assert.equal((await call('GET','/metadata/doctypes',200)).data.length,22)
     assert((await call('GET','/metadata/modules',200)).data.includes('Stock'))
     for(const name of ['User','Company','Quality Feedback Template Parameter','Sales Invoice']) await make('/documents/'+name,{},404)
     await call('GET',group,401,{auth:null})

@@ -13,6 +13,9 @@ const Dashboard = lazy(() => import('./pages/Dashboard/Dashboard'))
 const Login = lazy(() => import('./pages/Login/Login'))
 const DynamicPage = lazy(() => import('./engine/DynamicPage/DynamicPage'))
 const DynamicWorkspace = lazy(() => import('./engine/DynamicWorkspace/DynamicWorkspace'))
+const ReportViewer = lazy(() => import('./engine/ReportViewer/ReportViewer'))
+const DynamicCustomPage = lazy(() => import('./engine/DynamicCustomPage/DynamicCustomPage'))
+const CoverageDashboard = lazy(() => import('./pages/CoverageDashboard/CoverageDashboard'))
 
 export default function App() {
   const { status, error, restore } = useAuth()
@@ -35,6 +38,19 @@ export default function App() {
             {/* Workspace Routes */}
             <Route path="/workspaces/:module" element={<DynamicWorkspace />} />
             <Route path="/w/:module" element={<DynamicWorkspace />} />
+
+            {/* Report Routes */}
+            <Route path="/reports/:name" element={<ReportViewer />} />
+            <Route path="/app/reports/:name" element={<ReportViewer />} />
+
+            {/* Custom Page Routes */}
+            <Route path="/pages/:name" element={<DynamicCustomPage />} />
+            <Route path="/app/pages/:name" element={<DynamicCustomPage />} />
+
+            {/* Implementation Coverage Matrix */}
+            <Route path="/coverage" element={<CoverageDashboard />} />
+            <Route path="/app/coverage" element={<CoverageDashboard />} />
+            <Route path="/admin/coverage" element={<CoverageDashboard />} />
 
             {/* App-prefixed route aliases */}
             <Route path="/app/:module" element={<DynamicWorkspace />} />

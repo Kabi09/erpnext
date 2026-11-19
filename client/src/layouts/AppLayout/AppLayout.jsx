@@ -3,6 +3,7 @@ import {
   Alert,
   Avatar,
   Breadcrumbs,
+  Button,
   Chip,
   Drawer,
   IconButton,
@@ -16,19 +17,22 @@ import {
   Typography,
 } from '@mui/material'
 import {
+  AssessmentOutlined,
   BusinessOutlined,
   DashboardOutlined,
   DescriptionOutlined,
   FolderOutlined,
   LogoutOutlined,
   MenuOutlined,
+  SearchOutlined,
 } from '@mui/icons-material'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import Brand from '../../components/Brand/Brand'
+import GlobalSearch from '../../components/GlobalSearch/GlobalSearch'
 import { useAuth } from '../../context/AuthContext/AuthContext'
 import { useCompany } from '../../context/CompanyContext/CompanyContext'
 import { errorMessage } from '../../services/api'
-import { getDocTypes, getModules } from '../../services/documentApi'
+import { getDocTypes, getModules, getNavigationCatalog } from '../../services/documentApi'
 import styles from './AppLayout.module.scss'
 
 export default function AppLayout() {
@@ -45,18 +49,34 @@ export default function AppLayout() {
 
   const [modules, setModules] = useState([])
   const [docTypes, setDocTypes] = useState([])
+  const [navCatalog, setNavCatalog] = useState(null)
+  const [searchOpen, setSearchOpen] = useState(false)
 
-  // Load readable modules and doctypes
+  // Global Ctrl+K / Cmd+K search listener
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        setSearchOpen(prev => !prev)
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
+  // Load readable modules, doctypes and navigation catalog
   useEffect(() => {
     if (!activeCompanyId) return
-    Promise.all([getModules(), getDocTypes()])
-      .then(([mods, dts]) => {
+    Promise.all([getModules(), getDocTypes(), getNavigationCatalog()])
+      .then(([mods, dts, catalog]) => {
         setModules(mods || [])
         setDocTypes(dts || [])
+        setNavCatalog(catalog || null)
       })
       .catch(() => {
         setModules([])
         setDocTypes([])
+        setNavCatalog(null)
       })
   }, [activeCompanyId])
 
@@ -64,6 +84,21 @@ export default function AppLayout() {
   const getBreadcrumbs = () => {
     if (pathname === '/') return [{ label: 'Overview' }]
     if (pathname === '/unauthorized') return [{ label: 'Access denied' }]
+    if (pathname === '/coverage' || pathname === '/app/coverage' || pathname === '/admin/coverage') {
+      return [{ label: 'Implementation Coverage' }]
+    }
+
+    // Match /reports/:name or /app/reports/:name
+    const repMatch = pathname.match(/^(?:\/app)?\/reports\/([^/]+)$/)
+    if (repMatch) {
+      return [{ to: '/reports', label: 'Reports' }, { label: decodeURIComponent(repMatch[1]) }]
+    }
+
+    // Match /pages/:name or /app/pages/:name
+    const pageMatch = pathname.match(/^(?:\/app)?\/pages\/([^/]+)$/)
+    if (pageMatch) {
+      return [{ to: '/pages', label: 'Pages' }, { label: decodeURIComponent(pageMatch[1]) }]
+    }
 
     // Match /documents/:doctype or /app/documents/:doctype
     const docMatch = pathname.match(/^(?:\/app)?\/documents\/([^/]+)(?:\/([^/]+))?(?:\/([^/]+))?$/)
@@ -116,6 +151,21 @@ export default function AppLayout() {
             <ListItemIcon className={styles.icon}><DashboardOutlined fontSize="small" /></ListItemIcon>
             <ListItemText primary="Overview" />
           </ListItemButton>
+
+          {navCatalog?.canViewCoverage && (
+            <ListItemButton
+              component={Link}
+              to="/coverage"
+              selected={pathname === '/coverage'}
+              aria-current={pathname === '/coverage' ? 'page' : undefined}
+              onClick={() => setDrawer(false)}
+              className={styles.coverageItem}
+            >
+              <ListItemIcon className={styles.icon}><AssessmentOutlined fontSize="small" color="primary" /></ListItemIcon>
+              <ListItemText primary="Coverage Matrix" />
+              <Chip label="Admin" size="small" color="primary" variant="outlined" className={styles.coverageChip} />
+            </ListItemButton>
+          )}
 
           {modules.map((mod) => {
             const modDocTypes = docTypes.filter(dt => dt.module === mod)
@@ -203,6 +253,18 @@ export default function AppLayout() {
           </div>
 
           <div className={styles.topRight}>
+            <Button
+              variant="outlined"
+              size="small"
+              onClick={() => setSearchOpen(true)}
+              className={styles.searchButton}
+              aria-label="Search"
+            >
+              <SearchOutlined fontSize="small" />
+              <span className={styles.searchText}>Search…</span>
+              <kbd className={styles.searchKbd}>Ctrl+K</kbd>
+            </Button>
+
             {activeCompany && (
               <>
                 <Chip
@@ -270,6 +332,8 @@ export default function AppLayout() {
           <Outlet />
         </main>
       </div>
+
+      <GlobalSearch open={searchOpen} onClose={() => setSearchOpen(false)} />
     </div>
   )
 }

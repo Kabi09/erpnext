@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.toprow {
+  margin-bottom: 4px;
+}
+
+.headingGroup {
+  .titleRow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+
+    .title {
+      font-weight: 700;
+      color: var(--ink, #222037);
+    }
+  }
+}
+
+.alert:global(.MuiAlert-root) {
+  margin-bottom: 12px;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.kpiCard:global(.MuiCard-root) {
+  border-radius: var(--radius, 12px);
+  background: var(--surface);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+}
+
+.kpiValue {
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+
+.middlerow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tabHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: var(--surface);
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.tabs {
+  min-height: 44px;
+}
+
+.searchInput {
+  min-width: 240px;
+}
+
+.tableContainer {
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.tableHead {
+  background: var(--surface-subtle);
+}

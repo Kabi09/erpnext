@@ -1,0 +1,118 @@
+.dialogPaper:global(.MuiPaper-root) {
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 80vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.toprow {
+  padding: 16px 20px;
+  background: var(--surface);
+}
+
+.searchInput {
+  font-size: 1.1rem;
+}
+
+.searchIcon {
+  color: var(--nav-muted);
+  margin-right: 8px;
+}
+
+.filterRow {
+  display: flex;
+  gap: 8px;
+  padding: 8px 20px 12px;
+  overflow-x: auto;
+  background: var(--surface);
+}
+
+.typeChip:global(.MuiChip-root) {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.middlerow {
+  max-height: 420px;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.emptyState {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.resultList {
+  width: 100%;
+}
+
+.resultItem:global(.MuiListItemButton-root) {
+  padding: 10px 20px;
+  gap: 12px;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--surface-hover);
+  }
+
+  &:global(.Mui-selected) {
+    background-color: rgb(153 124 255 / 15%);
+  }
+}
+
+.resultIcon:global(.MuiListItemIcon-root) {
+  min-width: 32px;
+  color: var(--brand);
+}
+
+.primaryText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.itemTitle {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.itemBadge:global(.MuiChip-root) {
+  height: 20px;
+  font-size: 0.7rem;
+}
+
+.secondaryText {
+  color: var(--text-secondary);
+}
+
+.bottomrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--surface-subtle);
+  border-top: 1px solid var(--border);
+
+  kbd {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-family: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+}

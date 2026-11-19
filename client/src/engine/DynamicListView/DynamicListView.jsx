@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Alert, Button, Chip, Stack, Typography } from '@mui/material'
-import { AddOutlined } from '@mui/icons-material'
+import { Alert, Button, Chip, Stack, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import { AccountTreeOutlined, AddOutlined, TableRowsOutlined } from '@mui/icons-material'
 import { Link, useNavigate } from 'react-router-dom'
 import { listDocuments, deleteDocument } from '../../services/documentApi'
 import { useCompany } from '../../context/CompanyContext/CompanyContext'
@@ -9,11 +9,19 @@ import Pagination from '../../components/Pagination/Pagination'
 import DynamicTable from '../DynamicTable/DynamicTable'
 import LoadingState from '../../components/LoadingState/LoadingState'
 import ErrorState from '../../components/ErrorState/ErrorState'
+import TreeView from '../../components/TreeView/TreeView'
 import styles from './DynamicListView.module.scss'
 
 export default function DynamicListView({ doctype, metadata }) {
   const navigate = useNavigate()
   const { activeCompanyId } = useCompany()
+
+  const isTree = Boolean(metadata?.tree)
+  const [viewMode, setViewMode] = useState(isTree ? 'tree' : 'list')
+
+  useEffect(() => {
+    setViewMode(isTree ? 'tree' : 'list')
+  }, [isTree])
 
   const [documents, setDocuments] = useState([])
   const [loading, setLoading] = useState(true)
@@ -145,6 +153,23 @@ export default function DynamicListView({ doctype, metadata }) {
           </div>
 
           <div className={styles.actionSection}>
+            {isTree && (
+              <ToggleButtonGroup
+                value={viewMode}
+                exclusive
+                size="small"
+                onChange={(_, next) => next && setViewMode(next)}
+                aria-label="View mode"
+                className={styles.viewToggle}
+              >
+                <ToggleButton value="tree" aria-label="Tree view">
+                  <AccountTreeOutlined fontSize="small" sx={{ mr: 0.5 }} /> Tree
+                </ToggleButton>
+                <ToggleButton value="list" aria-label="List view">
+                  <TableRowsOutlined fontSize="small" sx={{ mr: 0.5 }} /> List
+                </ToggleButton>
+              </ToggleButtonGroup>
+            )}
             {canCreate && (
               <Button
                 variant="contained"
@@ -171,42 +196,46 @@ export default function DynamicListView({ doctype, metadata }) {
           </Alert>
         )}
 
-        <div className={styles.middlerow}>
-          <FilterBar
-            filterableFields={filterableFields}
-            onFilterChange={handleFilterChange}
-            onRefresh={() => loadData(cursor)}
-            loading={loading}
-          />
+        {isTree && viewMode === 'tree' ? (
+          <TreeView doctype={doctype} metadata={metadata} />
+        ) : (
+          <div className={styles.middlerow}>
+            <FilterBar
+              filterableFields={filterableFields}
+              onFilterChange={handleFilterChange}
+              onRefresh={() => loadData(cursor)}
+              loading={loading}
+            />
 
-          {loading && documents.length === 0 ? (
-            <LoadingState label={`Loading ${doctype} documents…`} />
-          ) : (
-            <>
-              <DynamicTable
-                doctype={doctype}
-                metadata={metadata}
-                rows={documents}
-                sortField={sortField}
-                sortOrder={sortOrder}
-                onSortChange={handleSortChange}
-                onDeleteRow={handleDeleteRow}
-                deletingId={deletingId}
-              />
+            {loading && documents.length === 0 ? (
+              <LoadingState label={`Loading ${doctype} documents…`} />
+            ) : (
+              <>
+                <DynamicTable
+                  doctype={doctype}
+                  metadata={metadata}
+                  rows={documents}
+                  sortField={sortField}
+                  sortOrder={sortOrder}
+                  onSortChange={handleSortChange}
+                  onDeleteRow={handleDeleteRow}
+                  deletingId={deletingId}
+                />
 
-              <Pagination
-                hasNext={Boolean(nextCursor)}
-                hasPrev={cursorHistory.length > 0}
-                onNext={handleNextPage}
-                onPrev={handlePrevPage}
-                limit={limit}
-                onLimitChange={handleLimitChange}
-                count={documents.length}
-                loading={loading}
-              />
-            </>
-          )}
-        </div>
+                <Pagination
+                  hasNext={Boolean(nextCursor)}
+                  hasPrev={cursorHistory.length > 0}
+                  onNext={handleNextPage}
+                  onPrev={handlePrevPage}
+                  limit={limit}
+                  onLimitChange={handleLimitChange}
+                  count={documents.length}
+                  loading={loading}
+                />
+              </>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )

@@ -30,5 +30,9 @@ export function describe(spec, grants, registry) {
     sourceId: spec.row.id, fields, layout, listFields: fields.filter(f => f.list).map(f => f.name),
     actions: actions.filter(action => granted(grants,spec.resource,action) && (spec.scope !== 'global' || action === 'read')),
     unsupportedActions: ['submit','cancel','amend','print','export','import','report','share'],
-    unsupportedConditions: [] }
+    unsupportedConditions: [],
+    tree: Boolean(spec.tree),
+    treeParentField: spec.treeParentField || null,
+    treeGroupField: spec.treeGroupField || null,
+  }
 }

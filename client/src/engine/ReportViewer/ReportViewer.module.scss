@@ -1,0 +1,89 @@
+.container {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.toprow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleSection {
+  .headingGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+
+    .title {
+      font-weight: 700;
+      color: var(--ink, #222037);
+    }
+  }
+}
+
+.actionSection {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.alert:global(.MuiAlert-root) {
+  margin-bottom: 8px;
+}
+
+.middlerow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filterBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.searchInput {
+  min-width: 240px;
+  flex: 1;
+}
+
+.dateInput {
+  min-width: 150px;
+}
+
+.tableContainer {
+  border-radius: 8px;
+  overflow-x: auto;
+  background: var(--surface);
+}
+
+.tableHead {
+  background: var(--surface-subtle);
+}
+
+.emptyCell {
+  padding: 40px 16px;
+}
+
+.bottomrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+}
