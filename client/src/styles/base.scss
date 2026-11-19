@@ -1,0 +1,24 @@
+:root {
+  --font: 'Inter Variable', Inter, system-ui, sans-serif;
+  --surface: #fff;
+  --canvas: #f7f7fb;
+  --ink: #222037;
+  --muted: #625e74;
+  --border: #e5e1ee;
+  --brand: #5036ae;
+  --brand-soft: #eee9ff;
+  --nav: #1d1631;
+  --nav-text: #f0ebff;
+  --nav-muted: #c7bbeb;
+  --radius: 14px;
+  --space: 8px;
+  --header-height: 64px;
+  --sidebar-width: 244px;
+  --shadow: 0 15px 45px rgb(36 20 75 / 8%);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 280px; margin: 0; }
+a { color: inherit; }
+button, input { font: inherit; }

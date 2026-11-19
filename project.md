@@ -8,45 +8,45 @@
 - Target users — Approximately 500 registered users. Concurrent workload and capacity remain unmeasured.
 - Important conventions — Preserve references and upstream notices. Follow [project rules](docs/14-PROJECT-RULES.md). Keep proposed behavior distinct from implementation status.
 - Reference repositories — ERPNext `develop`, `04985378822020da230b7bf77ffc40c63c77a91a`. Frappe `develop`, `a9488f482626a9794457c89ad88b31a881cb79a9`. Both clean at review.
-- Current development phase — Phase 1 deliverables are in place. Phase 2 is the next implementation phase.
+- Current development phase — Phase 2 core foundation is complete. Phase 3 is pending.
 
 ## Project Structure
 
-- Important folders — `reference/` contains cloned inputs, `scripts/` contains Node and Git extraction tooling, `metadata/` contains generated definitions, and `docs/` contains 15 technical Markdown documents. No MERN client or server scaffolds exist.
+- Important folders — `client/` is the Vite/MUI app and `server/` is the Express/Mongoose API. `reference/`, `scripts/` and `metadata/` retain Phase 1 inputs and extraction. `docs/` includes the new [local setup guide](docs/15-LOCAL-DEVELOPMENT.md).
 - Important files — [AGENTS.md](AGENTS.md), [extract-metadata.js](scripts/extract-metadata.js), [validate-metadata.js](scripts/validate-metadata.js), [extraction summary](metadata/extraction-summary.json).
-- Component structure — The planned client uses named component folders, JSX and colocated SCSS Modules. The architecture doc describes planned client and server paths.
+- Component structure — JSX components use named folders and SCSS Modules. Frontend routes, pages, shell, shared view states, styles, context and the Axios service are in `client/src/`. Backend app composition, configuration, models, authentication, access middleware and the metadata loader are in `server/`.
 - Shared utilities — The repo scanner supplies definitions, evidence and provenance to the focused extractors and shared orchestration. Focused extraction CLIs print one normalized catalog to stdout.
-- Metadata structure — 14 JSON artifacts. The requested catalogs are supplemented by navigation edges, configuration definitions and the source index. Record IDs encode the repository-relative file path and array index. Samples retain provenance. Both upstream license texts are copied into `metadata/licenses/`. Future CRYO overlays live separately.
+- Metadata structure — 14 Phase 1 artifacts retain their provenance and licenses. `server/engine/reference-metadata.js` validates the reference catalogs used by the runtime, checks summary counts, computes a SHA-256 checksum and preserves original source IDs. Future CRYO overlays live separately.
 
 ## UI & Styling Rules
 
 - MUI usage — Standard MUI forms, tables, dialogs and layouts, combined in a distinct CRYO shell.
 - Google Material Icons — Use Google Material Icons via MUI. Supply accessible action labels.
 - SCSS Modules — Apply custom styles through each component's named module. Use shared tokens and relevant layout regions.
-- Google Fonts — Inter is proposed. No font files or frontend assets have been added.
+- Google Fonts — Inter is bundled through Fontsource. The app has its own CRYO identity.
 - Responsive approach — Six viewport classes. Test narrow screens, long values and overflowing tables inside the table container.
 - Component structure — Shared rendering and domain overrides are described in [UI components](docs/09-UI-COMPONENTS.md).
 
 ## Application Logic
 
-- Authentication and authorization — Planned access and refresh flow with JWT and rotating sessions, plus default-deny server policy scoped by document type, action, record, field and company.
-- State management and API handling — Proposed context for session state, local draft state and a shared Axios client for request, cancellation, error and refresh handling.
-- Business logic — No target domain code exists. Selected reference controller rules were read and documented in [business logic](docs/05-BUSINESS-LOGIC.md).
-- Validation and error handling — Planned typed request schemas, revision preconditions, field allowlists, service validation and consistent error envelopes.
+- Authentication and authorization — Scrypt password hashes, ten-minute JWTs, seven-day refresh sessions, digest-only refresh storage and transactional rotation with replay revocation. Deny-by-default company policy reads current role grants. Document and field policies follow in Phase 3.
+- State management and API handling — React context restores the session. Axios holds access credentials in memory, coordinates refresh, retries a failed bearer request once and cancels obsolete company data requests.
+- Business logic — The company-access check is live. ERP controller ports remain future work. Source review is in [business logic](docs/05-BUSINESS-LOGIC.md).
+- Validation and error handling — Zod validates environment and request fields. API middleware standardizes errors, request IDs, restricted origins, security headers and rate limits.
 - Document lifecycle and workflow integration — Draft, submitted and cancelled are separate from workflow and domain state. Plan typed transitions, audited reversals and outbox side effects. Upstream definitions are evidence and stay inert.
 
 ## Database Architecture
 
-- MongoDB collections and Mongoose schemas — Proposed registered type mappings, scoped settings, identities, ledgers, balances, idempotency, sequences, audit and outbox. No target schema is implemented.
+- MongoDB collections and Mongoose schemas — User, Role, Permission, Company, RefreshSession and AuditLog are implemented with timestamps, scoped memberships and indexes. Dynamic type mappings, ledger and posting collections remain planned.
 - Document relationships — Embed bounded ordered child rows and link by immutable IDs. Independently updated or unbounded rows get dedicated indexed collections.
-- Transactions and indexes — Use a replica set, scoped uniqueness, optimistic versions, balance predicates and deterministic posting keys. Commit ledger, state, counters, audit and outbox together.
+- Transactions and indexes — The API requires a writable replica set or compatible cluster. Rotation, logout and bootstrap commit with audit events. Startup creates unique identity and grant indexes, a refresh expiration TTL and audit lookup indexes. Future posting uses scoped uniqueness, optimistic versions and deterministic keys.
 - Data integrity and audit — Decimal128 with explicit scales and decimal-string transport. Enforce quantity and state bounds and preserve reversal history. [Database design](docs/04-DOCTYPES-AND-DATABASE.md)
 
 ## API / Backend Integration
 
-- API endpoints and methods — Proposed `/api/v1` auth, metadata, document, action, attachment, search, timeline and reporting routes. No target routes are implemented.
+- API endpoints and methods — Active under `/api/v1`: GET `/health`, GET `/ready`, POST `/auth/login`, POST `/auth/refresh`, POST `/auth/logout`, GET `/auth/me` and GET `/companies/:companyId/access`. Metadata, documents, lifecycle and reports remain future routes.
 - Payload structures and response handling — Typed input, stable cursor pagination, decimal strings, request IDs and a uniform error envelope. Critical writes carry version and idempotency preconditions.
-- Authentication and authorization requirements — Server-executed auth, scoped queries and field filtering. Keep generic APIs behind registration and dedicated action handlers. [API mapping](docs/07-API-MAPPING.md)
+- Authentication and authorization requirements — Auth mutations require the CRYO request header and configured browser origins. Protected reads require a current bearer and, for company data, a matching membership and grant. Keep future generic APIs behind registration. [API mapping](docs/07-API-MAPPING.md)
 
 ## Module Inventory
 
@@ -55,6 +55,13 @@
 - Implementation status — Metadata only. 875 shipped DocTypes, 14,719 fields, 375 child-table schemas, 24 workspaces, 29 page definitions, 207 reports, nine dashboards and 2,220 permission definitions.
 
 ## Components
+
+### Login, AppLayout and Dashboard (implemented)
+
+- Locations — `client/src/pages/Login/`, `client/src/layouts/AppLayout/` and `client/src/pages/Dashboard/`.
+- Purpose — Sign in, navigate protected workspace routes, select an assigned company, see server-confirmed access and sign out.
+- State and logic — AuthContext owns identity and session restoration. Pages handle pending, failure and empty states. The shell owns the mobile drawer and account menu.
+- API dependencies — Login, refresh, logout, current user and company access. Related components include ProtectedRoute, shared view states, NotFound and Unauthorized.
 
 ### DynamicForm (proposed)
 
@@ -75,6 +82,13 @@
 
 ### 2026-11-19
 
+#### Phase 2 implementation
+
+- Changes — Added npm workspace configuration, Node version files, lockfile, environment examples, Docker Compose configuration, the client and server packages, real-backend tests and [local development instructions](docs/15-LOCAL-DEVELOPMENT.md). Updated the API, auth, UI, architecture and limitations docs.
+- Dependencies — Client runtime uses React, React DOM, MUI, MUI icons, Emotion internals, React Router, Axios and Fontsource Inter. Dev tools are Vite, its React plugin, Sass and Playwright. Server uses Express, Mongoose, JSON Web Token, Helmet, CORS, cookie-parser, express-rate-limit, Zod and pino-http. Packages are pinned in manifests and the root lockfile.
+- Logic — Added liveness and readiness, environment and input validation, database/index lifecycle, transactional auth and bootstrap, company policy, request logging, an internal metadata loader, the sign-in and protected app routes, and responsive shared UI.
+- Verification — Clean lockfile install, production build, 13 Node tests and three browser tests passed on the native MongoDB replica set. Both reference trees and the Phase 1 extraction inputs and outputs were preserved.
+
 #### Phase 1 repository analysis and design
 
 - What was changed — Initialized project memory and agent rules. Added automated inventory, normalization and validation for both references, copied licenses and documented the future MERN conversion.
@@ -86,11 +100,11 @@
 
 ## Current Progress
 
-- Completed — Phase 0 local clones recorded. Phase 1 static inventory, generated metadata, selected manual source review, licenses, architecture, roadmap and handover.
+- Completed — Phase 0 local clones recorded. Phase 1 static inventory, generated metadata, selected manual source review, licenses, architecture, roadmap and handover. Phase 2 verified client, API, MongoDB, identity, company authorization and metadata-loading foundation.
 - In Progress — None.
-- Pending — Phases 2 through 9, including verified business implementations, integration choices and CRYO overlays.
-- Blocked — None for Phase 2. Effective site-specific behavior requires site data or stakeholder evidence.
-- Next implementation task — Start Phase 2 by scaffolding the approved Vite/MUI client and Express server and establishing a local MongoDB replica-set connection, health/readiness and JWT authentication with tested server-side role and company scope.
+- Pending — Phases 3 through 9, including document engine, functional ERP implementation, integrations and CRYO overlays.
+- Blocked — None for Phase 3. Effective site-specific behavior requires site data or stakeholder evidence.
+- Next implementation task — Build the explicit type registry over the Phase 2 metadata loader. Select one safe master DocType, map its fields to a Mongoose model, and expose typed, company-scoped document endpoints with validation and negative authorization tests.
 
 ## Known Issues
 
@@ -98,6 +112,7 @@
 - Five absent app references include HRMS/payroll, Payments, Webshop, Insights and Lending. Review relevance and license before enabling an integration.
 - `Payment Gateway Account.payment_gateway` points to an absent `Payment Gateway` DocType. Eight legacy Desktop Icon targets and one repeated portal rule need migration review.
 - Nineteen observed field types fall outside the proposed MVP adapter list. No unexplained upstream field types, duplicate shipped definition names or extraction errors were reported.
+- Phase 2 authorizes the company-access resource. Rate limiting is per process. Without Web Locks, simultaneous refreshes from separate tabs can trigger replay revocation. Multi-member failover, production HTTPS and 500-user load are still unverified.
 
 ## Technical Decisions
 
@@ -105,13 +120,20 @@
 - 2026-11-19 — Plan a modular monolith and MongoDB transactional outbox for the initial deployment. Approve registry types explicitly. Use Decimal128 for financial and quantity values with explicit scales.
 - 2026-11-19 — Use a visually distinct CRYO shell and propose Inter. The one-day MVP emphasizes navigation and reviewed draft master data, with operational posting and report parity in later phases.
 - 2026-11-19 — Treat a strict material issuance cap as the CRYO default. Upstream material requests can allow overage through a setting. Any compatibility allowance needs approval.
+- 2026-11-19 — Pin Node.js 26.13.0 and use one npm-workspace lockfile. Use a native single-member MongoDB replica set for local verification, with optional Compose for local development.
+- 2026-11-19 — Scope roles to company memberships. Resolve grants live and provision only the tested company-read grant. Use scrypt, fixed-lifetime refresh sessions, audited digest rotation and replay-triggered revocation.
 
 ## Testing Results
 
 - Task — Phase 1 static extraction and handover.
 - Tests executed — Both scanners, focused extractor CLI smoke tests, JavaScript syntax, full extraction and source-backed validation, corrupted-summary rejection, Markdown link and required deliverable checks, clean reference Git status.
 - Result — 11,888 indexed files and 1,936 parsed JSON files. All 14 metadata JSON artifacts passed source-backed validation with zero extraction errors. Ten syntax checks, seven CLI smoke tests and 129 local Markdown link checks passed. The validator rejected a tampered count. Both copied licenses matched upstream byte for byte.
-- Untested areas — Upstream runtime, target build, UI, API, transactions, security behavior, performance and full business parity. The target application does not exist yet.
+- Untested areas at Phase 1 — Upstream runtime, the then-unimplemented target and full business parity.
+
+- Task — Phase 2 MERN foundation.
+- Tests executed — Clean `npm ci`, npm audit, Node HTTP/database tests, Chrome UI tests, Vite production build, Compose config validation, local documentation links and reference Git checks.
+- Result — 13 Node tests passed against native MongoDB 8.0.4, including rollback, readiness loss, role and company denial, concurrent rotation, replay and logout. All three Playwright tests passed. The browser suite covered six viewports from 320 to 1920 pixels, company switching, two-tab restoration, navigation, empty, loading and retry states. Reviewed phone and desktop screenshots. The build passed and npm audit reported zero known vulnerabilities.
+- Untested areas — Docker container startup because Docker Desktop was inactive, multi-member MongoDB failover, production HTTPS, full accessibility review, 500-user workload, ERP domain workflows and document parity.
 
 ## Important Notes
 
@@ -119,9 +141,9 @@ Read the actual pinned source before translating a complex domain action. Static
 
 ## Agent Handover
 
-- Current phase — Phase 1 complete. Phase 2 pending.
-- Last completed task — Cataloged and validated both reference trees and documented the architecture and follow-on dependencies.
-- Next task — Choose and pin a Node LTS version for the application. Scaffold `client/` and `server/`. Add validated environment configuration and local MongoDB replica-set startup. Implement health/readiness, JWT login/refresh/logout and one protected endpoint. Test startup, transaction availability, refresh rotation and role/company denial before starting the registry.
-- Required files to read — [AGENTS.md](AGENTS.md), this file, [project rules](docs/14-PROJECT-RULES.md), [MERN architecture](docs/11-MERN-ARCHITECTURE.md), [API mapping](docs/07-API-MAPPING.md), [permissions](docs/08-AUTHENTICATION-PERMISSIONS.md), [conversion plan](docs/12-CONVERSION-PLAN.md) and [extraction summary](metadata/extraction-summary.json).
-- Commands to continue — Run `node scripts/validate-metadata.js --check-sources`. On reference or extractor changes, run `node scripts/extract-metadata.js` and validate again.
-- Known blockers — None for the foundation. Live site exports and external app decisions are dependency gates for relevant later features.
+- Current phase — Phase 2 complete. Phase 3 is Dynamic Metadata, Mongoose Model and Document API Engine.
+- Last completed task — Verified the running client and API, transactional auth, company policy, pinned metadata intake and database bootstrap.
+- Next task — Extend the [reference metadata loader](server/engine/reference-metadata.js) with an explicit deny-by-default registry that preserves source IDs and version. Register one non-submittable master type with a reviewed field and company policy. Compile its Mongoose schema, add validated list/read/write APIs with optimistic versions, and test unregistered types, invalid input, stale versions, field scope and company denial. Add child rows, links, naming and lifecycle incrementally.
+- Required files to read — [AGENTS.md](AGENTS.md), this file, [project rules](docs/14-PROJECT-RULES.md), [MERN architecture](docs/11-MERN-ARCHITECTURE.md), [database design](docs/04-DOCTYPES-AND-DATABASE.md), [API mapping](docs/07-API-MAPPING.md), [permissions](docs/08-AUTHENTICATION-PERMISSIONS.md), [conversion plan](docs/12-CONVERSION-PLAN.md) and [extraction summary](metadata/extraction-summary.json).
+- Commands to continue — Use `npm ci`, `npm test`, `npm run test:ui` and `npm run build`. Start a local replica set and bootstrap using the [local development guide](docs/15-LOCAL-DEVELOPMENT.md). Regenerate Phase 1 metadata only when the references or extractor change.
+- Known blockers — None for the Phase 3 registry. Live site exports and external app decisions are dependency gates for later features.

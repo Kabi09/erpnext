@@ -1,5 +1,11 @@
 # Authentication and permissions
 
+## Phase 2 implementation
+
+Passwords are salted and hashed with Node's asynchronous scrypt implementation. Access JWTs expire after ten minutes. The seven-day refresh session has a fixed lifetime and the database stores only a SHA-256 digest of the current token. Refresh proves the token was issued by the server, then rotates the digest transactionally with its audit event. Replay of a previously issued token revokes the session, including bearer validity. Logout revokes the session and clears the cookie. Bearer authentication verifies the current user status and revocation state with MongoDB on every request. The client keeps access tokens in memory and coordinates refresh in one request per tab, using Web Locks across tabs where supported.
+
+A user has roles per explicit company membership. The API checks the company is active and resolves grants from current role and permission documents. The permissions model covers the twelve agreed actions. The only seeded resource grant is `company:read`. Approve additional resources and policies individually. Phase 1 permission metadata remains reference input. See [local setup](15-LOCAL-DEVELOPMENT.md) for cookie, proxy, replica-set and administrator details.
+
 Frappe has session and login management and request-time validation for OAuth, API keys and authentication hooks. Its permission engine uses role grants, owner rules, user permissions on linked records and controller hooks. Frappe metadata can apply Custom DocPerm over standard definitions and resolve field access by permission level. [Authentication](../reference/frappe/frappe/auth.py#L637) · [Permission source](../reference/frappe/frappe/permissions.py#L237) · [Meta processing](../reference/frappe/frappe/model/meta.py#L660)
 
 Phase 1 indexed 2,219 inline permission or role rows, one permission fixture and 52 distinct role names in those inline rows. A shipped role row is input for migration. Effective grants depend on roles, scope, custom overrides and active apps. [Permission catalog](../metadata/permissions.json)

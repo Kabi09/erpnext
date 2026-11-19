@@ -1,5 +1,9 @@
 # UI components and metadata rendering
 
+## Phase 2 interface
+
+The MUI client uses self-hosted Inter and shared SCSS tokens. The login screen uses the real authentication API and supports password visibility and server errors. The protected shell provides a desktop sidebar, a mobile drawer, breadcrumbs, a profile menu and sign-out. Its route definitions can be replaced by registered screen data later. The dashboard loads company access from the protected backend and displays loading, empty, error and verified states. Not Found and Unauthorized have dedicated routes. Lazy route chunks cover the login, shell and dashboard.
+
 Use a visually distinct CRYO workspace shell with MUI components, SCSS Modules and MUI Material Icons. Use shared CSS variables or SCSS tokens for spacing, color and breakpoints. Inter is the proposed Google Font pending foundation work. Group each React component in a folder with its named JSX and SCSS Module when it needs custom styling. Use the existing CSS class layout convention only where its regions are useful. [Project rules](14-PROJECT-RULES.md)
 
 | Component | Proposed responsibility and inputs |

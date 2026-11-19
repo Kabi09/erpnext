@@ -1,0 +1,11 @@
+services:
+  mongo:
+    image: mongo:8.0
+    command: ["mongod", "--replSet", "cryo-rs", "--port", "27018", "--bind_ip_all"]
+    ports:
+      - "127.0.0.1:27018:27018"
+    volumes:
+      - cryo-mongo:/data/db
+
+volumes:
+  cryo-mongo:

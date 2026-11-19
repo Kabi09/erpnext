@@ -1,5 +1,21 @@
 # API mapping
 
+## Phase 2 endpoints
+
+All active routes use the `/api/v1` prefix. Auth mutation requests carry `X-CRYO-Request: 1` and browser origins must match `APP_ORIGINS`. Authenticated GETs use a bearer access JWT. Successful GETs and login/refresh responses use `data` and `meta.requestId`. Errors use `error` with code, message, details and request ID.
+
+| Method and path | Input and result |
+| --- | --- |
+| `GET /health` | Liveness. Returns 200 with `status: ok` |
+| `GET /ready` | Checks validated reference metadata, MongoDB connection and a writable transaction-capable topology. Returns 200 or 503 |
+| `POST /auth/login` | Email and password. Returns safe user profile, access JWT and refresh cookie |
+| `POST /auth/refresh` | Refresh cookie. Returns new access JWT and a rotated refresh cookie |
+| `POST /auth/logout` | Refresh cookie or verified bearer session. Revokes the session, clears the cookie and returns 204 |
+| `GET /auth/me` | Current user ID, name, email and active companies |
+| `GET /companies/:companyId/access` | Requires active membership and company-read grant. Returns the company's ID, name and code |
+
+Malformed JSON returns 400, invalid input 422, failed authentication 401, denied access 403 and rate limit 429. Responses carry `X-Request-Id`. All other routes in the proposal below are future contracts.
+
 Frappe mounts v1 under `/api` and `/api/v1` and v2 under `/api/v2`. V1 exposes resource and whitelisted method routes. V2 has document, metadata, count and method routes, plus discovery and separate bulk operations. The source index records literal routes, decorator occurrences and observed client RPC references. A whitelist hit does not establish route exposure, HTTP verbs, auth behavior or the set of usable calls after hooks are applied. [API entry](../reference/frappe/frappe/api/__init__.py) · [V1 routes](../reference/frappe/frappe/api/v1.py#L150) · [V2 routes](../reference/frappe/frappe/api/v2.py#L674)
 
 | Upstream capability | Proposed Express endpoint |

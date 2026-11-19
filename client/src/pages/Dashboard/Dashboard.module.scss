@@ -1,0 +1,11 @@
+.container { display: grid; gap: 26px; min-width: 0; }
+.toprow { display: flex; flex-wrap: wrap; gap: 20px; align-items: end; justify-content: space-between; }
+.topleft { min-width: 0; overflow-wrap: anywhere; }
+.title { font-size: clamp(1.85rem, 4vw, 3rem); font-weight: 740; letter-spacing: -.065em; margin: 0 0 6px; }
+.companyPicker { background: var(--surface); width: min(100%, 270px); }
+.company { border-color: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(18px, 4vw, 32px); }
+.companyHeading { align-items: center; flex-wrap: wrap; row-gap: 12px; }
+.companyIcon { display: grid; place-items: center; background: var(--brand-soft); color: var(--brand);
+  border-radius: 12px; flex: 0 0 48px; height: 48px; }
+.companyText { flex: 1 1 110px; min-width: 0; overflow-wrap: anywhere; }
+.status { flex: 0 0 auto; }
