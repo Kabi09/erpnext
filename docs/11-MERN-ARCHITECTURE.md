@@ -4,7 +4,7 @@
 
 The npm workspace contains separate client and server packages with one lockfile and a pinned Node.js version. Express startup loads and checks the required Phase 1 catalogs, computes a SHA-256 checksum over their names and file digests, preserves original source IDs, checks the MongoDB topology and creates declared indexes. The loader is internal and exposes a source-ID lookup for Phase 3. Reference data remains separated from future overlays.
 
-The backend currently contains User, Role, Permission, Company, RefreshSession and AuditLog collections. Browser requests go through the shared Axios gateway. Refresh rotation and audit recording use MongoDB transactions. Document services, derived models, ledger posting and the outbox are future work. [Local setup](15-LOCAL-DEVELOPMENT.md) · [Active API](07-API-MAPPING.md)
+The Phase 2 backend introduced User, Role, Permission, Company, RefreshSession and AuditLog collections. Browser requests go through the shared Axios gateway. Refresh rotation and audit recording use MongoDB transactions. Phase 3 compiles registered models at startup and routes document requests through shared grant resolution, validated fields and transactional mutation services. Ledger posting and the outbox remain planned. [Document engine](16-DOCUMENT-ENGINE.md) [Local setup](15-LOCAL-DEVELOPMENT.md) · [Active API](07-API-MAPPING.md)
 
 The Phase 2 foundation is a modular Express API and Vite app backed by a single MongoDB deployment. Keep business modules in one server and use a transactional outbox for jobs. This gives the 500-registered-user deployment a small operational footprint. Benchmark actual concurrent traffic and long-running reports before scaling.
 

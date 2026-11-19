@@ -1,5 +1,7 @@
 # DocTypes and database
 
+Phase 3 stores three company-scoped quality masters in compiled MongoDB collections. Quality Feedback Template embeds up to 100 parameter rows. An atomic counter supports reviewed naming series. The registry derives a stable model name from each original source ID. [Storage, adapters and migrations](16-DOCUMENT-ENGINE.md#registration-and-storage)
+
 The catalog contains 875 shipped DocTypes and 14,719 declared fields, including layout fields. There are 375 child-table schemas, 474 Table or Table MultiSelect fields, 66 singleton DocTypes and 86 submittable DocTypes. It retains DocType flags, options, labels, required/default values, dependencies, permissions, child order and naming metadata. [DocType catalog](../metadata/doctypes.json) · [Relationships](../metadata/relationships.json)
 
 | Source metadata | Target treatment |

@@ -11,6 +11,9 @@ const record = z.looseObject({
 })
 const catalog = z.array(record)
 const schemas = {
+  'source-index': z.array(z.object({ evidence: z.array(z.object({
+    source, signals: z.array(z.object({ kind: z.string() })),
+  })) })),
   'extraction-summary': z.looseObject({
     schemaVersion: z.literal(1),
     errors: z.array(z.unknown()).length(0),

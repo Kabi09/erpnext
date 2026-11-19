@@ -14,7 +14,7 @@ All active routes use the `/api/v1` prefix. Auth mutation requests carry `X-CRYO
 | `GET /auth/me` | Current user ID, name, email and active companies |
 | `GET /companies/:companyId/access` | Requires active membership and company-read grant. Returns the company's ID, name and code |
 
-Malformed JSON returns 400, invalid input 422, failed authentication 401, denied access 403 and rate limit 429. Responses carry `X-Request-Id`. All other routes in the proposal below are future contracts.
+Malformed JSON returns 400, invalid input 422, failed authentication 401, denied access 403 and rate limit 429. Responses carry `X-Request-Id`. Phase 3 adds the ten metadata and document operations in the [active document contract](16-DOCUMENT-ENGINE.md#active-routes). Discovery uses `/metadata/doctypes`. Workspace, lifecycle action and reporting routes in the original proposal remain planned.
 
 Frappe mounts v1 under `/api` and `/api/v1` and v2 under `/api/v2`. V1 exposes resource and whitelisted method routes. V2 has document, metadata, count and method routes, plus discovery and separate bulk operations. The source index records literal routes, decorator occurrences and observed client RPC references. A whitelist hit does not establish route exposure, HTTP verbs, auth behavior or the set of usable calls after hooks are applied. [API entry](../reference/frappe/frappe/api/__init__.py) · [V1 routes](../reference/frappe/frappe/api/v1.py#L150) · [V2 routes](../reference/frappe/frappe/api/v2.py#L674)
 

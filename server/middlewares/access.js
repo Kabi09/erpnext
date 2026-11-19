@@ -12,15 +12,21 @@ export function requireCompanyPermission(models, resource, action) {
   if (!permissionActions.includes(action)) throw new Error('Unsupported permission action')
   return async (req, _res, next) => {
     const companyId = req.params.companyId.toLowerCase()
-    const membership = req.user.memberships.find(entry => String(entry.company) === companyId)
-    if (!membership?.roles.length) throw forbidden()
-    const [company, permission] = await Promise.all([
-      models.Company.findOne({ _id: companyId, active: true }).select('name code').lean(),
-      models.Permission.findOne({ resource, action }).select('_id').lean(),
-    ])
-    if (!company || !permission ||
-      !await models.Role.exists({ _id: { $in: membership.roles }, permissions: permission._id })) throw forbidden()
-    req.company = company
+    const access = await companyGrants(models,req.user,companyId)
+    if (!access?.grants.has(resource + ':' + action)) throw forbidden()
+    req.company = access.company
     next()
   }
+}
+
+export async function companyGrants(models,user,companyId) {
+  const membership = user.memberships.find(entry => String(entry.company) === companyId.toLowerCase())
+  if (!membership?.roles.length) return null
+  const [company,roles] = await Promise.all([
+    models.Company.findOne({ _id:companyId,active:true }).select('code name').lean(),
+    models.Role.find({ _id:{ $in:membership.roles } }).select('permissions').lean(),
+  ])
+  if (!company) return null
+  const permissions = await models.Permission.find({ _id:{ $in:roles.flatMap(role => role.permissions) } }).lean()
+  return { company,grants:new Set(permissions.map(p => p.resource + ':' + p.action)) }
 }

@@ -1,4 +1,5 @@
 import { pathToFileURL } from 'node:url'
+import { seedDocumentGrants } from '../engine/policies.js'
 import { readConfig } from './environment.js'
 import { openDatabase } from './database.js'
 import { hashPassword } from '../services/passwords.js'
@@ -16,6 +17,7 @@ export async function bootstrapAdmin(database, env) {
       permissions: [permission._id] }], { session })
     const [user] = await User.create([{ email: ADMIN_EMAIL, name: ADMIN_NAME, passwordHash,
       memberships: [{ company: company._id, roles: [role._id] }] }], { session })
+    await seedDocumentGrants(database.models, role, session)
     await AuditLog.create([{ action: 'bootstrap.admin', actor: user._id,
       subject: user._id, company: company._id }], { session })
     return true

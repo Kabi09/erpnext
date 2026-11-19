@@ -10,7 +10,9 @@ async function main() {
     const config = readConfig()
     const metadata = await loadReferenceMetadata()
     database = await openDatabase(config.mongoUri)
-    const server = createApp(config, { database, metadata }).listen(config.port, config.host)
+    const app = createApp(config, { database, metadata })
+    await app.locals.documentsReady
+    const server = app.listen(config.port, config.host)
     await once(server, 'listening')
     console.log('CRYO API listening on ' + config.host + ':' + config.port)
 

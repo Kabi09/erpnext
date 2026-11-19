@@ -1,6 +1,10 @@
 # Known limitations and licensing
 
-## Phase 2 boundaries
+## Phase 3 boundaries
+
+The registry classifies 875 types and exposes three reviewed company-scoped masters. Tree operations, posting, file handling, secret storage, generalized client conditions, runtime customizations and upstream sharing rules need separate implementations. See the [field coverage and lifecycle table](16-DOCUMENT-ENGINE.md#field-coverage-and-lifecycle) for adapter boundaries.
+
+## Phase 2 boundaries at delivery
 
 The foundation authorizes only the company-access resource. Effective document permissions, workflow rules, row and field policies, admin management screens, metadata-driven routes and dynamic models belong to later work. Rate limiting is local to the server process. A multi-instance deployment would need a shared limit strategy. Web Locks coordinate refresh across compatible browser tabs. Without Web Locks, simultaneous refreshes from separate tabs can cause a replay-triggered sign-out. Local test topology has one MongoDB member. Multi-member failover, deployed TLS behavior and 500-user workload capacity remain unverified.
 

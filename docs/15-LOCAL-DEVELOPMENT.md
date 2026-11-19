@@ -38,7 +38,7 @@ $env:ADMIN_PASSWORD = [System.Net.NetworkCredential]::new('', $cryoAdminSecret).
 try { npm run bootstrap:admin } finally { Remove-Item Env:ADMIN_PASSWORD }
 ```
 
-The bootstrap transaction creates one company, one company-administrator role, the reviewed company-read grant, and an initial user and audit event. A repeat bootstrap leaves the account and password intact. Use a development database for local operation.
+The bootstrap transaction creates one company, one company-administrator role, the reviewed company and document grants, and an initial user and audit event. When upgrading an existing Phase 2 database, run `node --env-file-if-exists=.env config/seed-document-grants.js` from `server/` once to add the reviewed document grants to the company-administrator role. [Document permissions](16-DOCUMENT-ENGINE.md#active-routes) A repeat bootstrap leaves the account and password intact. Use a development database for local operation.
 
 ## Run, test and build
 
@@ -47,7 +47,7 @@ The bootstrap transaction creates one company, one company-administrator role, t
 | `npm run dev:api` | Express with Node watch mode |
 | `npm run dev:client` | Vite development server and same-origin API proxy. Open `http://127.0.0.1:5173` |
 | `npm test` | Node tests, including real HTTP and an isolated MongoDB replica set |
-| `npx playwright install chromium` | Browser binary for UI tests |
+| `npx playwright install chromium` | Install the default browser for UI tests. Alternatively, set `CRYO_TEST_BROWSER` to the absolute path of an installed Chrome executable. |
 | `npm run test:ui` | Playwright with isolated MongoDB, the actual Express entry point on 4174 and Vite on 4173 |
 | `npm run build` | Production assets in `client/dist/` |
 | `npm run start -w server` | Non-watch Express entry point |

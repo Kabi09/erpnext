@@ -1,4 +1,5 @@
 import express from 'express'
+import { documentRoutes } from './routes/documents.js'
 import helmet from 'helmet'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
@@ -40,8 +41,8 @@ export function createApp(config, { database, metadata, logger = true }) {
       if (!origin || config.origins.includes(origin)) return callback(null, Boolean(origin))
       callback(forbidden())
     },
-    credentials: true, methods: ['GET', 'POST'], allowedHeaders: ['Authorization', 'Content-Type', 'X-CRYO-Request'],
-    exposedHeaders: ['X-Request-Id'],
+    credentials: true, methods: ['GET', 'POST', 'PATCH', 'DELETE'], allowedHeaders: ['Authorization', 'Content-Type', 'X-CRYO-Request','X-Company-Id','If-Match'],
+    exposedHeaders: ['X-Request-Id','ETag'],
   }))
   router.get('/health', (req, res) => respond(req, res, { status: 'ok' }))
   router.get('/ready', async (req, res) => {
@@ -65,6 +66,9 @@ export function createApp(config, { database, metadata, logger = true }) {
     (req, res) => respond(req, res, { id: String(req.company._id), name: req.company.name, code: req.company.code }),
   )
 
+  const documents = documentRoutes(database, metadata, identity)
+  app.locals.documentsReady = documents.initialized
+  router.use(documents.router)
   app.use('/api/v1', (_req, res, next) => { res.set('Cache-Control', 'no-store'); next() }, router)
   app.use((_req, _res, next) => next(new HttpError(404, 'NOT_FOUND', 'This endpoint was not found.')))
   app.use(errorResponse)

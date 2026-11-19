@@ -58,6 +58,8 @@ const audit = new Schema({
   subject: { type: Schema.Types.ObjectId },
   company: { type: Schema.Types.ObjectId, ref: 'Company' },
   requestId: String,
+  doctype: String,
+  changedFields: { type: [String], default: undefined },
 }, { ...options, timestamps: { createdAt: true, updatedAt: false } })
 audit.index({ actor: 1, createdAt: -1 })
 audit.index({ subject: 1, createdAt: -1 })
