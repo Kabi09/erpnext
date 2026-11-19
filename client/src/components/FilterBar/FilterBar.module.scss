@@ -1,0 +1,83 @@
+.container {
+  width: 100%;
+  margin-bottom: 16px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .toprow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      justify-content: space-between;
+
+      .searchSection {
+        flex: 1 1 240px;
+        min-width: 200px;
+
+        .searchInput {
+          width: 100%;
+        }
+      }
+
+      .filterSection {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        flex: 2 1 auto;
+
+        .fieldPicker {
+          min-width: 140px;
+        }
+
+        .valueInput {
+          min-width: 140px;
+        }
+
+        .dateInput {
+          min-width: 135px;
+        }
+      }
+
+      .actionSection {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container .wrapper .toprow {
+    flex-direction: column;
+    align-items: stretch;
+
+    .searchSection,
+    .filterSection,
+    .actionSection {
+      width: 100%;
+    }
+
+    .filterSection {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+
+      .fieldPicker,
+      .valueInput,
+      .dateInput {
+        width: 100%;
+      }
+    }
+
+    .actionSection {
+      justify-content: flex-end;
+    }
+  }
+}

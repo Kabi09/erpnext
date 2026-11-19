@@ -1,0 +1,40 @@
+.container {
+  width: 100%;
+
+  .wrapper {
+    .card {
+      padding: 16px;
+      border-radius: var(--radius, 14px);
+      background-color: var(--surface, #fff);
+
+      .toprow {
+        margin-bottom: 12px;
+
+        .title {
+          font-weight: 600;
+          color: var(--ink, #222037);
+        }
+      }
+
+      .middlerow {
+        .infoList {
+          .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+
+            .icon {
+              color: var(--muted, #625e74);
+              margin-top: 2px;
+            }
+
+            .monoId {
+              font-family: monospace;
+              font-size: 0.8125rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

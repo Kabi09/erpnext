@@ -1,0 +1,58 @@
+.container {
+  width: 100%;
+
+  .wrapper {
+    .toprow {
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+
+        .icon {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .middlerow {
+      .content {
+        padding-top: 4px;
+        padding-bottom: 12px;
+
+        .alert {
+          margin-bottom: 16px;
+        }
+
+        .diffSection {
+          .diffHeading {
+            margin-bottom: 8px;
+            font-weight: 600;
+          }
+
+          .diffTable {
+            max-height: 200px;
+            overflow-y: auto;
+
+            .userVal {
+              color: var(--brand, #5036ae);
+              font-family: monospace;
+            }
+
+            .serverVal {
+              color: var(--muted, #625e74);
+              font-family: monospace;
+            }
+          }
+        }
+      }
+    }
+
+    .bottomrow {
+      .actions {
+        padding: 12px 24px 16px;
+        gap: 8px;
+      }
+    }
+  }
+}

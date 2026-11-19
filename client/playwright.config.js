@@ -1,4 +1,8 @@
+import fs from 'node:fs'
 import { defineConfig } from '@playwright/test'
+
+const defaultChrome = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+const executablePath = process.env.CRYO_TEST_BROWSER || (fs.existsSync(defaultChrome) ? defaultChrome : undefined)
 
 export default defineConfig({
   testDir: './tests',
@@ -9,7 +13,7 @@ export default defineConfig({
   use: {
     baseURL: 'http://127.0.0.1:4173',
     browserName: 'chromium',
-    launchOptions: process.env.CRYO_TEST_BROWSER ? { executablePath: process.env.CRYO_TEST_BROWSER } : undefined,
+    launchOptions: executablePath ? { executablePath } : undefined,
   },
   workers: 1,
   webServer: {

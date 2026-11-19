@@ -1,0 +1,44 @@
+.container {
+  width: 100%;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .toprow {
+      .breadcrumbs {
+        margin-bottom: 8px;
+
+        .breadcrumbLink {
+          color: var(--brand, #5036ae);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .createHeader {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+
+        .title {
+          font-weight: 700;
+          color: var(--ink, #222037);
+        }
+      }
+
+      .notFoundAlert {
+        border-radius: var(--radius, 14px);
+      }
+    }
+
+    .middlerow {
+      width: 100%;
+    }
+  }
+}

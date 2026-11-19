@@ -1,0 +1,110 @@
+.container {
+  width: 100%;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .toprow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      .headerLeft {
+        .breadcrumbs {
+          margin-bottom: 4px;
+
+          .breadcrumbLink {
+            color: var(--brand, #5036ae);
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .titleRow {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          flex-wrap: wrap;
+
+          .title {
+            font-weight: 700;
+            color: var(--ink, #222037);
+          }
+        }
+      }
+
+      .headerRight {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .notice {
+      border-radius: var(--radius, 14px);
+    }
+
+    .middlerow {
+      .contentGrid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 24px;
+        align-items: start;
+
+        .mainColumn {
+          min-width: 0;
+        }
+
+        .sideColumn {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .relationsCard {
+            padding: 16px;
+            border-radius: var(--radius, 14px);
+            background-color: var(--surface, #fff);
+
+            .relationsTitle {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-weight: 600;
+              margin-bottom: 12px;
+            }
+
+            .relationsList {
+              .relationItem {
+                display: flex;
+                flex-direction: column;
+
+                .relationLink {
+                  color: var(--brand, #5036ae);
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 0.875rem;
+
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .container .wrapper .middlerow .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}

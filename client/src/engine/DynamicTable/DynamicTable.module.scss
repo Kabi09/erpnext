@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+
+  .wrapper {
+    .middlerow {
+      .tableContainer {
+        border-radius: var(--radius, 14px);
+        max-width: 100%;
+        overflow-x: auto;
+        background-color: var(--surface, #fff);
+
+        .nameHeader,
+        .nameCell {
+          font-weight: 600;
+          min-width: 180px;
+
+          .docLink {
+            color: var(--brand, #5036ae);
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .statusHeader,
+        .statusCell {
+          min-width: 120px;
+        }
+
+        .dateHeader,
+        .dateCell {
+          min-width: 120px;
+          color: var(--muted, #625e74);
+        }
+
+        .actionsHeader,
+        .actionsCell {
+          min-width: 130px;
+          white-space: nowrap;
+        }
+
+        .emptyCell {
+          padding: 40px 16px;
+        }
+
+        .row:hover {
+          background-color: var(--canvas, #f7f7fb);
+        }
+      }
+    }
+  }
+}

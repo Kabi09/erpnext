@@ -8,12 +8,12 @@
 - Target users — Approximately 500 registered users. Concurrent workload and capacity remain unmeasured.
 - Important conventions — Preserve references and upstream notices. Follow [project rules](docs/14-PROJECT-RULES.md). Keep proposed behavior distinct from implementation status.
 - Reference repositories — ERPNext `develop`, `04985378822020da230b7bf77ffc40c63c77a91a`. Frappe `develop`, `a9488f482626a9794457c89ad88b31a881cb79a9`. Both clean at review.
-- Current development phase — Phase 3 backend engine complete. Phase 4 is the metadata-driven React MUI form, table, page and workspace engine.
+- Current development phase — Phase 4 frontend engine complete. Phase 5 is Core DocType Rollout and Business Logic Engine.
 
 ## Project Structure
 
-- Important folders — `client/` contains the Vite/MUI app. `server/engine/` and `server/routes/` contain the registry, compiled models, services and HTTP routes. `metadata/` holds the 14 Phase 1 JSON artifacts and the Phase 3 registration manifest. [Local development](docs/15-LOCAL-DEVELOPMENT.md)
-- Important files — [AGENTS.md](AGENTS.md), [extract-metadata.js](scripts/extract-metadata.js), [validate-metadata.js](scripts/validate-metadata.js), [extraction summary](metadata/extraction-summary.json).
+- Important folders — `client/` contains the Vite/MUI app. `client/src/engine/` and `client/src/components/` contain the dynamic metadata-driven UI engine. `server/engine/` and `server/routes/` contain the registry, compiled models, services and HTTP routes. `metadata/` holds the 14 Phase 1 JSON artifacts and the Phase 3 registration manifest. [Local development](docs/15-LOCAL-DEVELOPMENT.md)
+- Important files — [AGENTS.md](AGENTS.md), [extract-metadata.js](scripts/extract-metadata.js), [validate-metadata.js](scripts/validate-metadata.js), [extraction summary](metadata/extraction-summary.json), [frontend metadata engine](docs/17-FRONTEND-METADATA-ENGINE.md).
 - Component structure — JSX components use named folders and SCSS Modules. Frontend routes, pages, shell, shared view states, styles, context and the Axios service are in `client/src/`. Backend app composition, configuration, models, authentication, access middleware and the metadata loader are in `server/`.
 - Shared utilities — The repo scanner supplies definitions, evidence and provenance to the focused extractors and shared orchestration. Focused extraction CLIs print one normalized catalog to stdout.
 - Metadata structure — 14 Phase 1 artifacts retain their provenance and licenses. `server/engine/reference-metadata.js` validates the reference catalogs used by the runtime, checks summary counts, computes a SHA-256 checksum and preserves original source IDs. Future CRYO overlays live separately.
@@ -21,18 +21,18 @@
 ## UI & Styling Rules
 
 - MUI usage — Standard MUI forms, tables, dialogs and layouts, combined in a distinct CRYO shell.
-- Google Material Icons — Use Google Material Icons via MUI. Supply accessible action labels.
-- SCSS Modules — Apply custom styles through each component's named module. Use shared tokens and relevant layout regions.
+- Google Material Icons — Use Google Material Icons via MUI (`@mui/icons-material`). Supply accessible action labels.
+- SCSS Modules — Apply custom styles through each component's named module (`ComponentName.module.scss`). Use shared tokens and relevant layout regions (`.container > .wrapper > (.toprow, .middlerow, .bottomrow)`).
 - Google Fonts — Inter is bundled through Fontsource. The app has its own CRYO identity.
-- Responsive approach — Six viewport classes. Test narrow screens, long values and overflowing tables inside the table container.
+- Responsive approach — Six viewport classes (320x640, 390x844, 768x1024, 1024x768, 1440x900, 1920x1080). Test narrow screens, long values and overflowing tables inside the table container.
 - Component structure — Shared rendering and domain overrides are described in [UI components](docs/09-UI-COMPONENTS.md).
 
 ## Application Logic
 
 - Authentication and authorization — Scrypt password hashes, ten-minute JWTs, seven-day refresh sessions, digest-only refresh storage and transactional rotation with replay revocation. The document engine resolves current role, company, action and field grants for each request.
-- State management and API handling — React context restores the session. Axios holds access credentials in memory, coordinates refresh, retries a failed bearer request once and cancels obsolete company data requests.
-- Business logic — Company access and three quality masters are live. Quality Feedback Template enforces unique parameter rows. Transactional ERP controller ports remain future work. [Business logic](docs/05-BUSINESS-LOGIC.md)
-- Validation and error handling — Zod validates environment and request fields. API middleware standardizes errors, request IDs, restricted origins, security headers and rate limits.
+- State management and API handling — React context restores the session. `CompanyContext` tracks and synchronizes the active company ID with `sessionStorage` and synchronous Axios request headers (`X-Company-Id`). Axios holds access credentials in memory, coordinates refresh, retries a failed bearer request once and cancels obsolete company data requests.
+- Business logic — Company access and three quality masters are live with full CRUD and optimistic concurrency handling. Quality Feedback Template enforces unique parameter rows. Transactional ERP controller ports remain future work. [Business logic](docs/05-BUSINESS-LOGIC.md)
+- Validation and error handling — Zod validates environment and request fields. Pre-submit validation catches missing required fields. Server 422 errors map to inline helper texts and `ValidationSummary` banners (with child row path decoding). Concurrency conflicts (412 STALE_VERSION) open `ConflictDialog`. Referential integrity blocks (409 REFERENCED) and unique collisions (409 DUPLICATE) display explanatory alerts.
 - Document lifecycle and workflow integration — Verified masters use server-owned Draft status. Mutations check the stored lifecycle. Submit, cancel and amend require a domain handler with permission checks, version, idempotency and audit. Workflow and business status belong to those domain services.
 
 ## Database Architecture
@@ -52,7 +52,7 @@
 
 - Modules and source references — 21 ERPNext modules and 17 Frappe modules. The [module inventory](docs/02-MODULE-INVENTORY.md) lists every module and its source directory. The [module catalog](metadata/modules.json) preserves discovered subareas and outgoing dependencies.
 - Dependencies — 204 grouped cross-module edges, five absent named app references, one unresolved DocType link, eight unresolved legacy navigation targets and one duplicate portal hook route.
-- Implementation status — All 875 shipped DocTypes are classified. Three have verified document APIs. The reference catalog contains 14,719 fields, 375 child-table schemas, 24 workspaces, 29 page definitions, 207 reports, nine dashboards and 2,220 permission definitions.
+- Implementation status — All 875 shipped DocTypes are classified. Three have verified document APIs and complete metadata-driven UI frontend integration. The reference catalog contains 14,719 fields, 375 child-table schemas, 24 workspaces, 29 page definitions, 207 reports, nine dashboards and 2,220 permission definitions.
 
 ## Components
 
@@ -60,16 +60,16 @@
 
 - Locations — `client/src/pages/Login/`, `client/src/layouts/AppLayout/` and `client/src/pages/Dashboard/`.
 - Purpose — Sign in, navigate protected workspace routes, select an assigned company, see server-confirmed access and sign out.
-- State and logic — AuthContext owns identity and session restoration. Pages handle pending, failure and empty states. The shell owns the mobile drawer and account menu.
+- State and logic — AuthContext owns identity and session restoration. Pages handle pending, failure and empty states. The shell owns the mobile drawer, company selector, dynamic module links, and account menu.
 - API dependencies — Login, refresh, logout, current user and company access. Related components include ProtectedRoute, shared view states, NotFound and Unauthorized.
 
-### DynamicForm (proposed)
+### DynamicPage, DynamicListView, DynamicDetailView, DynamicForm, DynamicTable, DynamicField, DynamicWorkspace and ChildTable (implemented)
 
-- Location — `client/src/engine/DynamicForm/`.
-- Purpose and props — Render authorized metadata, initial values, field errors and submit capabilities.
-- State and logic — Local draft, current document version, visible validation state and server-returned capabilities.
-- API dependencies — Authorized metadata, document CRUD, link options, relations and version preconditions are available. Domain actions require future services.
-- Related components — DynamicField, DynamicTabs, ChildTable, LinkedDocumentSelector and DocumentActions. [Component design](docs/09-UI-COMPONENTS.md)
+- Locations — `client/src/engine/` and `client/src/components/`.
+- Purpose and props — Dynamically render authorized DocType metadata, dynamic list views, dynamic create/detail/edit forms, responsive tables, linked document autocompletes, ordered child tables, module workspaces, and audit timelines without hardcoding per-DocType pages.
+- State and logic — Route-based DocType dispatcher (`DynamicPage`), multi-condition FilterBar, cursor-based pagination, declarative condition evaluation (`visibleWhen`) without dynamic code execution, optimistic concurrency handling (`If-Match` with side-by-side diff reload dialog on 412 STALE_VERSION), exclusion of immutable/read-only naming fields on PATCH, inline and summary validation errors (422 INVALID_FIELD), foreign-key reference delete protection (409 REFERENCED), unique value collision alerts (409 DUPLICATE), and fallback cards for unregistered reference DocTypes.
+- API dependencies — `/api/v1/metadata/modules`, `/api/v1/metadata/doctypes`, `/api/v1/metadata/doctypes/:doctype`, `/api/v1/documents/:doctype`, `/api/v1/documents/:doctype/options`, `/api/v1/documents/:doctype/:id`, `/api/v1/documents/:doctype/:id/relations`, and company context with synchronous `X-Company-Id` header delivery.
+- Related components — FilterBar, Pagination, ConfirmDialog, ConflictDialog, ValidationSummary, PermissionGuard, DocumentStatus, DocumentTimeline, UnsupportedField, LinkedDocumentSelector, ChildTable, DynamicSection, DynamicTabs, and DocumentActions. [Technical reference](docs/17-FRONTEND-METADATA-ENGINE.md)
 
 ## Business Workflows
 
@@ -81,6 +81,17 @@
 ## Change History
 
 ### 2026-11-19
+
+#### Phase 4 metadata-driven React MUI frontend engine
+
+- Created complete reusable engine in `client/src/engine/`: `DynamicPage`, `DynamicListView`, `DynamicDetailView`, `DynamicForm`, `DynamicTable`, `DynamicField`, `DynamicSection`, `DynamicTabs`, `DynamicWorkspace`, `ChildTable`, `LinkedDocumentSelector`, and `DocumentActions`.
+- Created supporting components in `client/src/components/`: `FilterBar`, `Pagination`, `ConfirmDialog`, `ConflictDialog`, `ValidationSummary`, `PermissionGuard`, `DocumentStatus`, `DocumentTimeline`, and `UnsupportedField`.
+- Added services and context: `client/src/services/documentApi.js`, updated `client/src/services/api.js` with active company ID interceptors, and created `client/src/context/CompanyContext/CompanyContext.jsx` with sessionStorage fallback and synchronous API client header synchronization.
+- Updated shell and routing: Modified `client/src/layouts/AppLayout/` to dynamically load registered navigation modules and verified DocTypes, and updated `client/src/App.jsx` with route paths for `/documents/:doctype`, `/documents/:doctype/new`, `/documents/:doctype/:id`, `/documents/:doctype/:id/edit`, `/workspaces/:module`, and `/app/` aliases.
+- Concurrency & Validation: Implemented ETag parsing and `If-Match: "<version>"` concurrency preconditions on mutations, triggering `ConflictDialog` with live diff reload on 412 STALE_VERSION. Implemented field validation mapping for 422 INVALID_FIELD across both top-level and child table nested paths (`fields.<table_name>.<idx>.<col>`), 409 DUPLICATE handling, and 409 REFERENCED delete restriction handling.
+- Implemented declarative safe condition evaluation for `visibleWhen` rules without `eval` or dynamic code execution. Excluded immutable naming fields (`immutableAfterCreate: true`) and read-only fields from PATCH payloads.
+- Verified on all 3 Phase 3 verified masters (`Quality Inspection Parameter Group`, `Quality Inspection Parameter`, and `Quality Feedback Template`). Added comprehensive end-to-end integration test suite `client/tests/documents.spec.js`.
+- Created technical documentation: [Frontend metadata engine](docs/17-FRONTEND-METADATA-ENGINE.md).
 
 #### Phase 3 document engine
 
@@ -111,11 +122,11 @@
 
 ## Current Progress
 
-- Completed — Phases 0–2 established the references, inventory, running MERN foundation and authentication. Phase 3 delivered and tested the registered document engine, manifest and Phase 4 API contract.
+- Completed — Phases 0–2 established references, running MERN foundation and auth. Phase 3 delivered registered document engine and API contract. Phase 4 delivered metadata-driven React MUI frontend engine, full vertical integration on verified masters, multi-tenancy header synchronization, optimistic concurrency conflict recovery, child tables, and responsive UI across 6 viewports.
 - In Progress — None.
-- Pending — Phases 4 through 9, beginning with metadata-driven React forms, tables, pages and workspaces.
-- Blocked — No blocker for Phase 4 on the verified masters. Effective site-specific behavior requires site data or stakeholder evidence.
-- Next implementation task — Carry the selected company through shared Axios document requests and render a metadata-driven list and form for Quality Inspection Parameter Group. Exercise create, reload, field validation and stale-version recovery before expanding to links and child rows.
+- Pending — Phase 5 Core DocType Rollout and Business Logic Engine, followed by Phases 6 through 9.
+- Blocked — None for verified masters. Phase 5 rollout gates remaining DocTypes on domain controllers and approval.
+- Next implementation task — Phase 5: Classify and rollout the next batch of core ERPNext business DocTypes (e.g. Item, Customer, Supplier) with their domain logic, transaction controllers, and posting rules.
 
 ## Known Issues
 
@@ -133,8 +144,12 @@
 - 2026-11-19 — Treat a strict material issuance cap as the CRYO default. Upstream material requests can allow overage through a setting. Any compatibility allowance needs approval.
 - 2026-11-19 — Pin Node.js 26.13.0 and use one npm-workspace lockfile. Use a native single-member MongoDB replica set for local verification, with optional Compose for local development.
 - 2026-11-19 — Phase 2 scoped roles to company memberships, resolved grants live and provisioned the initial company-read grant. Use scrypt, fixed-lifetime refresh sessions, audited digest rotation and replay-triggered revocation.
-
 - 2026-11-19 — Treat the approved masters as company-scoped CRYO data. The contract revision, source checksum and policy overlay determine the registry version. Cursor sorting uses document ID to resolve ties. Preserve upstream extraction artifacts when regenerating the registration manifest.
+- 2026-11-19 — Synchronize active company ID to `sessionStorage` and include `X-Company-Id` header on all metadata and document operations. Fallback synchronously from storage on initial mount to prevent un-scoped API calls.
+- 2026-11-19 — Enforce optimistic concurrency on update/delete via HTTP `ETag` and `If-Match: "<version>"`. Surface concurrent edit diff in `ConflictDialog` on 412 STALE_VERSION with live reload.
+- 2026-11-19 — Automatically strip naming and immutable fields (`immutableAfterCreate: true`) and read-only fields on form update to adhere to backend PATCH validation rules.
+- 2026-11-19 — Maintain child table row identity via temporary `_clientKey` in React UI, preserving row array order, and serializing `rowId` for persistent rows while stripping transient keys.
+- 2026-11-19 — Execute declarative condition evaluation (`visibleWhen`) without dynamic code execution (`eval` or `Function`).
 
 ## Testing Results
 
@@ -149,8 +164,13 @@
 - Untested areas — Docker container startup because Docker Desktop was inactive, multi-member MongoDB failover, production HTTPS, full accessibility review, 500-user workload, ERP domain workflows and document parity.
 
 - Task — Phase 3 backend implementation and regressions.
-- Tests executed — `npm test` passed all 24 backend tests on a real local replica set. `npm run test:ui` passed all three Chrome tests, including six viewport sizes. `npm run build` passed. Final run had zero test failures or skips. One intervening Playwright launch could not locate its default headless Chromium binary. Re-running with the installed Chrome executable via `CRYO_TEST_BROWSER` passed all three tests.
+- Tests executed — `npm test` passed all 24 backend tests on a real local replica set. `npm run test:ui` passed all three Chrome tests, including six viewport sizes. `npm run build` passed. Final run had zero test failures or skips.
 - Coverage — Registry rejection and model identity, schema and field validation, protected fields, live grants, cross-company denial, child row ordering and edits, selector options, pagination, concurrent names and edits, reference/delete races, stale versions, and atomic value-free document audits. Individual field adapters and prefix series have narrower tests than the three registered masters.
+
+- Task — Phase 4 frontend metadata engine.
+- Tests executed — `npm test` backend test suite (24 tests), Playwright UI foundation suite (3 tests across 6 viewports), Playwright document engine integration suite `tests/documents.spec.js` (complete vertical integration covering navigation, list view, create, reload persistence, duplicate check, autocomplete linked selectors, reference delete restriction, inline editing, stale-version concurrency conflict recovery, child table reorder/remove/validation, company data isolation, unregistered DocType handling, and responsive layout across 6 viewports), and production build `npm run build`.
+- Result — All 24 backend tests passed. All 4 Playwright browser tests passed on native replica set with Chrome. Production build succeeded cleanly with zero errors.
+- Untested areas — Phase 5 unverified DocTypes (872 remaining DocTypes), ledger posting, complex transaction workflows, production HTTPS, multi-member replica failover, and 500-user concurrency benchmarks.
 
 ## Important Notes
 
@@ -158,8 +178,8 @@ Read the actual pinned source before translating a complex domain action. Static
 
 ## Agent Handover
 
-- Current phase — Phase 3 complete. Next is Phase 4 – Metadata-Driven React MUI Form, Table, Page and Workspace Engine.
-- First task — Supply the active company on document requests through shared Axios. Fetch authorized metadata for Quality Inspection Parameter Group, render its list and form, create and reload a record, and display field errors and stale-version recovery using the server contract. Then cover Quality Inspection Parameter link options and permissions, Quality Feedback Template child rows, and workspace routing.
-- Required reading — [Project rules](docs/14-PROJECT-RULES.md), [document contract](docs/16-DOCUMENT-ENGINE.md), [registration manifest](metadata/registration-manifest.json), [UI components](docs/09-UI-COMPONENTS.md), [permissions](docs/08-AUTHENTICATION-PERMISSIONS.md) and [conversion plan](docs/12-CONVERSION-PLAN.md).
+- Current phase — Phase 4 complete. Next is Phase 5 – Core DocType Rollout and Business Logic Engine.
+- First task — Expand registration and domain controllers to core master DocTypes (Item, Customer, Supplier, Warehouse). Ensure hierarchical tree structures, pricing/tax templates, and ledger posting controllers are authored and verified.
+- Required reading — [Project rules](docs/14-PROJECT-RULES.md), [document contract](docs/16-DOCUMENT-ENGINE.md), [frontend metadata engine](docs/17-FRONTEND-METADATA-ENGINE.md), [registration manifest](metadata/registration-manifest.json), [UI components](docs/09-UI-COMPONENTS.md), [permissions](docs/08-AUTHENTICATION-PERMISSIONS.md) and [conversion plan](docs/12-CONVERSION-PLAN.md).
 - Commands — Use `npm ci`, `npm test`, `npm run test:ui` and `npm run build`. Follow the [local development guide](docs/15-LOCAL-DEVELOPMENT.md) for replica setup and grants. Regenerate the Phase 3 manifest with `node scripts/classify-doctypes.mjs` after registry changes.
-- Known blockers — None for the three verified masters. Live site exports, external app decisions and reviewed domain controllers gate wider coverage.
+- Known blockers — None for verified masters. Live site exports, external app decisions and reviewed domain controllers gate wider coverage.

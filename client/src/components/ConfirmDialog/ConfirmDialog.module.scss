@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+
+  .wrapper {
+    .toprow {
+      .title {
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+    }
+
+    .middlerow {
+      .content {
+        padding-top: 4px;
+        padding-bottom: 16px;
+      }
+    }
+
+    .bottomrow {
+      .actions {
+        padding: 12px 24px 16px;
+        gap: 8px;
+      }
+    }
+  }
+}

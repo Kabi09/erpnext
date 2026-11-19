@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  padding: 12px 0 4px;
+
+  .wrapper {
+    .toprow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      .left {
+        display: flex;
+        align-items: center;
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .limitControl {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .limitSelect {
+            width: 72px;
+          }
+        }
+
+        .navControls {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container .wrapper .toprow {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .right {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}

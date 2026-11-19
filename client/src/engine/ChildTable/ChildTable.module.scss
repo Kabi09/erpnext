@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  margin: 12px 0 16px;
+
+  .wrapper {
+    .toprow {
+      margin-bottom: 8px;
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .tableTitle {
+          font-weight: 600;
+          color: var(--ink, #222037);
+
+          .required {
+            color: #d32f2f;
+          }
+
+          .countBadge {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+
+    .middlerow {
+      .tableContainer {
+        border-radius: var(--radius, 14px);
+        max-width: 100%;
+        overflow-x: auto;
+
+        .indexCol {
+          width: 44px;
+          color: var(--muted, #625e74);
+          font-weight: 500;
+        }
+
+        .actionsCol {
+          width: 130px;
+          white-space: nowrap;
+        }
+
+        .cell {
+          min-width: 160px;
+          padding: 8px 12px;
+        }
+
+        .required {
+          color: #d32f2f;
+        }
+
+        .emptyRow {
+          padding: 24px;
+        }
+      }
+    }
+  }
+}
